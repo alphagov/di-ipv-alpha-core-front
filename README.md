@@ -46,6 +46,41 @@ yarn install
 
 Installs the dependencies required to run the application.
 
+### Installand run NGINX
+
+Install nginx and update the nginx.conf with the following lines
+
+```
+  #ATP endpoints
+  location ~ ^/attributes {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+  location ~ ^/passport {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+  location ~ ^/driving-licence {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+  location ~ ^/bank-account {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+  location ~ ^/information {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+  location ~ ^/json {
+      proxy_pass  http://127.0.0.1:3000;
+  }
+
+  #IPV endpoints
+  location ~ ^/ipv {
+      proxy_pass  http://127.0.0.1:4000;
+  }
+  location / {
+      proxy_pass  http://127.0.0.1:4000;
+  }
+
+```
+
 ## Run web app
 
 ### Environment variables
