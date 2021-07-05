@@ -94,6 +94,8 @@ The web app requires environment variables set up for Cognito and the API. The `
 - REDIS_SESSION_URL - Redis URL (de use 127.0.0.1)
 - REDIS_PORT - Redis Port - Redis default is 6379
 - REDIS_AUTH_TOKEN - Redis auth token (not required for localhost dev)
+- DI_IPV_SIGN_KEY - The signing key used to generate the token for orchestrator
+- DI_IPV_SIGN_CERT - The signing certificate used to verify the signature
 
 Then rename the file `.env.sample` to `.env`.
 
