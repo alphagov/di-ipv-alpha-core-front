@@ -1,0 +1,12 @@
+{% set pageTitleName = "Bad request" %}
+{% extends "common/layout/view.njk" %}
+{% set pageHeader = "Bad request" %}
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Bad request</h1>
+            <p class="govuk-body">{{ 'error.error500.tryAgain' | translate | safe }}</p>
+            {{ contactUsErrorLink() }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,340 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "Program przyszłych granic (Future Borders)",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Otwórz wszystkie sekcje",
+    "closeAll": "Zamknij wszystkie sekcje"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Błąd:",
+  "phaseBanner": {
+    "version": "beta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Teraz",
+    "yes": "Tak",
+    "no": "Nie",
+    "opensInNewTab": " (Otwiera się w nowej zakładce)",
+    "buttons": {
+      "saveAndContinue": "Zapisz i przejdź dalej",
+      "saveForLater": "Zapisz i wróć później",
+      "continue": "Dalej",
+      "cancel": "Anuluj",
+      "back": "Wstecz",
+      "submitDetails": "Prześlij szczegóły"
+    },
+    "localTimes": "Wszystkie godziny podano według czasu uniwersalnego",
+    "errorSummaryTitle": "Wystąpił problem.",
+    "survey": {
+      "text": "Co sądzisz o tym serwisie?",
+      "url": "#",
+      "note": "(Ankieta zajmie 30 sekund)"
+    },
+    "warningAssistive": "Ostrzeżenie"
+  },
+  "error": {
+    "error404": {
+      "title": "Nie znaleziono strony",
+      "header": "Nie znaleziono strony",
+      "checkAddress": "Po wpisaniu adresu internetowego sprawdź, czy jest prawidłowy.<br/><br/> Po wklejeniu adresu internetowego sprawdź, czy skopiowano cały adres.<br/><br/> Jeżeli adres internetowy jest poprawny lub zaznaczono łącze lub przycisk, ta strona mogła zostać usunięta.<br/><br/>",
+      "goBackToStart": "Wróć do „{{theService}}”"
+    },
+    "error500": {
+      "title": "Przepraszamy, wystąpił problem związany z serwisem",
+      "header": "Przepraszamy, wystąpił problem związany z serwisem",
+      "tryAgain": "Odśwież ekran lub spróbuj ponownie później.<br/><br/> Odpowiedzi nie zostały zapisane. Konieczne będzie rozpoczęcie od nowa, gdy serwis będzie znów dostępny.<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Sesja wygasła",
+      "header": "Sesja wygasła",
+      "content": {
+        "paragraph1": "Twoja sesja wygasła z powodu braku aktywności.",
+        "paragraph2": "Nie zapisaliśmy twoich odpowiedzi. Po powrocie do serwisu będziesz musiał zacząć od nowa."
+      }
+    },
+    "forbidden": {
+      "title": "Strona niedostępna",
+      "header": "Strona niedostępna",
+      "content": {
+        "paragraph1": "Wróć i sprawdź swój wpis.",
+        "paragraph2": "Po wpisaniu adresu internetowego sprawdź, czy jest prawidłowy.",
+        "paragraph3": "Jeżeli adres internetowy jest poprawny lub zaznaczono łącze lub przycisk, odśwież ekran lub spróbuj ponownie później."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Twoja sesja wkrótce wygaśnie",
+      "message": "Ze względów bezpieczeństwa zakończymy tę sesję i usuniemy Twoje odpowiedzi za",
+      "keepAliveButton": "Kontynuuj sesję",
+      "signOutButton": "Zakończ sesję",
+      "second": "sekundę",
+      "seconds": "sekund/-y",
+      "minute": "minutę",
+      "minutes": "minut/-y"
+    },
+    "contactUs": {
+      "content": "<div><p>Możesz zadać pytanie lub uzyskać pomoc w swoim języku:</p><a class=\"govuk-link\" href=\"mailto:bpdg.check-hgv@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">bpdg.check-hgv@cabinetoffice.gov.uk (Otwiera się w nowej zakładce)</a></div><p> Dołożymy starań, aby odpowiedzieć w ciągu 2 dni roboczych.</p>",
+      "heading": "Jeśli potrzebujesz pomocy w celu ukończenia oceny"
+    },
+    "header": {},
+    "back": {
+      "back": "Wstecz"
+    },
+    "footer": {
+      "items": {
+        "help": "Pomoc",
+        "cookies": "Pliki cookie",
+        "privacy": "Prywatność",
+        "accessibility": "Dostępność",
+        "contact": "Kontakt",
+        "termsAndConditions": "Warunki"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "Baner z ciasteczkami",
+    "heading": "Powiedz nam, czy akceptujesz pliki cookie",
+    "text": "Używamy plików <a class=\"govuk-link\" href=\"/cookies\">cookie do gromadzenia informacji</a> o sposobie korzystania z serwisu „{{theService}}”. Informacje te wykorzystujemy do pomiaru sposobu korzystania z witryny internetowej, dzięki czemu możemy je aktualizować i ulepszać odpowiednio do potrzeb użytkownika.",
+    "buttons": {
+      "acceptAll": "Zaakceptuj wszystkie pliki cookie",
+      "setPreferences": "Ustaw preferencje dotyczące plików cookie"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Zaakceptowano pliki cookie",
+    "text": "Zaakceptowano pliki cookie. Ustawienia <a class=\"govuk-link\" href=\"/cookies\">plików cookie można</a> zmienić w dowolnej chwili.",
+    "buttons": {
+      "hide": "Ukryj"
+    }
+  },
+  "pages": {
+    "start": {
+      "title": "Początek",
+      "header": "Początek"
+    },
+    "accessibilityStatement": {
+      "title": "Oświadczenie w sprawie dostępności usługi „{{theService}}”",
+      "header": "Oświadczenie w sprawie dostępności usługi „{{theService}}”",
+      "paragraph1": "Niniejsze oświadczenie w sprawie dostępności wyjaśnia sposób dostępności usługi, co zrobić w razie trudności z jej obsługą oraz sposób zgłaszania problemów związanych z usługą.",
+      "paragraph2": "Usługa ta jest częścią szerszego szerszej strony internetowej GOV.UK. Istnieje  <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">oddzielne oświadczenie w sprawie dostępności dla głównej strony internetowej GOV.UK (Otwiera się w nowej zakładce)</a>.",
+      "paragraph3": "Niniejsza strona zawiera jedynie informacje dotyczące usługi „{{theService}}” dostępnej pod adresem <a href=\"https://www.gov.uk/check-hgv-border\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://www.gov.uk/check-hgv-border (Otwiera się w nowej zakładce)</a>.",
+      "usingThisService": {
+        "header": "Korzystanie z usługi",
+        "paragraph1": "Usługa „{{theService}}” służy do sprawdzenia, czy masz dokumenty niezbędne do przekroczenia granicy Wielkiej Brytanii samochodem ciężarowym (HGV) oraz do ubiegania się o pozwolenie na „Wjazd do hrabstwa Kent” w przypadku opuszczania terytorium Wielkiej Brytanii w kierunku UE z portu w Dover lub przez Eurotunel.",
+        "paragraph2": "Usługa ta jest realizowana przez Urząd skarbowy i celny Jej Królewskiej Mości (HMRC). Chcemy, aby maksymalnie dużo osób mogło skorzystać z tej usługi. Oznacza to, że powinna ona umożliwiać:",
+        "list1": {
+          "item1": "zmianę kolorów, poziomu kontrastu i czcionek,",
+          "item2": "powiększanie do 300% bez wylewania się tekstu poza ekran,",
+          "item3": "przejście od początku do końca usługi jedynie z wykorzystaniem klawiatury,",
+          "item4": "przejście od początku do końca usługi jedynie z wykorzystaniem oprogramowania do rozpoznawania mowy,",
+          "item5": "odsłuchanie usługi z wykorzystaniem czytnika ekranu (w tym najnowszych wersji JAWS, NVDA i VoiceOver)."
+        },
+        "paragraph4": "Ponadto treść usługi została napisana maksymalnie prostym i zrozumiałym językiem.",
+        "paragraph5": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet oferuje poradę (Otwiera się w nowej zakładce)</a> dotyczącą łatwiejszej obsługi urządzenia w przypadku niepełnosprawności."
+      },
+      "howAccessibleIsThisService": {
+        "header": "Na ile dostępna jest przedmiotowa usługa?",
+        "paragraph1": "Przedmiotowa usługa jest częściowo zgodna z <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Wytycznymi dotyczącymi dostępności treści internetowych (WCAG) w wersji 2.1 standard AA (Otwiera się w nowej zakładce)</a>.",
+        "paragraph2": "Obsługa niektórych części przedmiotowej usługi może być trudna dla niektórych osób:",
+        "list1": {
+          "item1": "Niektóre tytuły stron usługi nie są opisowe.",
+          "item2": "Przy wyborze daty i godziny dla „Pozwolenia na wjazd do hrabstwa Kent” brakuje stanu potwierdzenia, wskazującego, że nie podano godziny.",
+          "item3": "Blok tekstu wyjaśniający konsekwencje braku „Pozwolenia na wjazd do hrabstwa Kent” może spowodować przelewanie się tekstu.",
+          "item4": "Adiustacja w punkcie „Co dalej?” wyświetlanym w momencie wydania „Pozwolenia na wjazd do hrabstwa Kent” jest trudna do odczytania przez czytniki ekranu.",
+          "item5": "Istnieje nieprawidłowe wykorzystanie ról ARIA w bannerze cookies i banerze beta.",
+          "item6": "Na stronie „Czy znane są numery referencyjne operacji tranzytowych (MRN) z deklaracji importowej UE lub tranzytowych dokumentów towarzyszących (TAD) w odniesieniu do wszystkich przewożonych towarów?” nie wyświetla się prawidłowy styl ostrości.",
+          "item7": "Po wydaniu „Pozwolenia na wjazd do hrabstwa Kent” informacje kontekstowe dotyczące stanu pozwolenia na panelu kolorowym są niewystarczające."
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "Co zrobić w razie trudności z korzystaniem z tej usługi?",
+        "paragraph1": "Możesz <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">Możesz skontaktować się z HMRC w celu uzyskania dodatkowego wsparcia (Otwiera się w nowej zakładce)</a>, jeśli potrzebujesz pomocy przy wypełnianiu formularzy lub uzyskaniu innego formatu, np. duża czcionka, nagranie lub wersja w języku Braille' a."
+      },
+      "reportingProblems": {
+        "header": "Zgłaszanie problemów związanych z dostępnością przedmiotowej usługi",
+        "paragraph1": "Zawsze dążymy do poprawy dostępności przedmiotowej usługi. Jeżeli znajdziesz problemy, które nie są wymienione na tej stronie lub uważasz, że nie spełniamy wymogów dotyczących dostępności, <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">zgłoś problem z dostępnością (Otwiera się w nowej zakładce)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "Jeśli nie jesteś zadowolony z naszej odpowiedzi",
+        "paragraph1": "Komisja ds. równości i praw człowieka (EHRC) odpowiada za egzekwowanie od organów sektora publicznego (strony internetowe i aplikacje mobilne) (nr. 2) stosowania rozporządzenia w sprawie dostępności z 2018 roku („rozporządzenie w sprawie dostępności”). Jeżeli nie jesteś zadowolony z tego, jak zareagowaliśmy na Twoje uwagi, <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">skontaktuj się z Biurem ds. równości i wsparcia (EASS) (Otwiera się w nowej zakładce)</a> lub <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Komisją ds. równości w Irlandii Północnej (ECNI) (Otwiera się w nowej zakładce)</a>, jeżeli mieszkasz w Irlandii Północnej."
+      },
+      "contactingUs": {
+        "header": "Kontakt telefoniczny lub osobisty",
+        "paragraph1": "Oferujemy telefon tekstowy dla osób głuchych, z niedosłuchem lub wadami wymowy.",
+        "paragraph2": "Oferujemy telefon tekstowy dla osób głuchych, z niedosłuchem lub wadami wymowy.",
+        "paragraph3": "Dowiedz się, <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">jak uzyskać dodatkowe wsparcie ze strony HMRC (Otwiera się w nowej zakładce)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Informacje techniczne dotyczące dostępności usługi",
+        "paragraph1": "dotyczące dostępności usługi",
+        "paragraph2": "Przedmiotowa usługa jest częściowo zgodna z <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">Wytycznymi dotyczącymi dostępności treści internetowych (WCAG) w wersji 2.1 standard AA (Otwiera się w nowej zakładce)</a>z uwagi na wymienione poniżej niezgodności.",
+        "nonAccessibleContent": {
+          "header": "Treści niedostępne",
+          "paragraph1": "Treści wskazane poniżej są niedostępne z następujących powodów.",
+          "nonCompliance": {
+            "header": "Brak zgodności z rozporządzeniem w sprawie dostępności",
+            "paragraph1": "Punkty w sekcji „Co dalej” są błędnie rozmieszczone w formie listy, a następnie pomieszano „p”, „strong”, „br”, „small”, aby odzwierciedlić układ, który powinien obejmować nagłówek poziomu 3 i akapit. Uniemożliwia to użytkownikowi czytnika ekranu nawigację po nagłówkach i sprawia, że strona jest trudniejsza do odczytania. Nie spełnia to kryterium sukcesu WCAG 1.3.1 (informacje i powiązania). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph2": "Istnieje nieprawidłowe wykorzystanie ról ARIA w bannerze cookies i banerze beta. Nie spełnia to kryterium sukcesu WCAG 1.3.1 (informacje i powiązania); 1.3.6 (identyfikacja celu) oraz 2.4.1 (blokady obejścia). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph3": "Blok tekstu wyjaśniający konsekwencje braku „Pozwolenia na wjazd do hrabstwa Kent” zawiera spacje nierozdzielające, co może spowodować przelewanie się tekstu. Nie spełnia to kryterium sukcesu WCAG 1.4.10 (zmiana układu). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph4": "Po wydaniu „Pozwolenia na wjazd do hrabstwa Kent” informacje kontekstowe dotyczące stanu pozwolenia na panelu kolorowym są niewystarczające. Nie spełnia to kryterium sukcesu WCAG 1.4.1 (użycie koloru). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph5": "Na stronie „Czy znane są numery referencyjne operacji tranzytowych (MRN) z deklaracji importowej UE lub tranzytowych dokumentów towarzyszących (TAD) w odniesieniu do wszystkich przewożonych towarów?” nie wyświetla się prawidłowy styl ostrości. Nie spełnia to kryterium sukcesu WCAG 1.4.11 (kontrast pozatekstowy) i 2.4.7 (widoczna ostrość). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph6": "W nagłówkach stron w całej usłudze brakuje informacji kontekstowych. Nie spełnia to kryterium sukcesu WCAG 2.4.8 (lokalizacja). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r.",
+            "paragraph7": "Brak błędu w momencie, gdy godzina nie została wybrana. Nie spełnia to kryterium sukcesu WCAG 3.3.1 (identyfikacja błędu). Planujemy naprawić ten problem ze zgodnością do dnia 31 stycznia 2021 r."
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "W jaki sposób przetestowaliśmy przedmiotową usługę?",
+        "paragraph1": "Usługa została ostatnio przetestowana dnia 11 grudnia 2020 roku i została sprawdzona pod kątem zgodności z WCAG 2.1 AA.",
+        "paragraph2": "Usługa została stworzona z wykorzystaniem części, które zostały przetestowane przez <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">Digital Accessibility Centre (Otwiera się w nowej zakładce)</a>. Całość usługi została przetestowana przez Urząd skarbowy i celny Jej Królewskiej Mości z uwzględnieniem użytkowników niepełnosprawnych.",
+        "paragraph3": "Strona ta została opublikowana dnia 11 grudnia 2020 r. Ostatnia zmiana dnia 11 grudnia 2020 r."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Informacje na temat ochrony prywatności w „{{theService}}” ",
+      "header": "Informacje na temat ochrony prywatności w „{{theService}}” ",
+      "paragraph1": "Niniejsza informacja zawiera wyjaśnienia dotyczące sposobu wykorzystywania przez nas Twoich danych osobowych, a także przysługujących Ci praw. Informacja jest przekazywana na podstawie art. 13 lub 14 ogólnego rozporządzenia o ochronie danych osobowych (RODO). ",
+      "yourData": {
+        "header": "TWOJE DANE ",
+        "purposeSection": {
+          "header": "Cel",
+          "paragraph1": "Cele, dla których przetwarzamy Twoje dane osobowe:",
+          "list": {
+            "item1": "świadczenie usługi „'{{theService}}'” ",
+            "item2": "wystawianie Pozwoleń na wjazd do hrabstwa Kent (KAP) na podstawie zakwalifikowanych oświadczeń",
+            "item3": "pomoc użytkownikom przy korzystaniu z naszej usługi",
+            "item4": "dostarczanie danych organizacjom i służbom na potrzeby realizowanych przez nie funkcji w zakresie kontroli ruchu drogowego i granicznego oraz egzekwowania przepisów ",
+            "item5": "ochrona strony internetowej i bezpieczeństwo danych",
+            "item6": "doskonalenie i rozwijanie naszej usługi "
+          }
+        },
+        "dataSection": {
+          "header": "Dane",
+          "paragraph1": "Będziemy przetwarzać następujące dane osobowe: numer rejestracyjny pojazdu ciężarowego wskazanego w Pozwoleniu na wjazd do hrabstwa Kent, Twój adres e mail, na który wysyłane jest Pozwolenie na wjazd do hrabstwa Kent, Twój adres IP (w celu umożliwienia nawiązania połączenia z usługą), dane analityki internetowej (do celów monitorowania korzystania z usługi i jej doskonalenia), a także Twoje imię i nazwisko oraz adres e mail w przypadku zgłoszenia żądania pomocy technicznej. "
+        },
+        "legalSection": {
+          "header": "Podstawa prawna przetwarzania ",
+          "paragraph1": "Podstawą prawną przetwarzania Twoich danych osobowych jest niezbędność ich przetwarzania do wykonania zadania realizowanego interesie publicznym lub do sprawowania urzędowych uprawnień nadanych administratorowi danych. W tym przypadku chodzi o zarządzanie ruchem drogowym, kontrolę ruchu granicznego oraz sprawdzanie zgodności z przepisami dotyczącymi kontroli granicznej. "
+        },
+        "recipientsSection": {
+          "header": "Odbiorcy",
+          "paragraph1": "Deklaracje dotyczące pojazdów składane za pośrednictwem usługi „Sprawdzanie gotowości samochodu ciężarowego do przekroczenia granicy” są udostępniane Służbie Kontroli Ruchu Granicznego (Border Flow Service) przy Kancelarii Gabinetu (Cabinet Office). <a href=\"https://www.gov.uk/government/publications/privacy-notice-for-border-flow-service\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Więcej informacji o Polityce prywatności Border Flow Service (Otwiera się w nowej zakładce)</a>.",
+          "paragraph2": "Twoje dane osobowe będą przez nas udostępniane agencji rządowej ds. poboru podatków i ceł (HMRC), która dostarcza naszą platformę usług, a także naszemu operatorowi IT, który świadczy nam usługi w zakresie hostingu i analityki internetowej. ",
+          "paragraph3": "Dane zapisane w Pozwoleniach na wjazd do hrabstwa Kent będziemy udostępniać również Policji w hrabstwie Kent, Departamentowi ds. Środowiska, Żywności i Obszarów Wiejskich, Departamentowi Transportu oraz Agencji Normalizacyjnej ds. Kierowców i Pojazdów (DVSA) "
+        },
+        "retentionSection": {
+          "header": "Przechowywanie danych ",
+          "paragraph2": "Dane gromadzone przez pliki cookie są przechowywane przez nas maksymalnie przez 16 dni.",
+          "paragraph3": "Dane osobowe zebrane przez nas przy składaniu przez Ciebie wniosku o pomoc techniczną dotyczącą usługi „Sprawdzanie gotowości samochodu ciężarowego do przekroczenia granicy” przechowujemy tak długo, jak to jest konieczne do zapewnienia Ci takiej pomocy technicznej, ale nie dłużej niż przez 18 miesięcy. "
+        }
+      },
+      "yourRights": {
+        "header": "TWOJE PRAWA ",
+        "paragraph1": "Przysługuje Ci prawo do żądania informacji o sposobie przetwarzania Twoich danych osobowych oraz do żądania kopii tych danych. ",
+        "paragraph2": "Masz prawo żądać niezwłocznego skorygowania wszelkich nieścisłości w Twoich danych osobowych. ",
+        "paragraph3": "Masz prawo żądać uzupełnienia niepełnych danych osobowych, w tym poprzez złożenie oświadczenia uzupełniającego. ",
+        "paragraph4": "Może przysługiwać Ci prawo żądania usunięcia Twoich danych osobowych, jeżeli nie ma już uzasadnienia dla ich przetwarzania. ",
+        "paragraph5": "W pewnych okolicznościach (np. w przypadku kwestionowania dokładności) masz prawo żądać ograniczenia przetwarzania Twoich danych osobowych. ",
+        "paragraph6": "Masz prawo do wniesienia sprzeciwu wobec przetwarzania Twoich danych osobowych."
+      },
+      "internationalTransfers": {
+        "header": "PRZESYŁANIE DANYCH ZA GRANICĘ ",
+        "paragraph1": "Dane analityki internetowej mogą być przesyłane poza Zjednoczone Królestwo i tam bezpiecznie przechowywane. W takim przypadku dane będą podlegać równoważnej ochronie prawnej poprzez zastosowanie modelowych klauzul umownych."
+      },
+      "contactDetails": {
+        "header": "Szczegóły kontaktu",
+        "paragraph1": "Administratorem Twoich danych osobowych jest Kancelaria Gabinetu. Dane kontaktowe administratora danych: Cabinet Office, 70 Whitehall, London, SW1A 2AS / tel.: 0207 276 1234 / e mail: <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (Otwiera się w nowej zakładce)</a>.",
+        "paragraph2": "Dane kontaktowe inspektora ochrony danych administratora danych: Stephen Jones, Data Protection Officer, Cabinet Office, Room 405, 70 Whitehall, London, SW1A 2AS / e mail: <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (Otwiera się w nowej zakładce)</a>.",
+        "paragraph3": "Inspektor ochrony danych zapewnia niezależną poradę i monitorowanie korzystania z danych osobowych przez Kancelarię Gabinetu."
+      },
+      "complaints": {
+        "header": "SKARGI ",
+        "paragraph1": "Jeżeli uważasz, że doszło do nadużycia lub wykorzystania Twoich danych osobowych niezgodnie z przeznaczeniem, możesz złożyć skargę do Komisarza ds. Informacji, który jest niezależnym organem regulacyjnym. Kontakt z Komisarzem ds. Informacji: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF / tel.: 0303 123 1113 e mail: <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (Otwiera się w nowej zakładce)</a>. Złożenie skargi do Komisarza ds. Informacji nie wyklucza Twojego prawa do dochodzenia odszkodowania przed sądem. "
+      }
+    },
+    "cookies": {
+      "title": "Pliki cookie",
+      "header": "Pliki cookie",
+      "paragraph1": "„{{theService}}” zapisuje na komputerze małe pliki (znane jako „pliki cookie”), mając na celu gromadzenia informacji o sposobie korzystania z serwisu.",
+      "paragraph2": "Pliki cookie stosuje się w celu:",
+      "list": "dostarczenia istotnych elementów serwisu|pomiaru sposobu korzystania z serwisu w celu aktualizacji i ulepszenia odpowiednio do potrzeb użytkownika|zapamiętania powiadomień, które wyświetlono, aby nie wyświetlać ich ponownie.",
+      "paragraph3": "Pliki cookie „{{theService}}” nie służą do identyfikacji użytkownika.",
+      "paragraph4": "Zwykle przed zapisaniem pliku cookie na komputerze użytkownik zobaczy odpowiednią wiadomość na stronie.",
+      "paragraph5": "Dowiedz się więcej o <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">zarządzaniu plikami cookie (Otwiera się w nowej zakładce)</a>",
+      "saved": {
+        "header": "Twoje ustawienia plików cookie zostały zapisane.",
+        "text": "Serwisy rządowe mogą tworzyć dodatkowe pliki cookie, ale w takim przypadku będą one objęte osobną polityką plików cookie i oznaczone banerem."
+      },
+      "cookies": {
+        "header": "W jaki sposób używamy plików cookie?"
+      },
+      "analytics": {
+        "header": "Pomiary wykorzystania witryny (Google Analytics)",
+        "text": "Google Analytics tworzy następujące pliki cookie:",
+        "paragraph1": "Korzystamy z Google Analytics w celu gromadzenia informacji o sposobie korzystania z serwisu „{{theService}}”. Takie działanie pozwala nam upewnić się, że serwis spełnia potrzeby użytkowników i wprowadzać ulepszenia.",
+        "paragraph2": "Google Analytics przechowuje informacje dotyczące:",
+        "paragraph3": "Nie udzielamy Google zgody na wykorzystywanie ani udostępnianie danych analitycznych.",
+        "link": "Możesz zrezygnować z Google Analytics",
+        "question": "Czy akceptujesz pliki cookie Google Analytics?",
+        "list": "stron odwiedzanych w serwisie „{{theService}}”|czasu spędzonego na każdej stronie|sposobu przejścia do serwisu|elementów klikanych podczas korzystania z serwisu.",
+        "choice": {
+          "yes": "Tak, zezwól na pliki cookie Google Analytics",
+          "no": "Nie, nie śledzić, jak korzystam z witryny "
+        }
+      },
+      "necessary": {
+        "header": "Zasadnicze pliki cookie",
+        "text": "Do korzystania z serwisu niezbędne są wymienione poniżej pliki cookie. Obejmują one:"
+      },
+      "buttons": {
+        "save": "Zapisywanie zmian"
+      },
+      "lastUpdated": "Ostatnia aktualizacja 10 listopada 2019 r.",
+      "table": {
+        "columns": {
+          "name": "Nazwa",
+          "purpose": "Przeznaczenie",
+          "expires": "Wygasa"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Rozróżnienie anonimowych użytkowników",
+            "expires": "2 lata"
+          },
+          "_gid": {
+            "purpose": "Rozróżnienie anonimowych użytkowników",
+            "expires": "24 godziny"
+          },
+          "_gat": {
+            "purpose": "Ograniczenie żądań",
+            "expires": "10 minut"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Ograniczenie żądań",
+            "expires": "10 minut"
+          },
+          "consented_to_cookies": {
+            "purpose": "Zapisywanie zgody na pliki cookie",
+            "expires": "1 rok"
+          },
+          "language": {
+            "purpose": "Zapisywanie preferencji językowych",
+            "expires": "1 rok"
+          },
+          "service_session": {
+            "purpose": "Zapisywanie informacji wprowadzonych podczas korzystania z serwisu",
+            "expires": "Po zamknięciu przeglądarki internetowej"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Zapisywanie informacji o wyświetlonych warunkach wersji beta",
+            "expires": "15 minut"
+          }
+        }
+      }
+    }
+  }
+}

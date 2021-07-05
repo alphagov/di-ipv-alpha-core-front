@@ -1,0 +1,19 @@
+{
+  "watch": ["app/**/*", "views/**/*", "locale/**/*"],
+  "ext": "ts,js,json,html,css,scss",
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "app/features/index.ts",
+    "locale/fa/translation.json"
+  ],
+  "verbose": true,
+  "execMap": {
+    "ts": "node generate-files.js && node --require ts-node/register/transpile-only"
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "4000"
+  }
+}

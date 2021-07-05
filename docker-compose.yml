@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  di-ipv-atp-playbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3010:3010
+    environment:
+      - SESSION_SECRET="your_session_secret"
+      - LOG_SESSION="false"
+      - REDIS_SESSION_URL=redis
+      - REDIS_PORT="6379"
+      - SESSION_COOKIE_MAX_AGE="1200000"
+      - SESSION_COOKIE_SECURE="false"
+      - ENVIRONMENT="dev"
+      - TOKEN_SECRET="some_secret"
+    depends_on:
+      - redis
+    networks:
+      - di-net
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    networks:
+      - di-net
+
+networks:
+  di-net:

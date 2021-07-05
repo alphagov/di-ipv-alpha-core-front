@@ -1,0 +1,710 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "GOV.UK Service",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Open all<span class=\"govuk-visually-hidden\"> sections</span>",
+    "closeAll": "Close all<span class=\"govuk-visually-hidden\">sections</span>"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Error: ",
+  "phaseBanner": {
+    "version": "beta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Now",
+    "yes": "Yes",
+    "no": "No",
+    "opensInNewTab": " (opens in new tab)",
+    "buttons": {
+      "saveAndContinue": "Save and continue",
+      "saveForLater": "Save for later",
+      "continue": "Continue",
+      "cancel": "Cancel",
+      "back": "Back",
+      "submitDetails": "Submit details"
+    },
+    "localTimes": "All times are UK Standard",
+    "errorSummaryTitle": "There is a problem",
+    "survey": {
+      "text": "What did you think of this service?",
+      "url": "#",
+      "note": "(takes 30 seconds)"
+    },
+    "warningAssistive": "Warning",
+    "dateInput": {
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
+    }
+  },
+  "error": {
+    "error404": {
+      "title": "Page not found",
+      "header": "Page not found",
+      "checkAddress": "If you typed the web address, check it is correct.<br/><br/> If you pasted the web address, check you copied the entire address. <br/><br/> If the web address is correct or you selected a link or button, this page may have been removed.<br/><br/>",
+      "goBackToStart": "Go back to '{{theService}}'"
+    },
+    "error500": {
+      "title": "Sorry, there is a problem with this service",
+      "header": "Sorry, there is a problem with this service",
+      "tryAgain": "Refresh your screen or try again later.<br/><br/>We have not saved your answers. When the service is available you will have to start again<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Session timed out",
+      "header": "Session timed out",
+      "content": {
+        "paragraph1": "Your session has timed out due to inactivity.",
+        "paragraph2": "We have not saved your answers. When you return to the service, you will have to start again."
+      }
+    },
+    "forbidden": {
+      "title": "Page not available",
+      "header": "Page not available",
+      "content": {
+        "paragraph1": "Go back and check your entry.",
+        "paragraph2": "If you typed the web address, check it is correct.",
+        "paragraph3": "If the web address is correct or you selected a link or button, refresh your screen or try again later."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Your session is about to expire",
+      "message": "For your security we will end this session and delete your answers in ",
+      "keepAliveButton": "Continue session",
+      "signOutButton": "End session",
+      "second": "second",
+      "seconds": "seconds",
+      "minute": "minute",
+      "minutes": "minutes"
+    },
+    "contactUs": {
+      "content": "<div><p>Ask a question or get help in your language.</p><a class=\"govuk-link\" href=\"mailto:help@service.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">help@service.gov.uk (opens in new tab)</a></div><p>We aim to respond within 2 working days</p>",
+      "heading": "If you need help completing this assessment"
+    },
+    "header": {},
+    "back": {
+      "back": "Back"
+    },
+    "footer": {
+      "items": {
+        "help": "Help",
+        "cookies": "Cookies",
+        "privacy": "Privacy",
+        "accessibility": "Accessibility",
+        "contact": "Contact",
+        "termsAndConditions": "Terms and Conditions"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "Cookie banner",
+    "heading": "Tell us whether you accept cookies",
+    "text": "We use <a class=\"govuk-link\" href=\"/cookies\"> cookies to collect information</a> about how you use '{{theService}}'. We use this information to measure how you use the website, so it can be updated and improved based on your needs.",
+    "buttons": {
+      "acceptAll": "Accept all cookies",
+      "setPreferences": "Set cookie preferences"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Cookies accepted",
+    "text": "You have accepted all cookies. You can <a class=\"govuk-link\" href=\"/cookies\">change your cookie settings</a> at any time.",
+    "buttons": {
+      "hide": "Hide"
+    }
+  },
+  "pages": {
+    "ipv": {
+      "info": {
+        "title": "Please enter the following information",
+        "header": "Please enter the following information",
+        "info": "Entering the information below will help us start to verify your identity. You may be asked additional questions as part of this process.",
+        "surname": {
+          "label": "Surname",
+          "validationError": {
+            "required": "Surname is required"
+          }
+        },
+        "givenNames": {
+          "label": "Given names",
+          "validationError": {
+            "required": "Given names are required"
+          }
+        },
+        "dob": {
+          "label": "Date of birth",
+          "validationError": {
+            "emptyDay": "Date of birth must include a day",
+            "emptyMonth": "Date of birth must include a month",
+            "emptyYear": "Date of birth must include a year",
+            "emptyDayAndMonth": "Date of birth must include a day and a month",
+            "emptyDayAndYear": "Date of birth must include a day and a year",
+            "emptyMonthAndYear": "Date of birth must include a month and a year",
+            "emptyDate": "Enter Date of birth",
+            "realDate": "Date of birth must be a real date",
+            "futureDate": "Date of birth must be be in the past"
+          }
+        },
+        "address": { "legend": "What is your address?" },
+        "addressLine1": {
+          "label": "Building and street <span class=\"govuk-visually-hidden\">line 1 of 2</span>",
+          "validationError": {
+            "required": "Building and street are required"
+          }
+        },
+        "addressLine2": {
+          "label": "<span class=\"govuk-visually-hidden\">Building and street line 2 of 2</span>"
+        },
+        "addressTown": {
+          "label": "Town or city",
+          "validationError": {
+            "required": "Town or city is required"
+          }
+        },
+        "addressCounty": {
+          "label": "County"
+        },
+        "addressPostcode": {
+          "label": "Postcode",
+          "validationError": {
+            "required": "Postcode is required"
+          }
+        }
+      }
+    },
+    "bankAccount": {
+      "title": "Answer these questions about your account",
+      "header": "Answer these questions about your account",
+      "lastOpened": {
+        "hint": "Question 1 of 4",
+        "question": "When did you last open a bank account?",
+        "questionHint": "Tell us when you opened your personal 'current' account. This does not include joint accounts, business accounts or savings accounts.",
+        "validationError": {
+          "required": "When you last opened a bank account is required"
+        }
+      },
+      "cvv": {
+        "hint": "Question 2 of 4",
+        "question": "What is the security code (sometimes known as the 'CVV') of the debit card connected to you current account?",
+        "questionHint": "This is the 3-digit number you can find on the back of your card.",
+        "validationError": {
+          "required": "The security code is required",
+          "digits": "The security code must be 3-digit number"
+        }
+      },
+      "mortgage": {
+        "hint": "Question 3 of 4",
+        "question": "How much is left to pay on your mortgage?",
+        "questionHint": "If you have more than one mortgage, tell us about the one you opened most recently.",
+        "validationError": {
+          "required": "How much is left to pay on your mortgage is required"
+        }
+      },
+      "postcode": {
+        "hint": "Question 4 of 4",
+        "question": "What is the postcode of the address where you were living in {{monthAndYear}}?",
+        "validationError": {
+          "required": "The postcode is required"
+        }
+      }
+    },
+    "passport": {
+      "start": {
+        "title": "Add the details from your passport",
+        "header": "Add the details from your passport",
+        "info": "Enter the details exactly as stated on your document even if you have since changed your name.",
+        "number": {
+          "label": "Passport number",
+          "validationError": {
+            "required": "The Passport number is required"
+          }
+        },
+        "surname": {
+          "label": "Surname",
+          "validationError": {
+            "required": "Surname is required"
+          }
+        },
+        "givenNames": {
+          "label": "Given names",
+          "validationError": {
+            "required": "Given names are required"
+          }
+        },
+        "dob": {
+          "label": "Date of birth",
+          "validationError": {
+            "emptyDay": "Date of birth must include a day",
+            "emptyMonth": "Date of birth must include a month",
+            "emptyYear": "Date of birth must include a year",
+            "emptyDayAndMonth": "Date of birth must include a day and a month",
+            "emptyDayAndYear": "Date of birth must include a day and a year",
+            "emptyMonthAndYear": "Date of birth must include a month and a year",
+            "emptyDate": "Enter Date of birth",
+            "realDate": "Date of birth must be a real date",
+            "futureDate": "Date of birth must be be in the past"
+          }
+        },
+        "issued": {
+          "label": "Issue date",
+          "validationError": {
+            "emptyDay": "Issue date must include a day",
+            "emptyMonth": "Issue date must include a month",
+            "emptyYear": "Issue date must include a year",
+            "emptyDayAndMonth": "Issue date must include a day and a month",
+            "emptyDayAndYear": "Issue date must include a day and a year",
+            "emptyMonthAndYear": "Issue date must include a month and a year",
+            "emptyDate": "Enter the Issue date",
+            "realDate": "Issue date must be a real date",
+            "futureDate": "Issue date must be be in the past"
+          }
+        },
+        "expiry": {
+          "label": "Expiry date",
+          "validationError": {
+            "emptyDay": "Expiry date must include a day",
+            "emptyMonth": "Expiry date must include a month",
+            "emptyYear": "Expiry date must include a year",
+            "emptyDayAndMonth": "Expiry date must include a day and a month",
+            "emptyDayAndYear": "Expiry date must include a day and a year",
+            "emptyMonthAndYear": "Expiry date must include a month and a year",
+            "emptyDate": "Enter the Expiry date",
+            "realDate": "Expiry date must be a real date",
+            "pastDate": "Expiry date must be be in the future"
+          }
+        }
+      }
+    },
+    "drivingLicence": {
+      "start": {
+        "title": "Add the details from your driving licence",
+        "header": "Add the details from your  driving licence",
+        "info": "Enter the details exactly as stated on your document even if you have since changed your name.",
+        "number": {
+          "label": "Licence number",
+          "validationError": {
+            "required": "The Licence number is required"
+          }
+        },
+        "surname": {
+          "label": "Surname",
+          "validationError": {
+            "required": "Surname is required"
+          }
+        },
+        "givenNames": {
+          "label": "Given names",
+          "validationError": {
+            "required": "Given names are required"
+          }
+        },
+        "dob": {
+          "label": "Date of birth",
+          "validationError": {
+            "emptyDay": "Date of birth must include a day",
+            "emptyMonth": "Date of birth must include a month",
+            "emptyYear": "Date of birth must include a year",
+            "emptyDayAndMonth": "Date of birth must include a day and a month",
+            "emptyDayAndYear": "Date of birth must include a day and a year",
+            "emptyMonthAndYear": "Date of birth must include a month and a year",
+            "emptyDate": "Enter Date of birth",
+            "realDate": "Date of birth must be a real date",
+            "futureDate": "Date of birth must be be in the past"
+          }
+        },
+        "issued": {
+          "label": "Issue date",
+          "validationError": {
+            "emptyDay": "Issue date must include a day",
+            "emptyMonth": "Issue date must include a month",
+            "emptyYear": "Issue date must include a year",
+            "emptyDayAndMonth": "Issue date must include a day and a month",
+            "emptyDayAndYear": "Issue date must include a day and a year",
+            "emptyMonthAndYear": "Issue date must include a month and a year",
+            "emptyDate": "Enter the Issue date",
+            "realDate": "Issue date must be a real date",
+            "futureDate": "Issue date must be be in the past"
+          }
+        },
+        "expiry": {
+          "label": "Expiry date",
+          "validationError": {
+            "emptyDay": "Expiry date must include a day",
+            "emptyMonth": "Expiry date must include a month",
+            "emptyYear": "Expiry date must include a year",
+            "emptyDayAndMonth": "Expiry date must include a day and a month",
+            "emptyDayAndYear": "Expiry date must include a day and a year",
+            "emptyMonthAndYear": "Expiry date must include a month and a year",
+            "emptyDate": "Enter the Expiry date",
+            "realDate": "Expiry date must be a real date",
+            "pastDate": "Expiry date must be be in the future"
+          }
+        }
+      }
+    },
+    "start": {
+      "title": "Start",
+      "header": "Start"
+    },
+    "accessibilityStatement": {
+      "title": "Accessibility statement for '{{theService}}'",
+      "header": "Accessibility statement for '{{theService}}'",
+      "paragraph1": "This accessibility statement explains how accessible this service is, what to do if you have difficulty using it, and how to report accessibility problems with the service.",
+      "paragraph2": "This service is part of the wider GOV.UK website. There is a <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">separate accessibility statement for the main GOV.UK website (opens in new tab)</a>.",
+      "paragraph3": "This page only contains information about the '{{theService}}', available at <a href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://... (opens in new tab)</a>.",
+      "usingThisService": {
+        "header": "Using this service",
+        "paragraph1": "'{{theService}}' is used for...",
+        "paragraph2": "This service is run by Cabinet Office. We want as many people as possible to be able to use this service. This means you should be able to:",
+        "list1": {
+          "item1": "change colours, contrast levels and fonts",
+          "item2": "zoom in up to 300% without the text spilling off the screen",
+          "item3": "get from the start of the service to the end using just a keyboard",
+          "item4": "get from the start of the service to the end using speech recognition software",
+          "item5": "listen to the service using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)"
+        },
+        "paragraph4": "We have also made the text in the service as simple as possible to understand.",
+        "paragraph5": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet (opens in new tab)</a> has advice on making your device easier to use if you have a disability."
+      },
+      "howAccessibleIsThisService": {
+        "header": "How accessible this service is",
+        "paragraph1": "This service is partially compliant with the <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Web Content Accessibility Guidelines version 2.1 AA standard (opens in new tab)</a>.",
+        "paragraph2": "Some people may find parts of this service difficult to use:",
+        "list1": {
+          "item1": "Issue 1",
+          "item2": "Issue 2",
+          "item3": "Issue 3",
+          "item4": "Issue 4",
+          "item5": "Issue 5",
+          "item6": "Issue 6",
+          "item7": "Issue 7"
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "What to do if you have difficulty using this service",
+        "paragraph1": "You can <a class=\"govuk-link\" href=\"#\" rel=\"noreferrer noopener\" target=\"_blank\">contact the provider for extra support (opens in new tab)</a> if you need help with filling in forms or getting a different format, like large print, audio recording or Braille."
+      },
+      "reportingProblems": {
+        "header": "Reporting accessibility problems with this service",
+        "paragraph1": "We are always looking to improve the accessibility of this service. If you find any problems that are not listed on this page or think we are not meeting accessibility requirements, <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">report the accessibility problem (opens in a new tab)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "If you are not happy with our response",
+        "paragraph1": "The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). If you are not happy with how we respond to your complaint, <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">contact the Equality Advisory and Support Service (EASS) (opens in new tab)</a> or the <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Equality Commission for Northern Ireland (ECNI) (opens in new tab)</a> if you live in Northern Ireland."
+      },
+      "contactingUs": {
+        "header": "Contacting us by phone or getting a visit from us in person",
+        "paragraph1": "We provide a text relay service if you are deaf, hearing impaired or have a speech impediment.",
+        "paragraph2": "We can provide a British Sign Language (BSL) interpreter, or you can arrange a visit from an advisor to help you complete the service.",
+        "paragraph3": "Find out <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">how to get extra support from the provider (opens in new tab)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Technical information about this service’s accessibility",
+        "paragraph1": "Cabinet Office is committed to making this service accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.",
+        "paragraph2": "This service is partially compliant with the <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">Web Content Accessibility Guidelines version 2.1 AA standard (opens in new tab)</a>, due to the non-compliances listed below.",
+        "nonAccessibleContent": {
+          "header": "Non‐accessible content",
+          "paragraph1": "The content listed below is non-accessible for the following reasons.",
+          "nonCompliance": {
+            "header": "Non‐compliance with the accessibility regulations",
+            "paragraph1": "Issue 1",
+            "paragraph2": "Issue 2",
+            "paragraph3": "Issue 3",
+            "paragraph4": "Issue 4",
+            "paragraph5": "Issue 5",
+            "paragraph6": "Issue 6",
+            "paragraph7": "Issue 7"
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "How we tested this service",
+        "paragraph1": "The service was last tested on 11 December 2020 and was checked for compliance with WCAG 2.1 AA.",
+        "paragraph2": "The service was built using parts that were tested by the <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">Digital Accessibility Centre (opens in new tab)</a>. The full service was tested by HMRC and included disabled users.",
+        "paragraph3": "This page was published on 11 December 2020. It was last updated on 11 December 2020."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Privacy policy for '{{theService}}'",
+      "header": "Privacy policy for '{{theService}}'",
+      "paragraph1": "This notice sets out how we will use your personal data, and your rights. It is made under Articles 13 and/or 14 of the General Data Protection Regulation (GDPR). ",
+      "yourData": {
+        "header": "Your data",
+        "purposeSection": {
+          "header": "Purpose",
+          "paragraph1": "The purposes for which we are processing your personal data are:",
+          "list": {
+            "item1": "providing the '{{theService}}' service.",
+            "item2": "issuance of Kent Access Permits (KAP) to qualifying declarations",
+            "item3": "supporting users in the use of our service",
+            "item4": "providing data to organisations and functions for their traffic flow, border management and law enforcement functions",
+            "item5": "protecting the site and keeping your data secure",
+            "item6": "improving and developing our service "
+          }
+        },
+        "dataSection": {
+          "header": "The data",
+          "paragraph1": "We will process the following personal data: your email address, your IP address (to allow you to connect to the service), web analytics data (for service usage tracking and improvement purposes), and your name and email address when raising a support ticket. "
+        },
+        "legalSection": {
+          "header": "Legal basis of processing",
+          "paragraph1": "The legal basis for processing your personal data is that processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the data controller. In this case that is traffic management, border flow and border compliance readiness. "
+        },
+        "recipientsSection": {
+          "header": "Recipients",
+          "paragraph2": "Your personal data will be shared by us with HMRC who provide our service platform, and our IT supplier that provides hosting and web analytics services. ",
+          "paragraph3": "We will also share data on Kent Access Permits with Kent Police, the Department for Environment, Food and Rural Affairs, the Department for Transport and the Driver Vehicle and Standards Agency."
+        },
+        "retentionSection": {
+          "header": "Retention",
+          "paragraph2": "Data collected through cookies is retained by us for no more than 16 days.",
+          "paragraph3": "Your personal data collected by us when you request support for the '{{theService}}' service is retained for as long as needed to provide support to you, and in any event, no longer than 18 months."
+        }
+      },
+      "yourRights": {
+        "header": "Your rights",
+        "paragraph1": "You have the right to request information about how your personal data are processed, and to request a copy of that personal data.",
+        "paragraph2": "You have the right to request that any inaccuracies in your personal data are rectified without delay.",
+        "paragraph3": "You have the right to request that any incomplete personal data are completed, including by means of a supplementary statement.",
+        "paragraph4": "You may have the right to request that your personal data are erased if there is no longer a justification for them to be processed.",
+        "paragraph5": "You have the right in certain circumstances (for example, where accuracy is contested) to request that the processing of your personal data is restricted.",
+        "paragraph6": "You have the right to object to the processing of your personal data."
+      },
+      "internationalTransfers": {
+        "header": "International transfers",
+        "paragraph1": "Web analytics data may be transferred and stored securely outside the UK. Where that is the case it will be subject to equivalent legal protection through the use of Model Contract Clauses."
+      },
+      "contactDetails": {
+        "header": "Contact details",
+        "paragraph1": "The data controller for your personal data is the Cabinet Office. The contact details for the data controller are: Cabinet Office, 70 Whitehall, London, SW1A 2AS, or 0207 276 1234, or <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (opens in new tab)</a>.",
+        "paragraph2": "The contact details for the data controller’s Data Protection Officer are: Stephen Jones, Data Protection Officer, Cabinet Office, Room 405, 70 Whitehall, London, SW1A 2AS, or <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (opens in new tab)</a>.",
+        "paragraph3": "The Data Protection Officer provides independent advice and monitoring of Cabinet Office’s use of personal information."
+      },
+      "complaints": {
+        "header": "Complaints",
+        "paragraph1": "If you consider that your personal data has been misused or mishandled, you may make a complaint to the Information Commissioner, who is an independent regulator.  The Information Commissioner can be contacted at:  Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF, or 0303 123 1113, or <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (opens in new tab)</a>.  Any complaint to the Information Commissioner is without prejudice to your right to seek redress through the courts."
+      }
+    },
+    "termsAndConditions": {
+      "title": "Terms and conditions",
+      "header": "Terms and conditions",
+      "paragraph1": "This page and any pages it links to explains GOV.UK’s terms of use. You must agree to these to use GOV.UK.",
+      "whoWeAre": {
+        "header": "Who we are",
+        "paragraph1": "GOV.UK is managed by <a href=\"https://www.gov.uk/government/organisations/government-digital-service\">Government Digital Service</a> (<abbr title=\"Government Digital Service\">GDS</abbr>) on behalf of the Crown. <abbr title=\"Government Digital Service\">GDS</abbr> is part of the Cabinet Office and will be referred to as ‘we’ from now on."
+      },
+      "usingTheService": {
+        "header": "Using GOV.UK",
+        "paragraph1": "You agree to use GOV.UK only for lawful purposes. You must also use it in a way that does not infringe the rights of, or restrict or inhibit the use and enjoyment of, this site by anyone else.",
+        "paragraph2": "We update GOV.UK all the time. We can change or remove content at any time without notice."
+      },
+      "servicesAndTransactions": {
+        "header": "Services and transactions",
+        "paragraph1": "You can use GOV.UK to access online government services and transactions, for example <a href=\"https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify\">GOV.UK Verify</a> or <a href=\"/register-to-vote\">register to vote</a>.",
+        "paragraph2": "These can be managed by <abbr title=\"Government Digital Service\">GDS</abbr> or another government department or agency.",
+        "paragraph3": "Some services have their own terms and conditions which also apply - read these before you use the service."
+      },
+      "linkingTo": {
+        "header": "Linking to GOV.UK",
+        "paragraph1": "We welcome and encourage other websites to link to GOV.UK.",
+        "paragraph2": "You must <a href=\"/contact/govuk\">contact us</a> for permission if you want to either:",
+        "list1": {
+          "item1": "charge your website’s users to click on a link to any page on GOV.UK",
+          "item2": "say your website is associated with or endorsed by GOV.UK or another government department or agency"
+        }
+      },
+      "linkingFrom": {
+        "header": "Linking from GOV.UK",
+        "paragraph1": "GOV.UK links to websites that are managed by other government departments and agencies, service providers or other organisations. We do not have any control over the content on these websites.",
+        "paragraph2": "We’re not responsible for:",
+        "list1": {
+          "item1": "the protection of any information you give to these websites",
+          "item2": "any loss or damage that may come from your use of these websites, or any other websites they link to"
+        },
+        "paragraph3": "You agree to release us from any claims or disputes that may come from using these websites.",
+        "paragraph4": "You should read all terms and conditions, privacy policies and end user licences that relate to these websites before you use them."
+      },
+      "usingContent": {
+        "header": "Using GOV.UK content",
+        "paragraph1": "Most content on GOV.UK is subject to <a rel=\"external\" href=\"http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/\">Crown copyright protection</a> and is published under the<a rel=\"external\" href=\"http://www.nationalarchives.gov.uk/doc/open-government-licence/version/1/open-government-licence.htm\">Open Government Licence</a> (<abbr title=\"Open Government Licence\">OGL</abbr>).",
+        "paragraph2": "Some content is exempt from the <abbr title=\"Open Government Licence\">OGL</abbr> - check the <a rel=\"external\" href=\"http://www.nationalarchives.gov.uk/doc/open-government-licence/version/1/open-government-licence.htm\">list of exemptions</a>.",
+        "paragraph3": "Departmental logos and crests are also exempt from the <abbr title=\"Open Government Licence\">OGL</abbr>, except when they form an integral part of a document or dataset.",
+        "paragraph4": "If any content is not subject to Crown copyright protection or published under the <abbr title=\"Open Government Licence\">OGL</abbr>, we’ll usually credit the author or copyright holder.",
+        "paragraph5": "You can reproduce content published on GOV.UK under the <abbr title=\"Open Government Licence\">OGL</abbr> as long as you follow the licence’s conditions.",
+        "paragraph6": "<a href=\"/contact/govuk\">Contact us</a> if you want to reproduce a piece of content but are not sure if it’s covered by Crown copyright or the <abbr title=\"Open Government Licence\">OGL</abbr>.",
+        "paragraph7": "We make most of the content on GOV.UK available through feeds for other websites and applications to use. The websites and applications that use our feeds are not our products, and they might use versions of our content that have been edited and stored for later use (‘cached’).",
+        "paragraph8": "We do not give any guarantees, conditions or warranties about the accuracy or completeness of any content used by these products. We’re not liable for any loss or damage that may come from your use of these products.",
+        "paragraph9": "The most up to date version of our content will always be on GOV.UK."
+      },
+      "disclaimer": {
+        "header": "Disclaimer",
+        "paragraph1": "While we make every effort to keep GOV.UK up to date, we do not provide any guarantees, conditions or warranties that the information will be:",
+
+        "list1": {
+          "item1": "current",
+          "item2": "secure",
+          "item3": "accurate",
+          "item4": "complete",
+          "item5": "free from bugs or viruses"
+        },
+        "paragraph2": "We do not publish advice on GOV.UK. You should get professional or specialist advice before doing anything on the basis of the content.",
+        "paragraph3": "We’re not liable for any loss or damage that may come from using GOV.UK. This includes:",
+        "list2": {
+          "item1": "any direct, indirect or consequential losses",
+          "item2": "any loss or damage caused by civil wrongs (‘tort’, including negligence), breach of contract or otherwise",
+          "item3": "the use of GOV.UK and any websites that are linked to or from it",
+          "item4": "the inability to use GOV.UK and any websites that are linked to or from it"
+        },
+        "paragraph4": "This applies if the loss or damage was foreseeable, arose in the normal course of things or you advised us that it might happen.",
+        "paragraph5": "This includes (but is not limited to) the loss of your:",
+        "list3": {
+          "item1": "income or revenue",
+          "item2": "salary, benefits or other payments",
+          "item3": "business",
+          "item4": "profits or contracts",
+          "item5": "opportunity",
+          "item6": "anticipated savings",
+          "item7": "data",
+          "item8": "goodwill or reputation",
+          "item9": "tangible property",
+          "item10": "intangible property, including loss, corruption or damage to data or any computer system",
+          "item11": "wasted management or office time"
+        },
+        "paragraph6": "We may still be liable for:",
+        "list4": {
+          "item1": "death or personal injury arising from our negligence",
+          "item2": "fraudulent misrepresentation",
+          "item3": "any other liability which cannot be excluded or limited under applicable law"
+        }
+      },
+      "requestToRemoveContent": {
+        "header": "Requests to remove content",
+        "paragraph1": "You can ask for content to be removed from GOV.UK. We’ll remove content:",
+        "list1": {
+          "item1": "in order to comply with data protection legislation covering the rights and freedoms of individuals",
+          "item2": "if it breaches copyright laws, contains sensitive personal data or material that may be considered obscene or defamatory"
+        },
+        "paragraph2": "<a href=\"/contact/govuk\">Contact us</a>to ask for content to be removed. You’ll need to send us the web address (URL) of the content and explain why you think it should be removed. We’ll reply to let you know whether we’ll remove it.",
+        "paragraph3": "We remove content at our discretion in discussion with the department or agency responsible for it. You can still request information under the <a href=\"/make-a-freedom-of-information-request\">Freedom of Information Act</a> and the <a href=\"/data-protection\">Data Protection Act</a>."
+      },
+      "informationAboutYou": {
+        "header": "Information about you and your visits to GOV.UK",
+        "paragraph1": "We collect information about you in accordance with our <a href=\"/privacy\">privacy policy</a> and our <a href=\"/cookies\">cookie policy</a>. By using GOV.UK, you agree to us collecting this information and confirm that any data you provide is accurate."
+      },
+      "virusProtection": {
+        "header": "Virus protection",
+        "paragraph1": "We make every effort to check and test GOV.UK for viruses at every stage of production. You must make sure that the way you use GOV.UK does not expose you to the risk of viruses, malicious computer code or other forms of interference which can damage your computer system.",
+        "paragraph2": "We’re not responsible for any loss, disruption or damage to your data or computer system that might happen when you use GOV.UK."
+      },
+      "virusesAndHacking": {
+        "header": "Viruses, hacking and other offences",
+        "paragraph1": "When using GOV.UK, you must not introduce viruses, trojans, worms, logic bombs or any other material that’s malicious or technologically harmful.",
+        "paragraph2": "You must not try to gain unauthorised access to GOV.UK, the server on which it’s stored or any server, computer or database connected to it.",
+        "paragraph3": "You must not attack GOV.UK in any way. This includes denial-of-service attacks.",
+        "paragraph4": "We’ll report any attacks or attempts to gain unauthorised access to GOV.UK to the relevant law enforcement authorities and share information about you with them."
+      },
+      "governingLaw": {
+        "header": "Governing law",
+        "paragraph1": "These terms and conditions are governed by and construed in accordance with the laws of England and Wales.",
+        "paragraph2": "Any dispute you have which relates to these terms and conditions, or your use of GOV.UK (whether it be contractual or non-contractual), will be subject to the exclusive jurisdiction of the courts of England and Wales."
+      },
+      "general": {
+        "header": "General",
+        "paragraph1": "There may be legal notices elsewhere on GOV.UK that relate to how you use the site.",
+        "paragraph2": "We’re not liable if we fail to comply with these terms and conditions because of circumstances beyond our reasonable control.",
+        "paragraph3": "We might decide not to exercise or enforce any right available to us under these terms and conditions. We can always decide to exercise or enforce that right at a later date.",
+        "paragraph4": "Doing this once will not mean we automatically waive the right on any other occasion.",
+        "paragraph5": "If any of these terms and conditions are held to be invalid, unenforceable or illegal for any reason, the remaining terms and conditions will still apply."
+      },
+      "changes": {
+        "header": "Changes to these terms and conditions",
+        "paragraph1": "Please check these terms and conditions regularly. We can update them at any time without notice.",
+        "paragraph2": "You’ll agree to any changes if you continue to use GOV.UK after the terms and conditions have been updated."
+      },
+      "lastUpdated": "Last updated 7 May 2021"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "header": "Cookies",
+      "paragraph1": "'{{theService}}' puts small files (known as 'cookies') onto your computer to collect information about how you use the service.",
+      "paragraph2": "Cookies are used to:",
+      "list": "deliver essential elements of the service|measure how you use it, so it can be updated and improved based on your needs|remember the notifications you have seen so that you are not shown them again",
+      "paragraph3": "'{{theService}}' cookies are not used to identify you personally.",
+      "paragraph4": "You will normally see a message on the site before a cookie is stored on your computer.",
+      "paragraph5": "Find out more about <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">how to manage cookies (opens in new tab)</a>",
+      "saved": {
+        "header": "Your cookie settings were saved",
+        "text": "Government services may set additional cookies and, if so, will have their own cookie policy and banner."
+      },
+      "cookies": {
+        "header": "How we use cookies"
+      },
+      "analytics": {
+        "header": "Measuring website useage (Google Analytics)",
+        "text": "Google Analytics sets the following cookies:",
+        "paragraph1": "We use Google Analytics software to collect information about how you use '{{theService}}'. We do this to make sure the service is meeting the needs of its users and to help us make improvements.",
+        "paragraph2": "Google Analytics stores information about:",
+        "paragraph3": "We do not allow Google to use or share out analytics data.",
+        "link": "You can opt out of Google Analytics",
+        "question": "Do you accept Google Analytic cookies?",
+        "list": "the pages you visit on '{{theService}}'|how long you spend on each page|how you got to the service|what you click on while you are using the service",
+        "choice": {
+          "yes": "Yes, opt-in to Google Analytics cookies",
+          "no": "No, do not track my website usage "
+        }
+      },
+      "necessary": {
+        "header": "Essential cookies",
+        "text": "The cookies listed below are needed in order for you to be able to use the service. They include:"
+      },
+      "buttons": {
+        "save": "Save changes"
+      },
+      "lastUpdated": "Last updated 10 November 2019",
+      "table": {
+        "columns": {
+          "name": "Name",
+          "purpose": "Purpose",
+          "expires": "Expires"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Used to distinguish anonymous users",
+            "expires": "2 years"
+          },
+          "_gid": {
+            "purpose": "Used to distinguish anonymous users",
+            "expires": "24 hours"
+          },
+          "_gat": {
+            "purpose": "Throttle requests",
+            "expires": "10 minutes"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Throttle requests",
+            "expires": "10 minutes"
+          },
+          "consented_to_cookies": {
+            "purpose": "Saves your cookie consent",
+            "expires": "1 year"
+          },
+          "language": {
+            "purpose": "Saves your language preferencee",
+            "expires": "1 year"
+          },
+          "service_session": {
+            "purpose": "Saves information you have entered while using the service",
+            "expires": "When you close your browser"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Set to remember whether you have been shown the terms of the Private Beta",
+            "expires": "15 minutes"
+          }
+        }
+      }
+    }
+  }
+}

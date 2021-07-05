@@ -1,0 +1,8 @@
+{% if consented_to_cookies.usage == null %}
+  <div role="region" aria-label="{{ 'allCookiesAccepted.title' | translate }}" id="all-cookies-accepted" class="govuk-clearfix govuk-!-padding-top-3 show-if-js">
+    <div class="govuk-width-container" tabindex="-1">
+      <p class="" role="alert">{{ 'allCookiesAccepted.text' | translate | safe }}</p>
+      <button id="hide-cookies-accepted" class="govuk-button">{{ 'allCookiesAccepted.buttons.hide' | translate }}</button>
+    </div>
+  </div>
+{% endif %}

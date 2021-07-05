@@ -1,0 +1,217 @@
+/*!
+ * MIT License
+ * 
+ * Copyright (c) 2021 Government Digital Service
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+@import "node_modules/govuk-frontend/govuk/all";
+@import "timeout-dialog.scss";
+
+body {
+  @extend .govuk-body;
+}
+
+%task-list__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+.list__item {
+  @extend %task-list__item;
+}
+
+img {
+  max-width: 100%;
+}
+
+.overview-banner {
+  background-color: #e1f0e9;
+  padding: 20px;
+}
+
+.saved-banner {
+  background-color: #f3f2f1;
+  border-left: 0.4rem solid #006600;
+  margin-top: 1rem;
+  padding: 0.01rem 0.01rem 0.4rem;
+}
+
+.banner-line {
+  border-bottom: 0.1rem solid #1d70b8;
+}
+
+.contact-us-component {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  padding-top: 1rem;
+}
+
+.reg-mark {
+  text-align: center;
+  background-color: #ffd307;
+  border-radius: 0.25em;
+  text-transform: uppercase;
+  max-width: 5em;
+  padding: 0.2em 0.4em 0.2em 0.5em;
+  font-size: 140%;
+}
+
+.related-links {
+  border-top: 10px solid #005ea5;
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+.govuk-error-message {
+  > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.govuk-panel.govuk-panel--amber {
+  background-color: #ffbf00;
+  color: black;
+}
+
+.govuk-panel.govuk-panel--red {
+  background-color: #d4361c;
+  color: white;
+}
+
+.govuk-panel.govuk-panel--blue {
+  background-color: #1d70b8;
+  color: white;
+}
+
+.govuk---align-left {
+  text-align: left;
+}
+.govuk---align-right {
+  text-align: right;
+}
+.govuk---align-center {
+  text-align: center;
+}
+
+.app-related-items {
+  border-top: 10px solid $govuk-brand-colour;
+  padding-top: 10px;
+  .govuk-list {
+    > li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.or-divider {
+  padding-left: 55px;
+}
+
+.govuk-accordion__section-content > :first-child {
+  margin-top: 0;
+}
+
+.display--none {
+  display: none;
+}
+
+.cookie-save-success-alert {
+  color: #0b0c0c;
+  padding: 15px;
+  border: 4px solid govuk-colour("green");
+  margin-bottom: 30px;
+}
+
+.cookie-table {
+  width: 100%;
+  td,
+  th {
+    text-align: left;
+    font-size: 1rem;
+  }
+}
+
+.gtm-iframe {
+  display: none;
+  visibility: hidden;
+}
+
+.warning-container {
+  ul {
+    font-weight: 700;
+  }
+}
+
+.checkbox-container {
+  .govuk-checkboxes__label {
+    padding: 8px 15px 0px;
+  }
+  .govuk-hint {
+    padding: 0px 15px 0px;
+  }
+}
+
+.govuk-accordion__controls {
+  .govuk-accordion__open-all {
+    .govuk-accordion__open-all-toggle {
+      display: inline-block;
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.show-if-js {
+  display: none;
+}
+
+.js-enabled {
+  .show-if-js {
+    display: block;
+  }
+}
+
+.govuk-accordion__section-button {
+  font-size: 1.5rem;
+}
+
+.notification-close {
+  float: right;
+  text-decoration-line: none;
+  color: white;
+  padding: 0 0.5rem;
+  margin-right: -1.2rem;
+  &:focus {
+    color: #0b0c0c;
+    outline: 3px solid transparent;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+}
+
+.mono-space {
+  font-family: monospace;
+}

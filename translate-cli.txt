@@ -1,0 +1,8 @@
+
+node generate-flat-translation-file.js {lng} && node import-translation-file.js ./locale/{lng}/translation-{lng}-extract.csv && node update-translation-file.js ./locale/{lng}/translation-{lng}-extract.csv translation-missing-{lng}.csv
+
+node update-translation-file.js translation-merge-{lng}.csv translation-missing-{lng}.csv && node import-translation-file.js translation-merge-{lng}.csv
+
+<a href=""https://www.gov.uk/guidance/haulier-advice-site-locations"" class=""govuk-link"" rel=""noreferrer noopener"" target=""_blank"">
+
+node update-translation-file.js translation-merge-{lng}.csv translation-different-{lng}.csv && node import-translation-file.js translation-merge-{lng}.csv

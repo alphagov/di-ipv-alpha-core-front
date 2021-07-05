@@ -1,0 +1,15 @@
+{% extends "common/layout/view.njk" %}
+{% set pageTitleName = 'error.timeoutError.title' | translate %}
+{% set pageHeader = 'error.timeoutError.header' | translate %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">{{ 'error.timeoutError.header' | translate }}</h1>
+            <p>{{ 'error.timeoutError.content.paragraph1' | translate | safe }}</p>
+            <p>{{ 'error.timeoutError.content.paragraph2' | translate | safe }}</p>
+            {{ contactUs() }}
+        </div>
+    </div>
+{% endblock %}

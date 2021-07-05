@@ -1,0 +1,111 @@
+{% extends "common/layout/view.njk" %}
+{% set pageTitleName = 'pages.privacyPolicy.title' | translate({
+    theService: ("serviceName" | translate)
+}) %}
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+                {{ "pages.privacyPolicy.header" | translate({ theService: ( "serviceName" | translate) }) | safe }}
+            </h1>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.paragraph1" | translate }}
+            </p>
+            <h2 class="govuk-heading-m">
+                {{ "pages.privacyPolicy.yourData.header" | translate }}</h2>
+
+            <h3 class="govuk-heading-s">
+                {{ "pages.privacyPolicy.yourData.purposeSection.header" | translate }}</h3>
+
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.purposeSection.paragraph1" | translate }}
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>{{ "pages.privacyPolicy.yourData.purposeSection.list.item3" | translate }}
+                </li>
+                <li>{{ "pages.privacyPolicy.yourData.purposeSection.list.item5" | translate }}
+                </li>
+                <li>{{ "pages.privacyPolicy.yourData.purposeSection.list.item6" | translate }}
+                </li>
+
+            </ul>
+            <h3 class="govuk-heading-s">
+                {{ "pages.privacyPolicy.yourData.dataSection.header" | translate }}</h3>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.dataSection.paragraph1" | translate }}
+            </p>
+            <h3 class="govuk-heading-s">
+
+                {{ "pages.privacyPolicy.yourData.legalSection.header" | translate }}</h3>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.legalSection.paragraph1" | translate }}
+            </p>
+
+            <h3 class="govuk-heading-s">
+                {{ "pages.privacyPolicy.yourData.recipientsSection.header" | translate }}</h3>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.recipientsSection.paragraph2" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.recipientsSection.paragraph3" | translate }}
+            </p>
+            <h3 class="govuk-heading-s">
+                {{ "pages.privacyPolicy.yourData.retentionSection.header" | translate }}</h3>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.retentionSection.paragraph2" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourData.retentionSection.paragraph3" | translate }}
+            </p>
+
+            <h2 class="govuk-heading-m">
+                {{ "pages.privacyPolicy.yourRights.header" | translate }}</h2>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph1" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph2" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph3" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph4" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph5" | translate }}
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.yourRights.paragraph6" | translate }}
+            </p>
+
+            <h2 class="govuk-heading-m">
+                {{ "pages.privacyPolicy.internationalTransfers.header" | translate }}</h2>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.internationalTransfers.paragraph1" | translate }}
+            </p>
+
+            <h2 class="govuk-heading-m">
+                {{ "pages.privacyPolicy.contactDetails.header" | translate }}</h2>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.contactDetails.paragraph1" | translate | safe }}
+
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.contactDetails.paragraph2" | translate | safe }}
+
+            </p>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.contactDetails.paragraph3" | translate }}
+            </p>
+
+            <h2 class="govuk-heading-m">
+                {{ "pages.privacyPolicy.complaints.header" | translate }}</h2>
+            <p class="govuk-body">
+                {{ "pages.privacyPolicy.complaints.paragraph1" | translate | safe }}
+            </p>
+        </div>
+    </div>
+{% endblock %}

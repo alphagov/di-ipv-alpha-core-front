@@ -1,0 +1,340 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "Fronteras futuras",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Abrir todas las secciones",
+    "closeAll": "Cerrar todas las secciones"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Error:",
+  "phaseBanner": {
+    "version": "beta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Ahora",
+    "yes": "Sí",
+    "no": "No",
+    "opensInNewTab": " (Se abre en una pestaña nueva)",
+    "buttons": {
+      "saveAndContinue": "Guardar y continuar",
+      "saveForLater": "Guardar para más adelante",
+      "continue": "Continuar",
+      "cancel": "Cancelar",
+      "back": "Atrás",
+      "submitDetails": "Enviar detalles"
+    },
+    "localTimes": "Todos los horarios son estándar del Reino Unido",
+    "errorSummaryTitle": "Hay un problema",
+    "survey": {
+      "text": "¿Qué le ha parecido este servicio?",
+      "url": "#",
+      "note": "(dura 30 segundos)"
+    },
+    "warningAssistive": "Advertencia"
+  },
+  "error": {
+    "error404": {
+      "title": "Página no encontrada",
+      "header": "Página no encontrada",
+      "checkAddress": "Si ha tecleado la dirección web, verifique que sea correcta.<br/><br/> Si ha copiado la dirección web, verifique que se haya copiado la dirección completa.<br/><br/> Si la dirección web es correcta o si intentó acceder mediante un enlace o botón, es posible que esta página se haya eliminado.<br/><br/>",
+      "goBackToStart": "Regrese a '{{theService}}'"
+    },
+    "error500": {
+      "title": "Lo sentimos, hay un problema con este servicio.",
+      "header": "Lo sentimos, hay un problema con este servicio.",
+      "tryAgain": "Actualice la pantalla o vuelva a intentarlo más tarde.<br/><br/> No hemos guardado sus respuestas. Cuando el servicio esté disponible, deberá comenzar de nuevo.<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Se agotó el tiempo de espera de la sesión",
+      "header": "Se agotó el tiempo de espera de la sesión",
+      "content": {
+        "paragraph1": "Se agotó el tiempo de espera de su sesión debido a la inactividad.",
+        "paragraph2": "No hemos guardado sus respuestas. Cuando regrese al servicio, deberá comenzar de nuevo."
+      }
+    },
+    "forbidden": {
+      "title": "Página no disponible",
+      "header": "Página no disponible",
+      "content": {
+        "paragraph1": "Vuelve a comprobar tu entrada.",
+        "paragraph2": "Si ha tecleado la dirección web, verifique que sea correcta.",
+        "paragraph3": "Si la dirección web es correcta o si intentó acceder mediante un enlace o botón, actualice la pantalla o inténtelo más tarde."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Su sesión está a punto de caducar",
+      "message": "Por su seguridad, finalizaremos esta sesión y eliminaremos sus respuestas en",
+      "keepAliveButton": "Continuar sesión",
+      "signOutButton": "Finalizar sesión",
+      "second": "segundo",
+      "seconds": "segundos",
+      "minute": "minuto",
+      "minutes": "minutos"
+    },
+    "contactUs": {
+      "content": "<div><p>Formule una pregunta u obtenga ayuda en su idioma.</p><a class=\"govuk-link\" href=\"mailto:bpdg.check-hgv@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">bpdg.check-hgv@cabinetoffice.gov.uk (Se abre en una pestaña nueva)</a></div><p> Nuestro objetivo es responder en un plazo de 2 días hábiles.</p>",
+      "heading": "Si necesita ayuda para completar esta evaluación"
+    },
+    "header": {},
+    "back": {
+      "back": "Atrás"
+    },
+    "footer": {
+      "items": {
+        "help": "Ayuda",
+        "cookies": "Cookies",
+        "privacy": "Privacidad",
+        "accessibility": "Accesibilidad",
+        "contact": "Contacto",
+        "termsAndConditions": "Términos y Condiciones"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "Banner de cookies",
+    "heading": "Díganos si acepta cookies",
+    "text": "Utilizamos <a class=\"govuk-link\" href=\"/cookies\">cookies para recopilar información</a> sobre cómo utiliza '{{theService}}'. Usamos esta información para medir cómo usa el sitio web, para que pueda actualizarse y mejorarse en función de sus necesidades.",
+    "buttons": {
+      "acceptAll": "Aceptar todas las cookies",
+      "setPreferences": "Establecer preferencias de cookies"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Cookies aceptadas",
+    "text": "Ha aceptado todas las cookies. Puede <a class=\"govuk-link\" href=\"/cookies\">cambiar la configuración de las cookies</a> en cualquier momento.",
+    "buttons": {
+      "hide": "Ocultar"
+    }
+  },
+  "pages": {
+    "start": {
+      "title": "Iniciar",
+      "header": "Iniciar"
+    },
+    "accessibilityStatement": {
+      "title": "Declaración de accesibilidad para '{{theService}}'",
+      "header": "Declaración de accesibilidad para '{{theService}}'",
+      "paragraph1": "Esta declaración de accesibilidad explica el grado de acceso a este servicio, qué hacer si tiene dificultades para usarlo y cómo comunicar problemas de accesibilidad al servicio.",
+      "paragraph2": "Este servicio forma parte del sitio web completo de GOV.UK. Hay una <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">declaración de accesibilidad separada para el sitio web principal de GOV.UK (Se abre en una pestaña nueva)</a>.",
+      "paragraph3": "Esta página solo contiene información sobre el servicio '{{theService}}', disponible en <a href=\"https://www.gov.uk/check-hgv-border\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://www.gov.uk/check-hgv-border (Se abre en una pestaña nueva)</a>.",
+      "usingThisService": {
+        "header": "Uso de este servicio",
+        "paragraph1": "{{theService}} se utiliza para verificar si tiene la documentación necesaria para cruzar la frontera del Reino Unido en un vehículo pesado (HGV) y para solicitar un permiso Kent Access Permit si sale del Reino Unido hacia la UE desde el puerto de Dover o vía Eurotunnel.",
+        "paragraph2": "Este servicio corre a cargo de HM Revenue and Customs (HMRC). Queremos que este servicio pueda ser utilizado por el máximo número de personas posible. Esto significa que debería poder:",
+        "list1": {
+          "item1": "cambiar colores, niveles de contraste y fuentes",
+          "item2": "agrandar el contenido hasta un 300 % sin que el texto se salga de la pantalla",
+          "item3": "navegar por el servicio de principio a fin usando solo el teclado",
+          "item4": "navegar por el servicio de principio a fin usando solo el software de reconocimiento de voz",
+          "item5": "escuchar el servicio con un lector de pantalla (incluidas las versiones más recientes de JAWS, NVDA y VoiceOver)"
+        },
+        "paragraph4": "También hemos intentado que el texto del servicio sea lo más sencillo posible de entender.",
+        "paragraph5": "Consulte <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet para consejos (Se abre en una pestaña nueva)</a> sobre cómo simplificar el uso de su dispositivo si tiene alguna discapacidad."
+      },
+      "howAccessibleIsThisService": {
+        "header": "Grado de accesibilidad de este servicio",
+        "paragraph1": "Este servicio cumple parcialmente con el <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">estándar AA de las Pautas de accesibilidad para el contenido web (WCAG) versión 2.1 (Se abre en una pestaña nueva)</a>.",
+        "paragraph2": "Algunas personas pueden encontrar ciertas partes de este servicio difíciles de usar:",
+        "list1": {
+          "item1": "Algunos títulos de páginas del servicio no son descriptivos",
+          "item2": "Al seleccionar la fecha y la hora para obtener un permiso Kent Access Permit, falta un estado de validación para indicar que no se ha proporcionado la hora.",
+          "item3": "El bloque de texto que explica las consecuencias de no disponer del Kent Access Permit puede hacer que el contenido se desborde.",
+          "item4": "La sección \"Qué pasa después\", que se muestra cuando se emite un Kent Access Permit, contiene marcas que dificultan la lectura con los lectores de pantalla.",
+          "item5": "Se hace un uso incorrecto de los roles ARIA en el banner de las cookies y el banner beta.",
+          "item6": "La página con la pregunta \"¿Tiene números de referencia de tránsito (MRN) de una declaración de importación de la UE o documentos adjuntos de tránsito (TAD) para todas las mercancías transportadas?\" no muestra el estado de enfoque correcto.",
+          "item7": "Cuando se emite un permiso Kent Access Permit, no hay suficiente información contextual sobre el estado del permiso dentro del panel codificado por colores."
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "Qué hacer si tiene dificultades para utilizar este servicio",
+        "paragraph1": "Puede <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">Puede comunicarse con HMRC para obtener ayuda adicional (Se abre en una pestaña nueva)</a> si necesita ayuda para completar formularios o recibirlos en un formato diferente, como con letra grande, grabación de audio o Braille."
+      },
+      "reportingProblems": {
+        "header": "Informar problemas de accesibilidad con este servicio",
+        "paragraph1": "Siempre buscamos mejorar la accesibilidad de este servicio. Si encuentra algún problema que no aparece en esta página o cree que no cumplimos con los requisitos de accesibilidad, <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">informe el problema de accesibilidad (Se abre en una pestaña nueva)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "Si no está satisfecho con nuestra respuesta",
+        "paragraph1": "La Comisión de Igualdad y Derechos Humanos (EHRC) es responsable de hacer cumplir las Regulaciones de Accesibilidad de los Organismos del Sector Público (Sitios Web y Aplicaciones Móviles) (N.º 2) 2018 (las \"regulaciones de accesibilidad\"). Si no está satisfecho con la forma en que respondemos a su queja, <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">comuníquese con el Servicio de asesoramiento y apoyo para la igualdad (EASS) (Se abre en una pestaña nueva)</a> o la <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Comisión de igualdad para Irlanda del Norte (ECNI) (Se abre en una pestaña nueva)</a> si vive en Irlanda del Norte."
+      },
+      "contactingUs": {
+        "header": "Comuníquese con nosotros por teléfono o solicite una visita en persona",
+        "paragraph1": "Ofrecemos un servicio de retransmisión de texto si padece sordera, tiene problemas de audición o tiene un impedimento del habla.",
+        "paragraph2": "Podemos proporcionarle un intérprete de lenguaje de signos británico (BSL) o puede concertar una visita de un asesor de HMRC para que le ayude a completar el servicio.",
+        "paragraph3": "Descubra <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">cómo obtener ayuda adicional de HMRC (Se abre en una pestaña nueva)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Información técnica sobre la accesibilidad de este servicio",
+        "paragraph1": "HMRC se compromete a hacer que este servicio sea accesible, de acuerdo con las Regulaciones de Accesibilidad de los Organismos del Sector Público (Sitios Web y Aplicaciones Móviles) (N.º 2) de 2018.",
+        "paragraph2": "Este servicio cumple parcialmente con el <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">estándar AA de las Pautas de accesibilidad para el contenido web (WCAG) versión 2.1 (Se abre en una pestaña nueva)</a> debido a los incumplimientos que figuran a continuación.",
+        "nonAccessibleContent": {
+          "header": "Contenido no accesible",
+          "paragraph1": "El contenido que se enumera a continuación no es accesible por las siguientes razones.",
+          "nonCompliance": {
+            "header": "Incumplimiento de la normativa de accesibilidad",
+            "paragraph1": "Los elementos de la sección \"Qué pasa después\" se presentan incorrectamente como una lista, y luego una combinación de caracteres de formato p, strong, br, y letras pequeñas cuando en realidad debería tener formato de encabezado de nivel 3 y párrafo. Esto impide que un usuario con lector de pantalla navegue por los encabezados y dificulta la lectura de la página. Esto no cumple con el criterio de éxito de WCAG 1.3.1 (información y relaciones). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph2": "Se hace un uso incorrecto de los roles ARIA en el banner de las cookies y el banner beta. Esto no cumple con el criterio de éxito de WCAG 1.3.1 (información y relaciones); 1.3.6 (identificar propósito) y 2.4.1 (bloques de derivación). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph3": "El bloque de texto donde se explica las consecuencias de no disponer del Kent Access Permit no contiene espacios duros, lo que puede hacer que el contenido se desborde. Esto no cumple con el criterio de éxito de WCAG 1.4.10 (flujo del texto). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph4": "Cuando se emite un permiso Kent Access Permit, no hay suficiente información contextual sobre el estado del permiso dentro del panel codificado por colores. Esto no cumple con el criterio de éxito de WCAG 1.4.1 (uso de color) Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph5": "La página con la pregunta \"¿Tiene números de referencia de tránsito (MRN) de una declaración de importación de la UE o documentos adjuntos de tránsito (TAD) para todas las mercancías transportadas?\" no muestra los estilos de enfoque correctos. Esto no cumple con el criterio de éxito de WCAG 1.4.11 (contraste sin texto) y 2.4.7 (enfoque visible). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph6": "Los títulos de las páginas de todo el servicio carecen de información contextual. Esto no cumple con el criterio de éxito de WCAG 2.4.8 (ubicación). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021.",
+            "paragraph7": "Falta un estado de error cuando no se selecciona la hora. Esto no cumple con el criterio de éxito de WCAG 3.3.1 (identificación de error). Planeamos solucionar este problema de cumplimiento antes del 31 de enero de 2021."
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "Cómo probamos este servicio",
+        "paragraph1": "El servicio se probó por última vez el 11 de diciembre de 2020 y se verificó su conformidad con WCAG 2.1 AA.",
+        "paragraph2": "El servicio se construyó a partir de las partes que fueron probadas por el <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">el Centro de Accesibilidad Digital (Se abre en una pestaña nueva)</a>. El servicio completo fue probado por HMRC e incluyó a usuarios discapacitados.",
+        "paragraph3": "Esta página fue publicada el 11 de diciembre de 2020. Se actualizó por última vez el 11 de diciembre de 2020."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Aviso de privacidad para '{{theService}}' ",
+      "header": "Aviso de privacidad para '{{theService}}' ",
+      "paragraph1": "Este aviso establece cómo usaremos sus datos personales y cuáles son sus derechos. Se realiza en virtud de los artículos 13 y/o 14 del Reglamento General de Protección de Datos (RGPD). ",
+      "yourData": {
+        "header": "SU INFORMACIÓN ",
+        "purposeSection": {
+          "header": "Finalidad",
+          "paragraph1": "Gestionamos sus datos personales con la siguiente finalidad:",
+          "list": {
+            "item1": "Gestionamos sus datos personales con la siguiente finalidad:",
+            "item2": "emitir permisos Kent Access Permit (KAP) para declaraciones aptas",
+            "item3": "ofrecer ayuda a los usuarios en el uso de nuestro servicio.",
+            "item4": "proporcionar datos a organizaciones y funciones respecto al flujo de tráfico, gestión de fronteras y funciones para la aplicación de la ley",
+            "item5": "proteger el sitio y mantener los datos protegidos",
+            "item6": "mejorar y desarrollar nuestro servicio "
+          }
+        },
+        "dataSection": {
+          "header": "Los datos",
+          "paragraph1": "Gestionaremos los siguientes datos personales: Número de matrícula de los vehículos pesados que son objeto de un permiso Kent Access Permit, dirección de correo electrónico para poder enviar el permiso Kent Access Permit, dirección IP (para que pueda conectarse al servicio), datos de análisis web (para el seguimiento del uso del servicio y fines de mejora), y nombre y dirección de correo electrónico al presentar un ticket de soporte. "
+        },
+        "legalSection": {
+          "header": "Base jurídica del tratamiento ",
+          "paragraph1": "La base jurídica para el tratamiento de sus datos personales estriba en que dicho tratamiento es necesario para el desempeño de una tarea realizada en interés público o en el ejercicio de la autoridad oficial conferida al controlador de datos. En este caso, se trata de la gestión del tráfico, flujo fronterizo y preparación para el cumplimiento de la normativa fronteriza. "
+        },
+        "recipientsSection": {
+          "header": "Destinatarios",
+          "paragraph1": "Las declaraciones de los vehículos que se realicen a través del servicio '{{theService}}' se comparten con el Servicio de flujo fronterizo de las oficinas gubernamentales. <a href=\"https://www.gov.uk/government/publications/privacy-notice-for-border-flow-service\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Lea más sobre la Política de privacidad del Servicio de flujo fronterizo (Se abre en una pestaña nueva)</a>.",
+          "paragraph2": "Compartiremos sus datos personales con HMRC, que proporciona nuestra plataforma de servicio, y con nuestro proveedor informático, que proporciona servicios de alojamiento y análisis web. ",
+          "paragraph3": "También compartiremos datos sobre los permisos Kent Access Permit con la policía de Kent, el Departamento de Medio Ambiente, Alimentación y Asuntos Rurales, el Departamento de Transporte y la Agencia de Normas y Vehículos para Conductores."
+        },
+        "retentionSection": {
+          "header": "Retención ",
+          "paragraph2": "Conservamos los datos recopilados a través de las cookies durante un máximo de 16 días.",
+          "paragraph3": "Los datos personales que recopilamos cuando solicita asistencia para el servicio '{{theService}}' se conservan durante el tiempo que sea necesario para proporcionarle asistencia y, en cualquier caso, no más de 18 meses. "
+        }
+      },
+      "yourRights": {
+        "header": "SUS DERECHOS ",
+        "paragraph1": "Tiene derecho a solicitar información sobre el tratamiento de sus datos personales y a solicitar una copia de dichos datos personales. ",
+        "paragraph2": "Tiene derecho a solicitar la rectificación inmediata de cualquier inexactitud en sus datos personales. ",
+        "paragraph3": "Tiene derecho a solicitar que se completen los datos personales incompletos, incluso mediante una declaración complementaria. ",
+        "paragraph4": "Puede tener derecho a solicitar que se borren sus datos personales si ya no hay ninguna circunstancia que justifique su tratamiento. ",
+        "paragraph5": "Tiene derecho en determinadas circunstancias (por ejemplo, cuando se cuestiona la precisión) a solicitar que se restrinja el tratamiento de sus datos personales. ",
+        "paragraph6": "Tiene derecho a oponerse al tratamiento de sus datos personales."
+      },
+      "internationalTransfers": {
+        "header": "TRASLADOS INTERNACIONALES ",
+        "paragraph1": "s datos de análisis web se pueden transferir y almacenar de forma segura fuera del Reino Unido. Si se da el caso, estará sujeto a una protección jurídica equivalente mediante el uso de cláusulas contractuales modelo."
+      },
+      "contactDetails": {
+        "header": "DATOS DE CONTACTO ",
+        "paragraph1": "El responsable del tratamiento de sus datos personales es la Oficina gubernamental. Los datos de contacto del responsable del tratamiento son: Cabinet Office, 70 Whitehall, Londres, SW1A 2AS, o 0207 276 1234, o <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (Se abre en una pestaña nueva)</a>.",
+        "paragraph2": "Los datos de contacto del responsable de Protección de Datos son: Stephen Jones, Data Protection Officer, Cabinet Office, Room 405, 70 Whitehall, Londres, SW1A 2AS, o <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (Se abre en una pestaña nueva)</a>.",
+        "paragraph3": "El responsable de Protección de Datos proporciona asesoramiento y seguimiento independientes del uso que hace la Oficina gubernamental de la información personal."
+      },
+      "complaints": {
+        "header": "RECLAMACIONES ",
+        "paragraph1": "Si considera que sus datos personales han sido mal utilizados o manipulados, puede presentar una reclamación al Comisionado de Información, que es un regulador independiente.  Los datos de contacto del Comisionado de Información son:  Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF, o 0303 123 1113, o <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (Se abre en una pestaña nueva)</a>.  Cualquier reclamación presentada ante el Comisionado de Información se entiende sin perjuicio de su derecho de buscar una compensación a través de los tribunales. "
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "header": "Cookies",
+      "paragraph1": "La acción '{{theService}}' coloca pequeños archivos (conocidos como \"cookies\") en su ordenador para recopilar información sobre cómo utiliza el servicio.",
+      "paragraph2": "Las cookies se utilizan para:",
+      "list": "entregar elementos esenciales del servicio|medir cómo lo usa, para que se pueda actualizar y mejorar en función de sus necesidades|recordar las notificaciones que ha visto para que no se las vuelvan a mostrar",
+      "paragraph3": "Las cookies de la acción '{{theService}}' no se utilizan para identificarlo personalmente.",
+      "paragraph4": "Normalmente verá un mensaje en el sitio antes de que se almacene una cookie en su equipo.",
+      "paragraph5": "Obtenga más información sobre <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">cómo administrar las cookies (Se abre en una pestaña nueva)</a>",
+      "saved": {
+        "header": "Se ha guardado su configuración de cookies",
+        "text": "Los servicios gubernamentales pueden establecer cookies adicionales y, de ser así, tendrán su propia política y aviso de cookies."
+      },
+      "cookies": {
+        "header": "Como usamos las cookies"
+      },
+      "analytics": {
+        "header": "Medición del uso del sitio web (Google Analytics)",
+        "text": "Google Analytics establece las siguientes cookies:",
+        "paragraph1": "Utilizamos el software de Google Analytics para recopilar información sobre cómo utiliza la acción '{{theService}}'. Hacemos esto para asegurarnos de que el servicio satisfaga las necesidades de sus usuarios y para ayudarnos a realizar mejoras.",
+        "paragraph2": "Google Analytics almacena información sobre:",
+        "paragraph3": "No permitimos que Google use o comparta datos analíticos.",
+        "link": "Puede optar por no acceder a Google Analytics",
+        "question": "¿Acepta las cookies de Google Analytics?",
+        "list": "las páginas que visita en '{{theService}}' | cuánto tiempo pasa en cada página | cómo llegó al servicio | en qué opciones hace clic mientras usa el servicio",
+        "choice": {
+          "yes": "Sí, aceptar las cookies de Google Analytics",
+          "no": "No, no rastrear el uso que hago en el sitio web "
+        }
+      },
+      "necessary": {
+        "header": "Cookies esenciales",
+        "text": "Las cookies que se enumeran a continuación son necesarias para que pueda utilizar el servicio. Estas son:"
+      },
+      "buttons": {
+        "save": "Guardar cambios"
+      },
+      "lastUpdated": "Última actualización 10 de noviembre de 2019",
+      "table": {
+        "columns": {
+          "name": "Nombre",
+          "purpose": "Finalidad",
+          "expires": "Caducidad"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Se usa para distinguir a los usuarios anónimos",
+            "expires": "2 años"
+          },
+          "_gid": {
+            "purpose": "Se usa para distinguir a los usuarios anónimos",
+            "expires": "24 horas"
+          },
+          "_gat": {
+            "purpose": "Solicitudes de aceleración",
+            "expires": "10 minutos"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Solicitudes de aceleración",
+            "expires": "10 minutos"
+          },
+          "consented_to_cookies": {
+            "purpose": "Guarda su consentimiento de cookies",
+            "expires": "1 año"
+          },
+          "language": {
+            "purpose": "Guarda su preferencia de idioma",
+            "expires": "1 año"
+          },
+          "service_session": {
+            "purpose": "Guarda la información que especificó mientras usaba el servicio",
+            "expires": "Cuando cierra su navegador"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Configurar para recordar si se le han mostrado los términos de la Beta Privada",
+            "expires": "15 minutos"
+          }
+        }
+      }
+    }
+  }
+}

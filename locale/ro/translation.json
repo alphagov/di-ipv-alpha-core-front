@@ -1,0 +1,340 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "Programul „Future Borders”",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Toate secțiunile sunt deschise",
+    "closeAll": "Toate secțiunile sunt închise"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Eroare:",
+  "phaseBanner": {
+    "version": "beta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Acum",
+    "yes": "Da",
+    "no": "Nu",
+    "opensInNewTab": " (Se deschide într-o filă nouă)",
+    "buttons": {
+      "saveAndContinue": "Salvare și continuare",
+      "saveForLater": "Salvare pentru mai târziu",
+      "continue": "Continuare",
+      "cancel": "Anulare",
+      "back": "Înapoi",
+      "submitDetails": "Trimitere detalii"
+    },
+    "localTimes": "Toate orele sunt în fusul orar standard pentru Marea Britanie",
+    "errorSummaryTitle": "A apărut o problemă",
+    "survey": {
+      "text": "Care este părerea dumneavoastră despre acest serviciu?",
+      "url": "#",
+      "note": "(durează 30 de secunde)"
+    },
+    "warningAssistive": "Avertisment"
+  },
+  "error": {
+    "error404": {
+      "title": "Pagina nu a fost găsită",
+      "header": "Pagina nu a fost găsită",
+      "checkAddress": "Dacă ați introdus manual adresa site-ului, verificați dacă este corectă.<br/><br/> Dacă ați lipit adresa site-ului, verificați dacă ați copiat întreaga adresă.<br/><br/> Dacă adresa web este corectă sau dacă ați selectat un link sau un buton, este posibil ca această pagină să fi fost eliminată.<br/><br/>",
+      "goBackToStart": "Reveniți la „{{theService}}”"
+    },
+    "error500": {
+      "title": "Ne pare rău, a apărut o problemă la acest serviciu",
+      "header": "Ne pare rău, a apărut o problemă la acest serviciu",
+      "tryAgain": "Reîmprospătați-vă ecranul sau încercați din nou mai târziu. Nu am salvat răspunsurile dumneavoastră.<br/><br/> Când serviciul este disponibil va trebui să începeți din nou.<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Sesiunea a expirat",
+      "header": "Sesiunea a expiratt",
+      "content": {
+        "paragraph1": "Sesiunea a expirat din cauza inactivității.",
+        "paragraph2": "Nu v-am salvat răspunsurile. Când reveniți la serviciu, va trebui să începeți din nou."
+      }
+    },
+    "forbidden": {
+      "title": "Pagina nu este disponibilă",
+      "header": "Pagina nu este disponibilă",
+      "content": {
+        "paragraph1": "Întoarceți-vă și verificați-vă intrarea.",
+        "paragraph2": "Dacă ați introdus manual adresa site-ului, verificați dacă este corectă.",
+        "paragraph3": "Dacă adresa web este corectă sau dacă ați selectat un link sau un buton, reîmprospătați ecranul sau încercați din nou mai târziu."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Sesiunea dumneavoastră este pe punctul de a expira",
+      "message": "Pentru siguranța dumneavoastră, vom încheia această sesiune și vom șterge răspunsurile dumneavoastră în",
+      "keepAliveButton": "Continuare sesiune",
+      "signOutButton": "Sfârșit sesiune",
+      "second": "secundă",
+      "seconds": "secunde",
+      "minute": "minut",
+      "minutes": "minute"
+    },
+    "contactUs": {
+      "content": "<div><p>Trimiteți o întrebare sau obțineți asistență în limba dumneavoastră. b</p><a class=\"govuk-link\" href=\"mailto:bpdg.check-hgv@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">bpdg.check-hgv@cabinetoffice.gov.uk (Se deschide într-o filă nouă)</a></div><p> Ne propunem să răspundem în termen de 2 zile lucrătoare.</p>",
+      "heading": "Dacă aveți nevoie de ajutor pentru a completa această evaluare"
+    },
+    "header": {},
+    "back": {
+      "back": "Înapoi"
+    },
+    "footer": {
+      "items": {
+        "help": "Ajutor",
+        "cookies": "Module cookie",
+        "privacy": "Confidențialitate",
+        "accessibility": "Accesibilitate",
+        "contact": "a lua legatura",
+        "termsAndConditions": "Termeni și Condiții"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "Banner cookie",
+    "heading": "Vă rugăm să ne menționați dacă acceptați utilizarea modulelor cookie",
+    "text": "Noi utilizăm module <a class=\"govuk-link\" href=\"/cookies\">cookie pentru a colecta informații</a> despre cum utilizați aplicația „{{theService}}”. Utilizăm aceste informații pentru a măsura cum utilizați site-ul nostru, astfel încât să fie actualizat și îmbunătățit pe baza nevoilor dumneavoastră.",
+    "buttons": {
+      "acceptAll": "Acceptați toate modulele cookie",
+      "setPreferences": "Setați preferințele pentru modulele cookie"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Module cookie acceptate",
+    "text": "Ați acceptat toate modulele cookie. Puteți <a class=\"govuk-link\" href=\"/cookies\">modifica oricând setările modulelor cookie</a>.",
+    "buttons": {
+      "hide": "Ascundeți"
+    }
+  },
+  "pages": {
+    "start": {
+      "title": "Start",
+      "header": "Start"
+    },
+    "accessibilityStatement": {
+      "title": "Declarație privind accesibilitatea pentru serviciul de „{{theService}}” ",
+      "header": "Declarație privind accesibilitatea pentru serviciul de „{{theService}}” ",
+      "paragraph1": "Declarație privind accesibilitatea explică nivelul de accesibilitate al acestui serviciu, ce trebuie să faceți dacă întâmpinați dificultăți în utilizarea sa și cum puteți raporta problemele de accesibilitate legate de acest serviciu.",
+      "paragraph2": "Acest serviciu face parte din site-ul web GOV.UK. Aceasta este <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">o declarație separată privind accesibilitatea pentru site-ul web GOV.UK principal (Se deschide într-o filă nouă)</a>.",
+      "paragraph3": "Această pagină conține doar informații privind serviciul de „{{theService}}”, disponibil la <a href=\"https://www.gov.uk/check-hgv-border\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://www.gov.uk/check-hgv-border (Se deschide într-o filă nouă)</a>.",
+      "usingThisService": {
+        "header": "Utilizarea acestui serviciu",
+        "paragraph1": "Serviciul de „{{theService}}” este utilizat dacă aveți documentele necesare pentru trecerea frontierei Marii Britanii la bordul unui vehicul greu de transport mărfuri (HGV) și pentru solicitarea unui permis de acces în Kent dacă plecați din Marea Britanie către UE din portul Dover sau prin Eurotunnel.",
+        "paragraph2": "Acest serviciu este prestat de Oficiul de venituri și vamă (HM Revenue and Customs - HMRC). Dorim ca acest serviciu să poată fi folosit de cât mai multă lume. Acest lucru înseamnă că trebuie să puteți:",
+        "list1": {
+          "item1": "schimba culorile, nivelurile de contrast și fonturile",
+          "item2": "mări scrisul cu până la 300% fără ca textul să dispară de pe ecran",
+          "item3": "accesa întregul serviciu doar cu ajutorul unei tastaturi",
+          "item4": "accesa întregul serviciu cu ajutorul unui program de recunoaștere a vorbirii",
+          "item5": "asculta informațiile legate de serviciu cu ajutorul unui cititor de ecran (inclusiv cele mai recente versiuni JAWS, NVDA și VoiceOver)"
+        },
+        "paragraph4": "De asemenea, am simplificat textul referitor la serviciu cât mai mult posibil, pentru a asigura înțelegerea sa.",
+        "paragraph5": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet oferă sfaturi (Se deschide într-o filă nouă)</a> pentru a permite o utilizare mai ușoară a dispozitivului dumneavoastră în cazul în care aveți un handicap."
+      },
+      "howAccessibleIsThisService": {
+        "header": "Accesibilitatea acestui serviciu",
+        "paragraph1": "Acest serviciu este parțial conform cu <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Orientările privind accesibilitatea conținutului web, versiunea 2.1, nivelul AA (Se deschide într-o filă nouă)</a>.",
+        "paragraph2": "Anumite părți ale acestui serviciu pot fi greu de folosit pentru unele persoane:",
+        "list1": {
+          "item1": "Unele titluri din acest serviciu nu sunt descriptive",
+          "item2": "La selectarea datei și orei pentru un permis de acces în Kent există o stare fără validare, care indică faptul ora nu a fost introdusă.",
+          "item3": "Blocul de text care prezintă consecințele lipsei unui permis de acces în Kent care poate duce la depășirea de către text a limitelor ecranului.",
+          "item4": "Secțiunea „Ce se întâmplă în continuare” care apare la emiterea unui permis de acces în Kent conține un marcaj care poate fi greu de citit pentru utilizatorii care folosesc un ecran.",
+          "item5": "Rolurile ARIA nu sunt folosite corect în bannerul pentru module cookie și în bannerul beta.",
+          "item6": "Pagina cu întrebarea „Aveți numerele de referință ale transportului (MRN) dintr-o declarație de import din UE sau documente de însoțire a tranzitului (TAD) pentru toate mărfurile transportate?” nu prezintă focalizarea corectă.",
+          "item7": "La emiterea unui permis de acces în Kent, în cadrul panoului codificat pe culori nu se regăsesc destule informații contextuale în legătură cu starea permisului."
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "Ce trebuie să faceți întâmpinați dificultăți în utilizarea acestui serviciu",
+        "paragraph1": "Puteți <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">contacta HMRC pentru asistență suplimentară (Se deschide într-o filă nouă)</a> dacă aveți nevoie de ajutor pentru completarea formularelor sau pentru obținerea unui format diferit, precum imprimare cu litere de dimensiuni mari, înregistrare audio sau Braille."
+      },
+      "reportingProblems": {
+        "header": "Raportarea problemelor de accesibilitate legate de acest serviciu",
+        "paragraph1": "Depunem eforturi constante pentru a îmbunătăți accesibilitatea acestui serviciu. Dacă întâmpinați orice probleme care nu se regăsesc pe această pagină sau considerați că nu îndeplinim cerințele privind accesibilitatea, <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">raportați problema legată de accesibilitate (Se deschide într-o filă nouă)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "Dacă nu sunteți mulțumit de răspunsul nostru",
+        "paragraph1": "Comisia pentru egalitate și drepturile omului (EHRC) este responsabilă pentru aplicarea Regulamentului privind accesibilitatea din 2018 („regulamentul privind accesibilitatea”) în cazul Organismelor publice naționale (Site-uri web și aplicații mobile) (Nr. 2). Dacă nu sunteți mulțumit de răspunsul nostru în legătură cu reclamația dumneavoastră, <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">contactați Serviciul de consiliere și asistență pe probleme de egalitate (EASS) (Se deschide într-o filă nouă)</a> sau <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Comisia pentru egalitate în Irlanda de Nord (ECNI) (Se deschide într-o filă nouă)</a> dacă locuiți în Irlanda de Nord."
+      },
+      "contactingUs": {
+        "header": "Contactarea prin telefon sau primirea unei vizite personale",
+        "paragraph1": "Vă punem la dispoziție un serviciu de redare a textului pentru persoanele surde, cu handicap auditiv sau cu probleme de vorbire.",
+        "paragraph2": "Vă putem pune la dispoziție un interpret în Limbaj al semnelor britanice (BSL) sau puteți programa o vizită a unui consilier HMRC care să vă ajute să finalizați serviciul.",
+        "paragraph3": "Aflați <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">cum puteți beneficia de asistență suplimentară din partea HMRC (Se deschide într-o filă nouă)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Informații tehnice privind accesibilitatea acestui serviciu",
+        "paragraph1": "HMRC s-a angajat să asigure accesibilitatea acestui serviciu, în conformitate cu Regulamentul privind accesibilitatea din 2018 pentru Organismele publice naționale (Site-uri web și aplicații mobile) (Nr. 2).",
+        "paragraph2": "Acest serviciu este parțial conform cu <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">Orientările privind accesibilitatea conținutului web, versiunea 2.1, nivelul AA (WCAG) (Se deschide într-o filă nouă)</a>, ca urmare a neconformităților enumerate mai jos..",
+        "nonAccessibleContent": {
+          "header": "Conținut inaccesibil",
+          "paragraph1": "Conținutul indicat mai jos nu este accesibil din următoarele motive.",
+          "nonCompliance": {
+            "header": "Neconformitatea cu regulamentul de accesibilitate",
+            "paragraph1": "Articolele din secțiunea „Ce se întâmplă în continuare” nu sunt formatate corectă sub formă de listă și există un amestec de litere p, aldine, br, minuscule, ce imită formatul titlurilor de nivel 3 sau alineatelor. Acest lucru împiedică utilizatorii care folosesc ecrane să navigheze în funcție de titluri și îngreunează citirea paginii. Acest lucru nu îndeplinește criteriul de succes WCAG 1.3.1 (informare și relații). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph2": "Rolurile ARIA nu sunt folosite corect în bannerul pentru module cookie și în bannerul beta. Acest lucru nu îndeplinește criteriul de succes WCAG 1.3.1 (informare și relații), 1.3.6 (identificarea scopului) și 2.4.1 (evitarea blocajelor). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph3": "Blocul de text care prezintă consecințele lipsei unui permis de acces în Kent conține spații neseparatoare care pot duce la depășirea de către text a limitelor ecranului. Acest lucru nu îndeplinește criteriul de succes WCAG 1.4.10 (rearanjare). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph4": "La emiterea unui permis de acces în Kent, în cadrul panoului codificat pe culori nu se regăsesc destule informații contextuale în legătură cu starea permisului. Acest lucru nu îndeplinește criteriul de succes WCAG 1.4.1 (utilizarea culorilor). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph5": "Pagina cu întrebarea „Aveți numerele de referință ale transportului (MRN) dintr-o declarație de import din UE sau documente de însoțire a tranzitului (TAD) pentru toate mărfurile transportate?” nu prezintă stilurile de focalizare corectă. Acest lucru nu îndeplinește criteriile de succes WCAG 1.4.11 (lipsa contrastului textului) și 2.4.7 (focalizare vizibilă). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph6": "Titlurile paginilor legate de serviciu nu conțin informații contextuale. Acest lucru nu îndeplinește criteriul de succes WCAG 2.4.8 (localizare). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021.",
+            "paragraph7": "Starea de eroare lipsește atunci când nu este selectată ora. Acest lucru nu îndeplinește criteriul de succes WCAG 3.3.1 (identificarea erorilor). Planificăm să rezolvăm această problemă de conformitate până la 31 ianuarie 2021."
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "Cum am testat acest serviciu",
+        "paragraph1": "Ultima testare a acestui serviciu a avut loc pe 11 decembrie 2020, iar testarea a vizat conformitatea cu WCAG 2.1 AA.",
+        "paragraph2": "Serviciul a fost construit cu ajutorul părților testate de <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">Centrul pentru accesibilitate digitală (Se deschide într-o filă nouă)</a>. Serviciul complet a fost testat de HMRC, inclusiv de utilizatori cu handicap.",
+        "paragraph3": "Această pagină a fost publicată la data de 11 decembrie 2020. Ultima actualizare a avut loc la data de 11 decembrie 2020."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Notificare de confidențialitate pentru „{{theService}}” ",
+      "header": "Notificare de confidențialitate pentru „{{theService}}” ",
+      "paragraph1": "Această notificare stabilește modul în care vom folosi datele dumneavoastră cu caracter personal și drepturile dumneavoastră. Este redactată în temeiul articolelor 13 și/sau 14 din Regulamentul general privind protecția datelor (GDPR). ",
+      "yourData": {
+        "header": "DATELE DUMNEAVOASTRĂ ",
+        "purposeSection": {
+          "header": "Scop",
+          "paragraph1": "Scopurile pentru care prelucrăm datele dumneavoastră cu caracter personal sunt:",
+          "list": {
+            "item1": "furnizare de date pentru serviciul „{{theService}}” ",
+            "item2": "emiterea permiselor de acces în Kent (KAP) pentru declarațiile de calificare",
+            "item3": "sprijinirea utilizatorilor serviciului nostru",
+            "item4": "furnizare de date către organizații și funcții, pentru fluxul de trafic al acestora, gestionarea frontierelor și funcțiile de aplicare a legii",
+            "item5": "protejarea centrului și păstrarea securității datelor dumneavoastră",
+            "item6": "îmbunătățirea și dezvoltarea serviciului nostru "
+          }
+        },
+        "dataSection": {
+          "header": "Datele",
+          "paragraph1": "Vom prelucra următoarele date cu caracter personal: Numărul de înmatriculare al vehiculelor grele de transport mărfuri care fac obiectul unui permis de acces în Kent, adresa dumneavoastră de e-mail pentru primirea permisului de acces în Kent, adresa dumneavoastră IP (pentru a vă permite să vă conectați la serviciu), date de analiză web (pentru urmărirea utilizării serviciului și scopuri de îmbunătățire), precum și numele și adresa dumneavoastră de e-mail atunci când deschideți un tichet de asistență. "
+        },
+        "legalSection": {
+          "header": "Temeiul legal al operațiunii de prelucrare ",
+          "paragraph1": "Temeiul legal pentru prelucrarea datelor dumneavoastră cu caracter personal este faptul că prelucrarea este necesară pentru îndeplinirea unei sarcini efectuate în interes public sau în exercitarea autorității oficiale cu care a fost învestit operatorul de date. În acest caz, aceasta este gestionarea traficului, fluxul de frontieră și pregătirea pentru conformitate la frontieră. "
+        },
+        "recipientsSection": {
+          "header": "Destinatari",
+          "paragraph1": "Declarațiile cu privire la vehicul făcute prin intermediul serviciului „{{theService}}” sunt partajate cu Serviciul de flux de frontieră al Cabinet Offices. <a href=\"https://www.gov.uk/government/publications/privacy-notice-for-border-flow-service\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Citiți mai multe despre politica de confidențialitate pentru Serviciul de flux de frontieră (Se deschide într-o filă nouă)</a>.",
+          "paragraph2": "Vom partaja datele dumneavoastră cu caracter personal cu HMRC, care furnizează platforma noastră de servicii și furnizorul nostru de IT, care oferă servicii de găzduire și de analiză web. ",
+          "paragraph3": "De asemenea, vom partaja date despre permisele de acces în Kent cu poliția din Kent, cu Departamentul pentru mediu, alimentație și afaceri rurale, cu Departamentul pentru transporturi și DVSA. "
+        },
+        "retentionSection": {
+          "header": "Păstrare ",
+          "paragraph2": "Datele colectate prin cookie-uri sunt păstrate de noi timp de cel mult 16 zile.",
+          "paragraph3": "Datele dumneavoastră cu caracter personal colectate de noi atunci când solicitați asistență pentru serviciul „{{theService}}” sunt păstrate atât timp cât este necesar pentru a vă oferi asistență și, în orice caz, nu mai mult de 18 luni. "
+        }
+      },
+      "yourRights": {
+        "header": "DREPTURILE DUMNEAVOASTRĂ ",
+        "paragraph1": "Aveți dreptul să solicitați informații despre modul în care sunt prelucrate datele dumneavoastră cu caracter personal și să solicitați o copie a acestor date cu caracter personal. ",
+        "paragraph2": "Aveți dreptul de a solicita ca orice inexactitate a datelor dumneavoastră cu caracter personal să fie remediată fără întârziere. ",
+        "paragraph3": "Aveți dreptul de a solicita completarea oricăror date personale incomplete, inclusiv prin intermediul unei declarații suplimentare. ",
+        "paragraph4": "Aveți dreptul să solicitați ștergerea datelor dumneavoastră cu caracter personal dacă nu mai există o justificare pentru prelucrarea acestora. ",
+        "paragraph5": "Aveți dreptul, în anumite circumstanțe (de exemplu, în cazul în care este contestată acuratețea), să solicitați restricționarea prelucrării datelor dumneavoastră cu caracter personal. ",
+        "paragraph6": "Aveți dreptul de a vă opune prelucrării datelor dumneavoastră cu caracter personal. "
+      },
+      "internationalTransfers": {
+        "header": "TRANSFERĂRI INTERNAȚIONALE ",
+        "paragraph1": "Datele de analiză web pot fi transferate și stocate în siguranță în afara Marii Britanii. În acest caz, vor fi supuse unei protecții juridice echivalente prin utilizarea unor clauze contractuale tip."
+      },
+      "contactDetails": {
+        "header": "DATE DE CONTACT ",
+        "paragraph1": "Operatorul de date pentru datele dumneavoastră cu caracter personal este Cabinet Office. Datele de contact ale operatorului de date sunt: Cabinet Office, 70 Whitehall, Londra, SW1A 2AS, sau 0207 276 1234, sau <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (Se deschide într-o filă nouă)</a>.",
+        "paragraph2": "Datele de contact ale responsabilului cu protecția datelor al operatorului de date sunt: Stephen Jones, Data Protection Officer, Cabinet Office, Room 405, 70 Whitehall, Londra, SW1A 2AS, sau <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (Se deschide într-o filă nouă)</a>.",
+        "paragraph3": "Responsabilul cu protecția datelor oferă consiliere independentă și monitorizarea utilizării informațiilor personale de către Cabinet Office."
+      },
+      "complaints": {
+        "header": "RECLAMAȚII ",
+        "paragraph1": "În cazul în care considerați că datele dumneavoastră cu caracter personal au fost utilizate sau gestionate în mod greșit, puteți depune o reclamație către Information Commissioner, care este un organism de reglementare independent.  Datele de contact pentru Information Commissioner sunt:  Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF, sau 0303 123 1113, sau <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (Se deschide într-o filă nouă)</a>. Nicio reclamație trimisă către Information Commissioner nu aduce atingere dreptului dumneavoastră de a solicita despăgubiri în instanță. "
+      }
+    },
+    "cookies": {
+      "title": "Module cookie",
+      "header": "Module cookie",
+      "paragraph1": "„{{theService}}” pune fișiere de mici dimensiuni (cunoscute și sub denumirea de „module cookie”) în computerul dumneavoastră pentru a colecta informații despre modul în care utilizați serviciul.",
+      "paragraph2": "Modulele cookie sunt utilizate pentru:",
+      "list": "a furniza elemente esențiale ale serviciului | a măsura modul în care îl utilizați, astfel încât să poată fi actualizat și îmbunătățit în funcție de nevoile dumneavoastră | a trimite memento-uri cu privire la notificările pe care le-ați văzut, astfel încât să nu vă mai fie afișate",
+      "paragraph3": "Modulele cookie pentru „Verificare pentru un vehicul greu” nu sunt utilizate pentru a vă identifica într-un mod personal.",
+      "paragraph4": "În mod normal, veți vedea un mesaj pe site înainte ca un modul cookie să fie stocat pe computerul dumneavoastră.",
+      "paragraph5": "Aflați mai multe despre cum să <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">gestionați modulele cookie (Se deschide într-o filă nouă)</a>",
+      "saved": {
+        "header": "Setările dumneavoastră pentru modulele cookie au fost salvate",
+        "text": "Serviciile guvernamentale pot seta module cookie suplimentare, și dacă acesta este cazul, vor avea propria lor politică și sistem de afișare."
+      },
+      "cookies": {
+        "header": "Modul în care utilizăm modulele cookie"
+      },
+      "analytics": {
+        "header": "Măsurarea gradului de utilizare a site-ului (Google Analytics)",
+        "text": "Google Analytics setează următoarele module cookie:",
+        "paragraph1": "Noi utilizăm software-ul Google Analytics pentru a colecta informații despre modul în care utilizați aplicația „{{theService}}”. Facem acest lucru pentru a ne asigura că serviciul satisface nevoile utilizatorilor săi și pentru a ne ajuta să aducem îmbunătățiri.",
+        "paragraph2": "Google Analytics stochează informații despre:",
+        "paragraph3": "Nu permitem Google să utilizeze sau să partajeze datele analitice.",
+        "link": "Puteți refuza modulele cookie Google Analytics",
+        "question": "Acceptați modulele Google Analytics?",
+        "list": "Paginile pe care le vizitați pe „{{theService}}”|cât timp petreceți pe fiecare pagină|cum ați ajuns să utilizați acest serviciu|pe ce faceți clic în timp ce utilizați serviciul",
+        "choice": {
+          "yes": "Da, accept modulele cookie Google Analytics",
+          "no": "Nu sunt de acord cu monitorizarea modului meu de utilizare a site-ului "
+        }
+      },
+      "necessary": {
+        "header": "Module cookie esențiale",
+        "text": "Modulele cookie listate mai jos sunt necesare pentru a putea utiliza serviciul. Acestea includ:"
+      },
+      "buttons": {
+        "save": "Salvați modificările"
+      },
+      "lastUpdated": "Ultima actualizare a fost efectuată pe 10 noiembrie 2019",
+      "table": {
+        "columns": {
+          "name": "Nume",
+          "purpose": "Scop",
+          "expires": "Expiră"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Utilizat pentru distingerea utilizatorilor anonimi",
+            "expires": "2 ani"
+          },
+          "_gid": {
+            "purpose": "Utilizat pentru distingerea utilizatorilor anonimi",
+            "expires": "24 de ore"
+          },
+          "_gat": {
+            "purpose": "Solicitări de limitare",
+            "expires": "10 minute"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Solicitări de limitare",
+            "expires": "10 minute"
+          },
+          "consented_to_cookies": {
+            "purpose": "Salvează consimțământul dumneavoastră privind modulele cookie",
+            "expires": "1 an"
+          },
+          "language": {
+            "purpose": "Salvează preferința dumneavoastră privind limba",
+            "expires": "1 an"
+          },
+          "service_session": {
+            "purpose": "Salvează informațiile pe care le-ați introdus în timp ce utilizați serviciul",
+            "expires": "Când vă închideți browser-ul"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Setați pentru a vă reaminti dacă au fost sau nu afișate termenii privind versiunea Beta",
+            "expires": "15 minute"
+          }
+        }
+      }
+    }
+  }
+}
