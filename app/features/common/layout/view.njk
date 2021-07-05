@@ -10,9 +10,6 @@
 {% set serviceName = 'serviceName' | translate %}
 {% set serviceUrl = "http://localhost:8081" %}
 {% set homepageUrl = 'homepageUrl' | translate %}
-{% macro errorSummary(errors) %}
-    {% include "common/errorSummary/errorSummary.njk" %}
-{% endmacro %}
 {% macro saveButtons() %}
     <div class="buttons__container">
         {{ govukButton({

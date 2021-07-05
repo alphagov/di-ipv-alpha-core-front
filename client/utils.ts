@@ -25,8 +25,6 @@
 import * as govUK from "govuk-frontend";
 
 import CookieBanner from "./cookie-banner";
-import DropDownCheck from "./check-drop-down-attr";
-import { Accordions } from "./accordion";
 import TimeoutDialog from "./timeout-dialog/timeout-dialog";
 
 if (!String.prototype.padStart) {
@@ -57,12 +55,9 @@ const ready = (callback: () => void): void => {
 
 const initialize = (): void => {
   const cookies: CookieBanner = new CookieBanner();
-  const ddCheck: DropDownCheck = new DropDownCheck();
 
-  ddCheck.init();
   cookies.init();
   govUK.initAll();
-  Accordions.initAll();
   const timeoutDialog = document.querySelector(
     'meta[name="hmrc-timeout-dialog"]'
   );

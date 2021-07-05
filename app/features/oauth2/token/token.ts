@@ -1,13 +1,12 @@
 import hashSessionId from "../../../utils/hashSessionId";
 
 const jwt = require("jsonwebtoken");
-const privateSigningKey = process.env.DI_IPV_SIGN_KEY;
-const publicSigningKey = process.env.DI_IPV_SIGN_CERT;
 
 export const audience = "urn:di:ipv:orchestrator-stub";
 export const issuer = "urn:di:ipv:ipv-atp-playbox";
 
 export const createJwtToken = (subject: string): string => {
+  const privateSigningKey = process.env.DI_IPV_SIGN_KEY;
   return jwt.sign(
     {
       data: hashSessionId((Math.random() * 100000000).toString()),
@@ -25,6 +24,7 @@ export const createJwtToken = (subject: string): string => {
 
 export const isTokenValid = (token: string): boolean => {
   try {
+    const publicSigningKey = process.env.DI_IPV_SIGN_CERT;
     jwt.verify(token, publicSigningKey, {
       algorithms: ["RS256"],
       audience: audience,
