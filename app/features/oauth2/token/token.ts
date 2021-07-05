@@ -1,13 +1,8 @@
-import * as fs from "fs";
 import hashSessionId from "../../../utils/hashSessionId";
 
 const jwt = require("jsonwebtoken");
-const privateSigningKey = fs.readFileSync(
-  "./keys/private-di-ipv-atp-playbox.pem"
-);
-const publicSigningKey = fs.readFileSync(
-  "./keys/public-di-ipv-atp-playbox.pem"
-);
+const privateSigningKey = process.env.DI_IPV_SIGN_KEY;
+const publicSigningKey = process.env.DI_IPV_SIGN_CERT;
 
 export const audience = "urn:di:ipv:orchestrator-stub";
 export const issuer = "urn:di:ipv:ipv-atp-playbox";

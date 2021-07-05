@@ -1,23 +1,19 @@
 import { Request, Response } from "express";
-import * as fs from "fs";
 import { audience } from "../token/token";
-const pem2jwk = require("pem-jwk").pem2jwk;
+const jose = require("node-jose");
 
-const publicSigningKey = fs.readFileSync(
-  "./keys/public-di-ipv-atp-playbox.pem"
-);
+const publicSigningKey = process.env.DI_IPV_SIGN_CERT;
+const keystore = jose.JWK.createKeyStore();
 
-const getJwks = (req: Request, res: Response): void => {
-  const jwk = pem2jwk(publicSigningKey);
-  res.json({
-    keys: [
-      {
-        ...jwk,
-        kid: audience,
-        use: "sig",
-      },
-    ],
+const getJwks = async (req: Request, res: Response): Promise<void> => {
+  await keystore.add(publicSigningKey, "pem");
+  const jwks = keystore.toJSON(false);
+  jwks.keys.forEach((key) => {
+    key.kid = audience;
+    key.use = "sig";
   });
+
+  res.json(jwks);
 };
 
 export { getJwks };
