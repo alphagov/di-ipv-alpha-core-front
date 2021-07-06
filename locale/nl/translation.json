@@ -1,0 +1,340 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "Toekomstige grenzen",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Alle onderdelen openen",
+    "closeAll": "Alle onderdelen sluiten"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Fout:",
+  "phaseBanner": {
+    "version": "bèta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Nu",
+    "yes": "Ja",
+    "no": "Nee",
+    "opensInNewTab": " (Wordt geopend in een nieuw tabblad)",
+    "buttons": {
+      "saveAndContinue": "Bewaren en doorgaan",
+      "saveForLater": "Bewaren voor later",
+      "continue": "Doorgaan",
+      "cancel": "Annuleren",
+      "back": "Terug",
+      "submitDetails": "Gegevens indienen"
+    },
+    "localTimes": "Alle tijden zijn standaard Britse tijd",
+    "errorSummaryTitle": "Er is een probleem",
+    "survey": {
+      "text": "Wat vond u van deze dienst?",
+      "url": "#",
+      "note": "(neemt 30 seconden in beslag)"
+    },
+    "warningAssistive": "Waarschuwing"
+  },
+  "error": {
+    "error404": {
+      "title": "Pagina niet gevonden",
+      "header": "Pagina niet gevonden",
+      "checkAddress": "Hebt u het websiteadres ingetikt? Controleer dan of het juist is.<br/><br/> Hebt u het websiteadres geplakt? Controleer dan of u het hele adres hebt gekopieerd.<br/><br/> Als het websiteadres correct is of als u een link of knop hebt aangeklikt, dan werd deze pagina mogelijk verwijderd.<br/><br/>",
+      "goBackToStart": "Terugkeren naar ‘{{theService}}’"
+    },
+    "error500": {
+      "title": "Het spijt ons, er is een probleem met deze dienst",
+      "header": "Het spijt ons, er is een probleem met deze dienst",
+      "tryAgain": "Vernieuw het scherm of probeer het later opnieuw.<br/><br/> We hebben uw antwoorden niet bewaard. Wanneer de dienst beschikbaar is, zult u opnieuw moeten beginnen.<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Sessie verlopen",
+      "header": "Sessie verlopen",
+      "content": {
+        "paragraph1": "YUw sessie is verlopen vanwege inactiviteit.",
+        "paragraph2": "We hebben uw antwoorden niet opgeslagen. Wanneer u terugkeert naar de dienst, moet u opnieuw beginnen."
+      }
+    },
+    "forbidden": {
+      "title": "Pagina niet beschikbaar",
+      "header": "Pagina niet beschikbaar",
+      "content": {
+        "paragraph1": "Ga terug en controleer je invoer.",
+        "paragraph2": "Hebt u het websiteadres ingetikt? Controleer dan of het juist is.",
+        "paragraph3": "Als het webadres correct is of u een link of knop hebt geselecteerd, vernieuwt u uw scherm of probeert u het later nog eens."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Uw sessie verloopt bijna",
+      "message": "Voor uw veiligheid beëindigen we deze sessie. Uw antwoorden worden verwijderd over",
+      "keepAliveButton": "Doorgaan met sessie",
+      "signOutButton": "Sessie beëindigen",
+      "second": "seconde",
+      "seconds": "seconden",
+      "minute": "minuut",
+      "minutes": "minuten"
+    },
+    "contactUs": {
+      "content": "<div><p>Stel een vraag of vraag om in uw taal geholpen te worden.</p><a class=\"govuk-link\" href=\"mailto:bpdg.check-hgv@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">bpdg.check-hgv@cabinetoffice.gov.uk (Wordt geopend in een nieuw tabblad)</a></div><p> We streven ernaar binnen de 2 werkdagen te antwoorden.</p>",
+      "heading": "Als u hulp nodig hebt bij deze evaluatie"
+    },
+    "header": {},
+    "back": {
+      "back": "Terug"
+    },
+    "footer": {
+      "items": {
+        "help": "Hulp",
+        "cookies": "Cookies",
+        "privacy": "Privacymededeling",
+        "accessibility": "Toegankelijkheid",
+        "contact": "Contact",
+        "termsAndConditions": "Bepalingen en voorwaarden"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "Cookie banner",
+    "heading": "Vertel ons of u cookies accepteert",
+    "text": "Wij gebruiken <a class=\"govuk-link\" href=\"/cookies\">cookies om gegevens</a> te vergaren over uw gebruik van de dienst ‘{{theService}}’. We gebruiken deze informatie om uw behoeften te onderzoeken aan de hand van uw gebruik van de website, zodat we deze kunnen updaten en verbeteren.",
+    "buttons": {
+      "acceptAll": "Alle cookies aanvaarden",
+      "setPreferences": "Cookievoorkeuren instellen"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Cookies aanvaard",
+    "text": "U hebt alle cookies aanvaard. U kunt uw <a class=\"govuk-link\" href=\"/cookies\">cookie-instellingen</a> altijd wijzigen.",
+    "buttons": {
+      "hide": "Verbergen"
+    }
+  },
+  "pages": {
+    "start": {
+      "title": "Starten",
+      "header": "Starten"
+    },
+    "accessibilityStatement": {
+      "title": "Toegankelijkheidsverklaring aangaande de dienst ‘{{theService}}’",
+      "header": "Toegankelijkheidsverklaring aangaande de dienst ‘{{theService}}’",
+      "paragraph1": "Deze toegankelijkheidsverklaring geeft aan in hoeverre deze dienst toegankelijk is, wat u moet doen als u problemen ondervindt bij het gebruik ervan, en hoe problemen in verband met de toegankelijkheid van de dienst te melden.",
+      "paragraph2": "Deze dienst maakt deel uit van de website GOV.UK. De <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">hoofdwebsite GOV.UK heeft een afzonderlijke toegankelijkheidsverklaring (Wordt geopend in een nieuw tabblad)</a>.",
+      "paragraph3": "De informatie op deze pagina heeft enkel betrekking op de dienst ‘{{theService}}’, die u vindt op <a href=\"https://www.gov.uk/check-hgv-border\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://www.gov.uk/check-hgv-border (Wordt geopend in een nieuw tabblad)</a>.",
+      "usingThisService": {
+        "header": "Deze dienst gebruiken",
+        "paragraph1": "Met de dienst ‘{{theService}}’ kunt u nagaan of u de nodige documenten hebt om de grens van het Verenigd Koninkrijk over te steken met een zware bedrijfswagen (HGV) en om een toegangsvergunning voor Kent aan te vragen als u via de haven van Dover of de Eurotunnel van het VK naar de EU rijdt.",
+        "paragraph2": "Deze dienst wordt beheerd door de Britse overheidsdienst HM Revenue and Customs (HMRC). We willen dat zo veel mogelijk mensen deze dienst kunnen gebruiken. Dit betekent dat u het volgende moet kunnen doen:",
+        "list1": {
+          "item1": "kleuren, contrasten en lettertypes veranderen",
+          "item2": "tot 300% inzoomen zonder dat er tekst buiten beeld valt",
+          "item3": "de procedure van begin tot eind doorlopen met enkel een toetsenbord",
+          "item4": "de procedure van begin tot eind doorlopen met behulp van spraakherkenningssoftware",
+          "item5": "de dienst beluisteren met behulp van een schermlezer (zoals de laatste versies van JAWS, NVDA en VoiceOver)"
+        },
+        "paragraph4": "Bovendien hebben we gezorgd dat de tekst met betrekking tot de dienst zo eenvoudig mogelijk te begrijpen is.",
+        "paragraph5": "<a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet heeft advies (Wordt geopend in een nieuw tabblad)</a> over het aanpassen van uw toestel aan uw beperking."
+      },
+      "howAccessibleIsThisService": {
+        "header": "De toegankelijkheid van deze dienst",
+        "paragraph1": "Deze dienst voldoet gedeeltelijk aan de norm <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Web Content Accessibility Guidelines version 2.1 AA (Wordt geopend in een nieuw tabblad)</a>.",
+        "paragraph2": "Sommige mensen kunnen problemen hebben met het gebruik van delen van deze dienst:",
+        "list1": {
+          "item1": "Sommige paginatitels in de dienst zijn niet descriptief",
+          "item2": "Bij het selecteren van de datum en het tijdstip van een toegangsvergunning voor Kent ontbreekt een goedkeuringsstatus die erop wijst dat de gebruiker geen tijdstip heeft aangegeven.",
+          "item3": "De tekst die de gevolgen beschrijft van rijden zonder een toegangsvergunning voor Kent is mogelijk te groot voor het tekstvak.",
+          "item4": "Het onderdeel 'En wat nu?' dat verschijnt wanneer een toegangsvergunning voor Kent werd uitgereikt, bevat opmaak die schermlezers moeilijk kunnen lezen.",
+          "item5": "De cookiebanner en betabanner gebruiken onjuiste ARIA-rollen.",
+          "item6": "De pagina waarop u gevraagd wordt 'Hebt u voor alle goederen die u vervoert een identificatienummer voor verzending (MRN) van een EU-invoerverklaring of een begeleidingsdocument douanevervoer (TAD)?' geeft niet de juiste focus state weer.",
+          "item7": "Wanneer een toegangsvergunning voor Kent wordt toegewezen, is er onvoldoende contextuele informatie over de status van de vergunning binnen het kleurgecodeerde paneel."
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "Wat moet u doen als u problemen hebt met het gebruik van deze dienst",
+        "paragraph1": "U kunt <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">voor extra ondersteuning contact opnemen met HMRC (Wordt geopend in een nieuw tabblad)</a> als u hulp nodig hebt bij het invullen van formulieren of een ander formaat nodig hebt, zoals grote lettertypes, een geluidsopname of braille."
+      },
+      "reportingProblems": {
+        "header": "Problemen met de toegankelijkheid van deze dienst melden",
+        "paragraph1": "We willen de toegankelijkheid van deze dienst steeds verbeteren. Ondervindt u problemen die niet op deze pagina vermeld worden of vindt u dat wij niet voldoen aan de vereisten inzake toegankelijkheid, dan kunt u <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">het toegankelijkheidsprobleem melden (Wordt geopend in een nieuw tabblad)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "Als u niet tevreden bent met ons antwoord",
+        "paragraph1": "De Britse Equality and Human Rights Commission (EHRC) is verantwoordelijk voor de naleving van de Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (de 'toegankelijkheidsvoorschriften'). Als u niet tevreden bent met onze reactie op uw klacht, dan kunt u <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">contact opnemen met de Equality Advisory and Support Service (EASS) (Wordt geopend in een nieuw tabblad)</a> of de <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Equality Commission for Northern Ireland (ECNI) (Wordt geopend in een nieuw tabblad)</a> als u in Noord-Ierland woont."
+      },
+      "contactingUs": {
+        "header": "Telefonisch contact met ons opnemen of een bezoek van een medewerker aanvragen",
+        "paragraph1": "Wij bieden een dienst die spraak omzet in tekst en vice versa voor doven, slechthorenden en personen met een spraakgebrek.",
+        "paragraph2": "We kunnen u in contact brengen met een tolk Britse gebarentaal (BSL) of u kunt een bezoek aanvragen van een medewerker van HMRC die u helpt de procedure te doorlopen.",
+        "paragraph3": "Meer informatie over <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">de aanvullende ondersteuning van HMRC (Wordt geopend in een nieuw tabblad)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Technische gegevens over de toegankelijkheid van deze dienst",
+        "paragraph1": "HMRC wil deze dienst toegankelijk maken in overeenstemming met de Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.",
+        "paragraph2": "Deze dienst voldoet gedeeltelijk aan de <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">Web Content Accessibility Guidelines version 2.1 AA standard (Wordt geopend in een nieuw tabblad)</a>, dit omwille van de hieronder genoemde non-conformiteiten.",
+        "nonAccessibleContent": {
+          "header": "Niet-toegankelijke inhoud",
+          "paragraph1": "De hieronder opgenoemde inhoud is om de volgende redenen niet-toegankelijk.",
+          "nonCompliance": {
+            "header": "Niet-naleving van de voorschriften inzake toegankelijkheid",
+            "paragraph1": "Items in het onderdeel 'En wat nu?' zijn onjuist opgemaakt als lijst, en vervolgens in een combinatie van p, strong, br, small als nabootsing van wat een hoofding niveau 3 en een paragraaf zou moeten zijn. Hierdoor kunnen gebruikers van een schermlezer niet navigeren door middel van hoofdingen, en is de pagina moeilijker te lezen. Dit voldoet niet aan het WCAG succescriterium 1.3.1 (info and relationships). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph2": "ARIA-rollen worden onjuist gebruikt in de cookiebanner en betabanner. Dit voldoet niet aan WCAG succescriterium 1.3.1 (info and relationships); 1.3.6 (identify purpose) en 2.4.1 (bypass blocks). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph3": "De tekst die de gevolgen uitlegt van rijden zonder een toegangsvergunning voor Kent bevat harde spaties die ervoor kunnen zorgen dat de tekst te groot is voor het vak. Dit voldoet niet aan WCAG succescriterium 1.4.10 (reflow). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph4": "Wanneer een toegangsvergunning voor Kent wordt toegewezen, is er onvoldoende contextuele informatie over de status van de vergunning binnen het kleurgecodeerde paneel. Dit voldoet niet aan WCAG succescriterium 1.4.1 (use of color). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph5": "De pagina waarop de gebruiker gevraagd wordt 'Hebt u voor alle goederen die u vervoert een identificatienummer voor verzending (MRN) van een EU-invoerverklaring of een begeleidingsdocument douanevervoer (TAD)?' toont onjuiste focus styles. Dit voldoet niet aan WCAG succescriterium 1.4.11 (Non-test contrast) en 2.4.7 (focus visible). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph6": "Het ontbreekt de paginatitels in de gehele dienst aan contextuele informatie. Dit voldoet niet aan WCAG-succescriterium 2.4.8 (location). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020.",
+            "paragraph7": "Er ontbreekt een foutstatus wanneer geen tijdstip wordt geselecteerd. Dit voldoet niet aan WCAG succescriterium 3.3.1 (error identification). We plannen dit conformiteitsprobleem te verhelpen tegen 31 januari 2020."
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "Hoe we deze dienst getest hebben",
+        "paragraph1": "De dienst werd voor het laatst getest op 11 december 2020 en gecontroleerd op naleving van WCAG 2.1 AA.",
+        "paragraph2": "De dienst werd gebouwd met onderdelen getest door het <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">Digital Accessibility Centre (Wordt geopend in een nieuw tabblad)</a>. De volledige dienst werd getest door HMRC in samenwerking met gebruikers met een beperking.",
+        "paragraph3": "Deze pagina werd gepubliceerd op 11 december 2020. Ze werd voor het laatst bijgewerkt op 11 december 2020."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Privacymededeling aangaande ‘{{theService}}’ ",
+      "header": "Privacymededeling aangaande ‘{{theService}}’ ",
+      "paragraph1": "In deze mededeling leest u meer over ons gebruik van uw persoonsgegevens en over uw rechten. Deze mededeling werd opgesteld conform Artikel 13 en/of 14 van de Algemene Verordening Gegegevensbescherming (AVG). ",
+      "yourData": {
+        "header": "UW GEGEVENS ",
+        "purposeSection": {
+          "header": "Doel",
+          "paragraph1": "Wij verwerken uw persoonsgegevens met verschillende doeleinden:",
+          "list": {
+            "item1": "om de dienst ‘{{theService}}’ te kunnen verlenen",
+            "item2": "om een toegangsvergunning voor Kent (KAP) uit te geven aan daarvoor in aanmerking komende aangiften",
+            "item3": "om gebruikers van onze diensten te ondersteunen",
+            "item4": "om organisaties en medewerkers gegevens te verstrekken die hun activiteiten op het vlak van verkeersstroom, grensbeheer en wetshandhaving vergemakkelijken",
+            "item5": "om de website en uw gegevens te beveiligen",
+            "item6": "om onze dienst te verbeteren en verder te ontwikkelen"
+          }
+        },
+        "dataSection": {
+          "header": "De gegevens",
+          "paragraph1": "Wij verwerken de volgende persoonsgegevens: het kenteken van HGV's waarvoor een toegangsvergunning voor Kent wordt verstrekt, uw e-mailadres dat we gebruiken om de toegangsvergunning voor Kent te versturen, uw IP-adres (zodanig dat u zich kunt aanmelden voor de dienst), webanalysegegevens (om het gebruik van de dienst te traceren en deze te verbeteren), en uw naam en e-mailadres (wanneer u een support ticket aanmaakt)."
+        },
+        "legalSection": {
+          "header": "Wettelijke basis van de verwerking ",
+          "paragraph1": "De wettelijke basis voor de verwerking van uw persoonsgegevens is dat deze nodig is om taken uit te voeren die van openbaar belang zijn, of de officiële bevoegdheid zijn van de databeheerder. In dit geval gaat het om verkeersbeheer, management van grensverkeer, en de controle van de gereedheid om de grens over te steken"
+        },
+        "recipientsSection": {
+          "header": "Ontvangers",
+          "paragraph1": "Voertuigaangiftes gedaan via de dienst ‘{{theService}}’ worden gedeeld met de grensverkeerdienst van het Cabinet Office <a href=\"https://www.gov.uk/government/publications/privacy-notice-for-border-flow-service\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Lees meer over het privacybeleid van de grensverkeerdienst (Wordt geopend in een nieuw tabblad)</a>.",
+          "paragraph2": "Wij zullen uw persoonsgegevens delen met HMRC die ons platform van diensten verstrekken, en onze IT-leverancier die zorgt voor hosting en webanalyse. ",
+          "paragraph3": "Gegevens betreffende toegangsvergunningen voor Kent delen we tevens met de politie van Kent en de Britse overheidsorganisaties Department for Environment, Food and Rural Affairs, het Department for Transport en het Driver Vehicle and Standards Agency. "
+        },
+        "retentionSection": {
+          "header": "Behoud ",
+          "paragraph2": "Gegevens die we verzamelen d.m.v. cookies bewaren we niet langer dan 16 dagen.",
+          "paragraph3": "Uw persoonsgegevens die we vergaren wanneer u hulp vraagt aangaande de dienst ‘{{theService}}’ bewaren we zo lang als nodig is om u van dienst te zijn, met een maximum van 18 maanden."
+        }
+      },
+      "yourRights": {
+        "header": "UW RECHTEN ",
+        "paragraph1": "U hebt het recht informatie te vragen over de verwerking van uw persoonsgegevens, en om een afschrift van die persoonsgegevens te vragen.",
+        "paragraph2": "U hebt het recht te vragen dat onjuistheden in uw persoonsgegevens onverwijld worden gecorrigeerd.",
+        "paragraph3": "U hebt het recht te vragen dat onvolledige persoonsgegevens aangevuld worden, bv. door een aanvullende verklaring.",
+        "paragraph4": "U hebt het recht te vragen dat uw persoonsgegevens worden gewist als er geen reden meer is voor de verwerking ervan.",
+        "paragraph5": "U hebt het recht om in bepaalde gevallen (bv. wanneer de juistheid in vraag wordt gesteld) te verzoeken tot beperkte verwerking van uw persoonsgegevens.",
+        "paragraph6": "U hebt het recht bezwaar te uiten tegen de verwerking van uw persoonsgegevens."
+      },
+      "internationalTransfers": {
+        "header": "INTERNATIONALE OVERDRACHT ",
+        "paragraph1": "Webanalysegegevens kunnen overgedragen worden buiten het VK en daar veilig bewaard. In dat geval genieten ze vergelijkbare wetsbescherming d.m.v. modelovereenkomstclausules."
+      },
+      "contactDetails": {
+        "header": "CONTACTGEGEVENS ",
+        "paragraph1": "De beheerder van uw persoonsgegevens is het Cabinet Office. Dit is als volgt te bereiken: Cabinet Office, 70 Whitehall, London, SW1A 2AS, of 0207 276 1234, of <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (Wordt geopend in een nieuw tabblad)</a>.",
+        "paragraph2": "De contactgegevens van de functionaris voor gegevensbescherming van deze gegevensbeheerder zijn: Stephen Jones, Data Protection Officer, Cabinet Office, Room 405, 70 Whitehall, London, SW1A 2AS, of <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (Wordt geopend in een nieuw tabblad)</a>.",
+        "paragraph3": "De functionaris voor gegevensbescherming geeft onafhankelijk advies en houdt toezicht op het gebruik van persoonsgegevens door het Cabinet Office."
+      },
+      "complaints": {
+        "header": "KLACHTEN ",
+        "paragraph1": "Bent u van mening dat uw persoonsgegevens misbruikt of verkeerd behandeld worden, kunt u klacht indienen bij de Information Commissioner. U kunt deze onafhankelijke toezichthouder als volgt bereiken: Information Commissioner's Office, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF, of 0303 123 1113, of <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (Wordt geopend in een nieuw tabblad)</a>. Als u klacht indient bij de Information Commissioner blijft uw recht om verhaal te zoeken bij de rechtbank onverminderd van kracht. "
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "header": "Cookies",
+      "paragraph1": "‘Controleren of een zware bedrijfswagen (HGV) klaar is om de grens over te steken’ plaatst bestandjes (ook wel ‘cookies’ genoemd) op uw computer om gegevens te verzamelen over uw gebruik van de dienst.",
+      "paragraph2": "Cookies dienen om:",
+      "list": "essentiële onderdelen van de dienst te leveren|uw gebruik van de dienst te peilen, zodat we deze kunnen bijwerken en verbeteren op basis van uw behoeften|op te slaan welke meldingen u al gezien hebt, zodat u ze niet opnieuw te zien krijgt",
+      "paragraph3": "De dienst ‘{{theService}}’ gebruikt geen cookies om u persoonlijk te identificeren.",
+      "paragraph4": "Normaliter toont de website u een boodschap voordat een cookie op uw computer wordt opgeslagen.",
+      "paragraph5": "Meer informatie over <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">cookiebeheer (Wordt geopend in een nieuw tabblad)</a>",
+      "saved": {
+        "header": "Uw cookie-instellingen werden opgeslagen",
+        "text": "Overheidsdiensten kunnen aanvullende cookies instellen. In dat geval hebben zij hun eigen cookiebeleid en -banner."
+      },
+      "cookies": {
+        "header": "Hoe wij cookies gebruiken"
+      },
+      "analytics": {
+        "header": "Het gebruik van de website meten (Google Analytics)",
+        "text": "Google Analytics stelt de volgende cookies in:",
+        "paragraph1": "Wij gebruiken de software Google Analytics om gegevens te vergaren over uw gebruik van de dienst ‘Controleren of een zware bedrijfswagen (HGV) klaar is om de grens over te steken’. Dit doen we om ervoor te zorgen dat de dienst tegemoetkomt aan de behoeften van de gebruikers en om ons te helpen verbeteringen te maken.",
+        "paragraph2": "Google Analytics bewaart informatie over:",
+        "paragraph3": "Wij geven Google geen toestemming om analytische gegevens te gebruiken of te delen.",
+        "link": "U kunt u afmelden voor Google Analytics",
+        "question": "Accepteert u de cookies van Google Analytics?",
+        "list": "de pagina’s die u bezoekt op ‘{{theService}}’|hoe lang u op de verschillende pagina’s blijft|via welke weg u op onze dienst bent terechtgekomen|wat u aanklikt terwijl u de dienst gebruikt",
+        "choice": {
+          "yes": "Ja, meld me aan voor de cookies van Google Analytics",
+          "no": "Nee, traceer mijn gebruik van de website niet "
+        }
+      },
+      "necessary": {
+        "header": "Essentiële cookies",
+        "text": "De onderstaande cookies hebt u nodig om de dienst te kunnen gebruiken. Deze zijn o.a.:"
+      },
+      "buttons": {
+        "save": "Wijzigingen opslaan"
+      },
+      "lastUpdated": "Laatst bijgewerkt op 10 november 2019",
+      "table": {
+        "columns": {
+          "name": "Naam",
+          "purpose": "Functie",
+          "expires": "Verloopt"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Dient om anonieme gebruikers te kunnen onderscheiden",
+            "expires": "2 jaar"
+          },
+          "_gid": {
+            "purpose": "Dient om anonieme gebruikers te kunnen onderscheiden",
+            "expires": "24 uur"
+          },
+          "_gat": {
+            "purpose": "Aanvragen vertragen",
+            "expires": "10 minuten"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Aanvragen vertragen",
+            "expires": "10 minuten"
+          },
+          "consented_to_cookies": {
+            "purpose": "Uw cookietoestemming opslaan",
+            "expires": "1 jaar"
+          },
+          "language": {
+            "purpose": "Uw taalvoorkeur opslaan",
+            "expires": "1 jaar"
+          },
+          "service_session": {
+            "purpose": "Bewaart gegevens die u ingevoerd hebt terwijl u de dienst gebruikte",
+            "expires": "Wanneer u uw browser sluit"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Om te bewaren of de voorwaarden van de niet-openbare bètaversie aan u werden getoond",
+            "expires": "15 minuten"
+          }
+        }
+      }
+    }
+  }
+}

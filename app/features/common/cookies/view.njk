@@ -1,0 +1,142 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{% set pageTitleName = 'pages.cookies.title' | translate %}
+{% extends "common/layout/view.njk" %}
+{% block content %}
+    <div id="cookies-page" class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {% if saved %}
+                <div class="cookie-settings__confirmation" data-cookie-confirmation="true">
+                    <div class="cookie-save-success-alert" data-module="initial-focus" role="alert" tabindex="-1">
+                        <h2>{{ 'pages.cookies.saved.header' | translate }}</h2>
+                        <p>{{ 'pages.cookies.saved.text' | translate }}</p>
+                    </div>
+                </div>
+            {% endif %}
+            <h1 class="govuk-heading-xl">{{ 'pages.cookies.header' | translate }}</h1>
+            <p>{{ "pages.cookies.paragraph1" | translate({ theService: ( "serviceName" | translate) }) }}</p>
+            <p>{{ "pages.cookies.paragraph2" | translate }}</p>
+            {% set listItems = ("pages.cookies.list" | translate).split("|") %}
+            {% if listItems.length > 0 %}
+                <ul class="govuk-list govuk-list--bullet">
+                    {% for item in listItems %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <p>{{ "pages.cookies.paragraph3" | translate({ theService: ( "serviceName" | translate) }) }}</p>
+            <p>{{ "pages.cookies.paragraph4" | translate }}</p>
+            <p>{{ "pages.cookies.paragraph5" | translate | safe }}</p>
+            <h2 class="govuk-heading-l">{{ "pages.cookies.cookies.header" | translate }}</h2>
+            <h3 class="govuk-heading-m" id="strictly-necessary-cookies">{{ "pages.cookies.necessary.header" | translate }}</h2>
+            <p>{{ "pages.cookies.necessary.text" | translate }}</p>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ "pages.cookies.table.columns.name" | translate }}</th>
+                        <th scope="col">{{ "pages.cookies.table.columns.purpose" | translate }}</th>
+                        <th scope="col">{{ "pages.cookies.table.columns.expires" | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>service_session</td>
+                        <td>{{ "pages.cookies.table.rows.service_session.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows.service_session.expires" | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>language</td>
+                        <td>{{ "pages.cookies.table.rows.language.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows.language.expires" | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>consented-to-cookies</td>
+                        <td>{{ "pages.cookies.table.rows.consented_to_cookies.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows.consented_to_cookies.expires" | translate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="govuk-heading-m govuk-!-margin-top-5" id="cookies-that-measure-website-use">{{ "pages.cookies.analytics.header" | translate }}</h2>
+            <form action="{{ paths.cookies.index }}" method="post" class="form">
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}"/>
+                <p>{{ "pages.cookies.analytics.paragraph1" | translate({ theService: ( "serviceName" | translate) }) | safe }}</p>
+                <p>{{ "pages.cookies.analytics.paragraph2" | translate | safe }}</p>
+                {% set listItems = ("pages.cookies.analytics.list" | translate({
+                    theService: ("serviceName" | translate)
+                })).split("|") %}
+                {% if listItems.length > 0 %}
+                    <ul class="govuk-list govuk-list--bullet">
+                        {% for item in listItems %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <p>{{ "pages.cookies.analytics.paragraph3" | translate | safe }}</p>
+                {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "usage",
+                name: "usage",
+                fieldset: {
+                    legend: {
+                        text: 'pages.cookies.analytics.question' | translate,
+                        classes: "govuk-fieldset__legend govuk-fieldset__legend--m"
+                    }
+                },
+                items: [
+                    {
+                    value: "true",
+                    checked: consented_to_cookies.usage === "true",
+                    text: "pages.cookies.analytics.choice.yes" | translate
+
+                    },
+                    {
+                    value: "false",
+                    checked: consented_to_cookies.usage === "false",
+                    text: "pages.cookies.analytics.choice.no" | translate
+                    }
+                ]
+                }) }}
+                {{ govukButton({
+                text: "pages.cookies.buttons.save" | translate
+            }) }}
+            </form>
+            <p>{{ "pages.cookies.analytics.text" | translate }}</p>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ "pages.cookies.table.columns.name" | translate }}</th>
+                        <th scope="col">{{ "pages.cookies.table.columns.purpose" | translate }}</th>
+                        <th scope="col">{{ "pages.cookies.table.columns.expires" | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>_ga</td>
+                        <td>{{ "pages.cookies.table.rows._ga.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows._ga.expires" | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>_gid</td>
+                        <td>{{ "pages.cookies.table.rows._gid.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows._gid.expires" | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>_gat</td>
+                        <td>{{ "pages.cookies.table.rows._gat.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows._gat.expires" | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>_gat_UA_*</td>
+                        <td>{{ "pages.cookies.table.rows._gat_gtag_UA_.purpose" | translate }}</td>
+                        <td>{{ "pages.cookies.table.rows._gat_gtag_UA_.expires" | translate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <a href="https://tools.google.com/dlpage/gaoptout" class="govuk-link" rel="noreferrer noopener" target="_blank">{{ "pages.cookies.analytics.link" | translate }}{{ "common.opensInNewTab" | translate }}</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

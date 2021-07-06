@@ -1,0 +1,35 @@
+{% if consented_to_cookies.usage == null %}
+  <div role="region" aria-label="{{ 'cookieBanner.title' | translate }}" id="cookie-banner" class="govuk-clearfix govuk-!-padding-top-3 show-if-js">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">{{ 'cookieBanner.heading' | translate }}</h2>
+          <p class="govuk-body">{{ 'cookieBanner.text' | translate | safe }}</p>
+          <div class="govuk-grid-column-full govuk-grid-column-one-half-from-desktop">
+            <button id="accept-all-cookies" class="govuk-button" type="submit">{{ 'cookieBanner.buttons.acceptAll' | translate }}</button>
+          </div>
+          <div class="govuk-grid-column-full govuk-grid-column-one-half-from-desktop">
+            <a class="govuk-button govuk-button--secondary" role="button" href="/cookies">{{ 'cookieBanner.buttons.setPreferences' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% if consented_to_cookies.usage == null %}
+  <noscript>
+    <div role="region" aria-label="{{ 'cookieBanner.title' | translate }}" id="cookie-banner-no-js" class="govuk-clearfix govuk-!-padding-top-3">
+      <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">{{ 'cookieBanner.heading' | translate }}</h2>
+            <p class="govuk-body">{{ 'cookieBanner.text' | translate | safe }}</p>
+            <div class="govuk-grid-column-full govuk-grid-column-one-half-from-desktop">
+              <a class="govuk-button" role="button" href="/cookies">{{ 'cookieBanner.buttons.setPreferences' | translate }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </noscript>
+{% endif %}

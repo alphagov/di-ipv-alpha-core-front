@@ -1,0 +1,72 @@
+{% extends "common/layout/view.njk" %}
+{% set pageTitleName = 'pages.accessibilityStatement.title' | translate({
+    theService: ("serviceName" | translate)
+}) %}
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">{{'pages.accessibilityStatement.header' | translate({ theService: ( "serviceName" | translate) }) }}</h1>
+            <p class="govuk-body-l">{{'pages.accessibilityStatement.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.paragraph2' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.paragraph3' | translate({ theService: ( "serviceName" | translate) }) | safe }}</p>
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.usingThisService.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.usingThisService.paragraph1' | translate({ theService: ( "serviceName" | translate) }) | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.usingThisService.paragraph2' | translate | safe}}</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>{{'pages.accessibilityStatement.usingThisService.list1.item1' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.usingThisService.list1.item2' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.usingThisService.list1.item3' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.usingThisService.list1.item4' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.usingThisService.list1.item5' | translate | safe }}</li>
+            </ul>
+            <p class="govuk-body">{{'pages.accessibilityStatement.usingThisService.paragraph4' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.usingThisService.paragraph5' | translate | safe }}</p>
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.howAccessibleIsThisService.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.howAccessibleIsThisService.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.howAccessibleIsThisService.paragraph2' | translate | safe }}</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item1' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item2' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item3' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item4' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item5' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item6' | translate | safe }}</li>
+                <li>{{'pages.accessibilityStatement.howAccessibleIsThisService.list1.item7' | translate | safe }}</li>
+            </ul>
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.difficultyWithSystem.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.difficultyWithSystem.paragraph1' | translate | safe }}</p>
+
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.reportingProblems.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.reportingProblems.paragraph1' | translate({url: "#"}) | safe }}</p>
+
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.ifYouAreNotHappy.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.ifYouAreNotHappy.paragraph1' | translate | safe }}</p>
+
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.contactingUs.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.contactingUs.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.contactingUs.paragraph2' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.contactingUs.paragraph3' | translate | safe }}</p>
+
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.paragraph2' | translate | safe }}</p>
+
+            <h3 class="govuk-heading-m">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.header' | translate }}</h3>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.paragraph1' | translate | safe }}</p>
+
+            <h4 class="govuk-heading-s">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.header' | translate }}</h4>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph2' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph3' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph4' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph5' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph6' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.technicalAboutServiceAccessibility.nonAccessibleContent.nonCompliance.paragraph7' | translate | safe }}</p>
+
+            <h2 class="govuk-heading-l">{{'pages.accessibilityStatement.howWeTested.header' | translate }}</h2>
+            <p class="govuk-body">{{'pages.accessibilityStatement.howWeTested.paragraph1' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.howWeTested.paragraph2' | translate | safe }}</p>
+            <p class="govuk-body">{{'pages.accessibilityStatement.howWeTested.paragraph3' | translate | safe }}</p>
+        </div>
+    </div>
+{% endblock %}

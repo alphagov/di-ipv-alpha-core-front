@@ -1,0 +1,340 @@
+{
+  "provider": "GOV.UK",
+  "providerLongName": "GOV.UK",
+  "pageTitle": "Ffiniau'r Dyfodol",
+  "serviceName": "GOV.UK Service",
+  "accordion": {
+    "openAll": "Agor pob adran",
+    "closeAll": "Cau pob adran"
+  },
+  "homepageUrl": "https://www.gov.uk/",
+  "errorTitlePrefix": "Gwall:",
+  "phaseBanner": {
+    "version": "beta",
+    "text": "This is a new service - your <a  href=\"#\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">feedback (opens in new tab)</a> will help us to improve it."
+  },
+  "common": {
+    "now": "Nawr",
+    "yes": "Ie",
+    "no": "Nage",
+    "opensInNewTab": " (Yn agor mewn tab newydd)",
+    "buttons": {
+      "saveAndContinue": "Cadw a pharhau",
+      "saveForLater": "Cadw tan wedyn",
+      "continue": "Parhau",
+      "cancel": "Canslo",
+      "back": "Yn ôl",
+      "submitDetails": "Cyflwyno manylion"
+    },
+    "localTimes": "Alle tijden zijn standaard Britse tijd",
+    "errorSummaryTitle": "Mae yna broblem",
+    "survey": {
+      "text": "Beth yw'ch barn chi am y gwasanaeth hwn?",
+      "url": "#",
+      "note": "(yn cymryd 30 eiliad)"
+    },
+    "warningAssistive": "Rhybudd"
+  },
+  "error": {
+    "error404": {
+      "title": "Y tudalen heb ei ganfod",
+      "header": "Y tudalen heb ei ganfod",
+      "checkAddress": "Os teipio'r cyfeiriad gwe wnaethoch chi, gwiriwch ei fod yn gywir.<br/><br/> Os gwnaethoch chi gludo'r cyfeiriad gwe, gwiriwch eich bod wedi copïo'r cyfeiriad cyfan.<br/><br/> Os yw'r cyfeiriad gwe yn gywir neu os gwnaethoch chi ddewis dolen neu fotwm, efallai bod y tudalen hwn wedi'i dynnu.<br/><br/>",
+      "goBackToStart": "Mynd yn ôl i '{{theService}}'"
+    },
+    "error500": {
+      "title": "Ymddiheuriadau, mae yna broblem gyda'r gwasanaeth hwn",
+      "header": "Ymddiheuriadau, mae yna broblem gyda'r gwasanaeth hwn",
+      "tryAgain": "Adnewyddwch eich sgrin neu rhowch gynnig arall arni rywbryd eto.<br/><br/> Dydyn ni ddim wedi cadw’ch atebion. Pan fydd y gwasanaeth ar gael bydd rhaid ichi ddechrau eto.<br/><br/>"
+    },
+    "timeoutError": {
+      "title": "Amseriad y sesiwn",
+      "header": "Amseriad y sesiwn",
+      "content": {
+        "paragraph1": "Mae eich sesiwn wedi amseru oherwydd anweithgarwch.",
+        "paragraph2": "Nid ydym wedi arbed eich atebion. Pan ddychwelwch i'r gwasanaeth, bydd yn rhaid ichi ddechrau eto."
+      }
+    },
+    "forbidden": {
+      "title": "Tudalen ddim ar gael",
+      "header": "Tudalen ddim ar gael",
+      "content": {
+        "paragraph1": "Ewch yn ôl a gwirio'ch cais.",
+        "paragraph2": "Os teipio'r cyfeiriad gwe wnaethoch chi, gwiriwch ei fod yn gywir.",
+        "paragraph3": "Os yw'r cyfeiriad gwe yn gywir neu os gwnaethoch chi ddewis dolen neu fotwm, adnewyddwch eich sgrin neu rhowch gynnig arall arni rywbryd eto."
+      }
+    }
+  },
+  "components": {
+    "timeoutDialog": {
+      "title": "Mae eich sesiwn ar fin dod i ben",
+      "message": "Er lles eich diogelwch chi, byddwn yn gorffen y sesiwn hon ac yn dileu eich atebion ymhen",
+      "keepAliveButton": "Parhau â’r sesiwn",
+      "signOutButton": "Gorffen y sesiwn",
+      "second": "eiliad",
+      "seconds": "o eiliadau",
+      "minute": "funud",
+      "minutes": "o funudau"
+    },
+    "contactUs": {
+      "content": "<div><p>Gofynnwch gwestiwn neu mynnwch help yn eich iaith chi.</p><a class=\"govuk-link\" href=\"mailto:bpdg.check-hgv@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">bpdg.check-hgv@cabinetoffice.gov.uk (Yn agor mewn tab newydd)</a></div><p> Rydyn ni’n anelu at ymateb o fewn dau ddiwrnod gwaith.</p>",
+      "heading": "Os oes arnoch angen help i gwblhau'r asesiad hwn"
+    },
+    "header": {},
+    "back": {
+      "back": "Yn ôl"
+    },
+    "footer": {
+      "items": {
+        "help": "Help",
+        "cookies": "Cwcis",
+        "privacy": "Preifatrwydd",
+        "accessibility": "Hygyrchedd",
+        "contact": "Cysylltu",
+        "termsAndConditions": "Telerau ac Amodau"
+      }
+    }
+  },
+  "cookieBanner": {
+    "title": "banner cwc",
+    "heading": "Dwedwch a ydych yn derbyn cwcis ai peidio",
+    "text": "Rydym yn defnyddio <a class=\"govuk-link\" href=\"/cookies\">cwcis i gasglu gwybodaeth</a> am sut rydych chi'n defnyddio '{{theService}}'. Rydym yn defnyddio'r wybodaeth hon i fesur sut rydych chi'n defnyddio'r wefan, er mwyn ei diweddaru a'i gwella ar sail eich anghenion.",
+    "buttons": {
+      "acceptAll": "Derbyn pob cwci",
+      "setPreferences": "Gosod eich dewisiadau o ran cwcis"
+    }
+  },
+  "allCookiesAccepted": {
+    "title": "Cwcis wedi'u derbyn",
+    "text": "Rydych chi wedi derbyn pob cwci. Cewch <a class=\"govuk-link\" href=\"/cookies\">newid eich gosodiadau cwcis</a> unrhyw bryd.",
+    "buttons": {
+      "hide": "Cuddio"
+    }
+  },
+  "pages": {
+    "start": {
+      "title": "Dechrau",
+      "header": "Dechrau"
+    },
+    "accessibilityStatement": {
+      "title": "Datganiad hygyrchedd '{{theService}}'",
+      "header": "Datganiad hygyrchedd '{{theService}}'",
+      "paragraph1": "Mae'r datganiad hygyrchedd hwn yn esbonio pa mor hygyrch yw'r gwasanaeth hwn, beth i'w wneud os ydych yn cael trafferth i’w ddefnyddio, a sut i roi gwybod am broblemau hygyrchedd gyda'r gwasanaeth.",
+      "paragraph2": "Mae'r gwasanaeth hwn yn rhan o wefan ehangach GOV.UK. Mae yna <a class=\"govuk-link\" href=\"https://www.gov.uk/help/accessibility\" rel=\"noreferrer noopener\" target=\"_blank\">ddatganiad hygyrchedd ar wahân ar gyfer prif wefan GOV.UK (Yn agor mewn tab newydd)</a>.",
+      "paragraph3": "Dim ond gwybodaeth am y gwasanaeth ‘{{theService}}’ sydd wedi’i chynnwys ar y tudalen hwn, sef gwasanaeth sydd ar gael yn  <a href=\"https://www.gov.uk/check-hgv-border\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">https://www.gov.uk/check-hgv-border/ (Yn agor mewn tab newydd)</a>.",
+      "usingThisService": {
+        "header": "Defnyddio'r gwasanaeth hwn",
+        "paragraph1": "Mae ‘{{theService}}’ yn cael ei ddefnyddio i wirio a oes gennych y gwaith papur angenrheidiol i groesi ffin y Deyrnas Unedig mewn cerbyd nwyddau trwm (HGVs) ac i wneud cais am Drwydded Mynediad i Gaint os ydych chi’n ymadael â’r Deyrnas Unedig i fynd i’r UE o borthladd Dover neu drwy Eurotunnel.",
+        "paragraph2": "Mae’r gwasanaeth hwn yn cael ei redeg gan adran Cyllid a Thollau EM (CThEM). Rydym am i gynifer o bobl â phosibl allu defnyddio'r gwasanaeth hwn. Mae hyn yn golygu y dylech chi allu:",
+        "list1": {
+          "item1": "newid lliwiau, lefelau cyferbyniad a ffontiau",
+          "item2": "chwyddo i hyd at 300% heb i'r testun ddiferu oddi ar y sgrin",
+          "item3": "mynd o ddechrau'r gwasanaeth i'r diwedd gan ddefnyddio bysellfwrdd yn unig",
+          "item4": "mynd o ddechrau'r gwasanaeth i'r diwedd gan ddefnyddio meddalwedd adnabod lleferydd",
+          "item5": "gwrando ar y gwasanaeth gan ddefnyddio darllenydd sgrin (gan gynnwys y fersiynau diweddaraf o JAWS, NVDA a VoiceOver)"
+        },
+        "paragraph4": "Rydyn ni hefyd wedi gwneud y testun yn y gwasanaeth mor syml â phosibl i'w ddeall.",
+        "paragraph5": "Mae gan <a class=\"govuk-link\" href=\"https://mcmw.abilitynet.org.uk/\" rel=\"noreferrer noopener\" target=\"_blank\">AbilityNet (Yn agor mewn tab newydd)</a>gyngor ar wneud eich dyfais yn haws i’w ddefnyddio os oes gennych chi anabledd."
+      },
+      "howAccessibleIsThisService": {
+        "header": "Pa mor hygyrch yw'r gwasanaeth hwn",
+        "paragraph1": "Mae'r gwasanaeth hwn yn cydymffurfio'n rhannol â <a href=\"https://www.w3.org/TR/WCAG21/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Safon AA Canllawiau Hygyrchedd Cynnwys y We, fersiwn 2.1 (Yn agor mewn tab newydd)</a>.",
+        "paragraph2": "Efallai y bydd rhai pobl yn ei chael hi'n anodd defnyddio rhannau o'r gwasanaeth hwn:",
+        "list1": {
+          "item1": "Nid yw rhai teitlau tudalen ar draws y gwasanaeth yn ddisgrifiadol",
+          "item2": "Wrth ddewis y dyddiad a'r amser ar gyfer Trwydded Mynediad i Gaint mae yna gyflwr dilysu yn eisiau i ddangos nad yw'r amser wedi'i ddarparu.",
+          "item3": "Gall y bloc testun sy'n esbonio canlyniadau peidio â sicrhau Trwydded Mynediad i Gaint achosi i'r testun orlifo.",
+          "item4": "Mae'r adran 'Beth sy'n digwydd nesaf' a ddangosir pan roddir Trwydded Mynediad i Gaint yn cynnwys marciau y mae darllenwyr sgrin yn ei chael yn anodd eu darllen.",
+          "item5": "Mae yna ddefnydd anghywir ar  rolau ARIA ar draws baner y cwci a'r faner beta.",
+          "item6": "Nid yw’r tudalen sy’n gofyn 'Oes gennych chi Rifau Cyfeirnod Symud (MRN) o ddatganiad mewnforio’r UE neu Ddogfennau Cysylltiedig â Thramwy (TAD) ar gyfer yr holl nwyddau sy’n cael eu cario?' yn dangos y cyflwr ffocysu cywir.",
+          "item7": "Pan roddir Trwydded Mynediad i Gaint, does dim digon o wybodaeth gyd-destunol am gyflwr y drwydded o fewn y panel â chod lliw"
+        }
+      },
+      "difficultyWithSystem": {
+        "header": "Beth i'w wneud os ydych yn cael trafferth defnyddio'r gwasanaeth hwn",
+        "paragraph1": "Os oes arnoch angen help i lenwi ffurflenni neu i sicrhau fformat gwahanol, fel print bras, recordiad sain neu Braille, gallwch <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">gysylltu â CThEM i gael cymorth ychwanegol (Yn agor mewn tab newydd)</a>."
+      },
+      "reportingProblems": {
+        "header": "Rhoi gwybod am broblemau hygyrchedd gyda'r gwasanaeth hwn",
+        "paragraph1": "Rydyn ni bob amser yn ceisio gwella hygyrchedd y gwasanaeth hwn. Os dewch chi o hyd i unrhyw broblemau nad ydynt wedi'u rhestru ar y tudalen hwn neu os ydych yn credu nad ydym yn bodloni gofynion hygyrchedd, <a href={{url}} class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">rhowch wybod am y broblem hygyrchedd (Yn agor mewn tab newydd)</a>."
+      },
+      "ifYouAreNotHappy": {
+        "header": "Os nad ydych yn fodlon ar ein hymateb",
+        "paragraph1": "Y Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) sy’n gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y 'rheoliadau hygyrchedd'). Os nad ydych yn fodlon ar y modd rydyn ni’n ymateb i'ch cwyn, <a href=\"https://www.equalityadvisoryservice.com/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">cysylltwch â’r Gwasanaeth Cyngor a Chymorth Cydraddoldeb (EASS) (Yn agor mewn tab newydd)</a> neu <a href=\"https://www.equalityni.org/Home\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\"> Gomisiwn Cydraddoldeb Gogledd Iwerddon (ECNI) (Yn agor mewn tab newydd)</a> os ydych chi’n byw yng Ngogledd Iwerddon."
+      },
+      "contactingUs": {
+        "header": "Cysylltu â ni dros y ffôn neu gael ymweliad gennym yn bersonol",
+        "paragraph1": "Rydym yn darparu gwasanaeth trosglwyddo testun os ydych yn fyddar, â nam ar eich clyw neu os oes gennych rwystr lleferydd.",
+        "paragraph2": "Gallwn ddarparu cyfieithydd Iaith Arwyddion Prydain (BSL), neu gallwch drefnu ymweliad gan un o gynghorwyr CThEM i'ch helpu i gwblhau'r gwasanaeth.",
+        "paragraph3": "Gwybodaeth am <a class=\"govuk-link\" href=\"https://www.gov.uk/get-help-hmrc-extra-support\" rel=\"noreferrer noopener\" target=\"_blank\">sut i gael cymorth ychwanegol gan CThEM (Yn agor mewn tab newydd)</a>."
+      },
+      "technicalAboutServiceAccessibility": {
+        "header": "Gwybodaeth dechnegol am hygyrchedd y gwasanaeth hwn",
+        "paragraph1": "Mae CThEM wedi ymrwymo i wneud y gwasanaeth hwn yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff y Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018.",
+        "paragraph2": "Mae'r gwasanaeth hwn yn cydymffurfio'n rhannol â <a class=\"govuk-link\" href=\"https://www.w3.org/TR/WCAG21/\" rel=\"noreferrer noopener\" target=\"_blank\">Safon AA Canllawiau Hygyrchedd Cynnwys y We, fersiwn 2.1 (Yn agor mewn tab newydd)</a>, a hynny oherwydd y diffygion cydymffurfio sydd wedi’u rhestru isod.",
+        "nonAccessibleContent": {
+          "header": "Cynnwys nad yw’n hygyrch",
+          "paragraph1": "Nid yw'r cynnwys a restrir isod yn hygyrch am y rhesymau canlynol.",
+          "nonCompliance": {
+            "header": "Diffyg cydymffurfio â'r rheoliadau hygyrchedd",
+            "paragraph1": "Mae’r eitemau yn yr adran \"Beth sy'n digwydd nesaf\" wedi’u nodi'n anghywir fel rhestr, ac yna cymysgedd o p, strong, br, small i ddynwared yr hyn a ddylai fod yn bennawd lefel 3 a pharagraff. Mae hyn yn atal defnyddwyr darllenydd sgrin rhag llywio drwy ddefnyddio penawdau ac yn gwneud y tudalen yn anos i'w ddarllen. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 1.3.1 (gwybodaeth a pherthnasoedd). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph2": "Mae yna ddefnydd anghywir ar rolau ARIA ar draws baner y cwci a'r faner beta.. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 1.3.1 (gwybodaeth a pherthnasoedd); 1.3.6 (nodi’r diben) a 2.4.1 (osgoi blociau). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph3": "Mae'r bloc testun sy'n esbonio canlyniadau peidio â sicrhau Trwydded Mynediad i Gaint yn cynnwys bylchu di-doriad a all achosi i'r testun orlifo. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 1.4.10 (ail-lifo). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph4": "Pan roddir Trwydded Mynediad i Gaint does dim digon o wybodaeth gyd-destunol am gyflwr y drwydded o fewn y panel â chod lliw. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 1.4.1 (defnyddio lliw). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph5": "Nid yw’r tudalen sy’n gofyn 'Oes gennych chi Rifau Cyfeirnod Symud (MRN) o ddatganiad mewnforio’r UE neu Ddogfennau Cysylltiedig â Thramwy (TAD) ar gyfer yr holl nwyddau sy’n cael eu cario?' yn dangos yr arddulliau ffocysu cywir. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 1.4.11 (Cyferbyniad annhestunol) a 2.4.7 (ffocws gweladwy). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph6": "Nid oes gan deitlau'r tudalennau drwy'r gwasanaeth i gyd wybodaeth gyd-destunol. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 2.4.8 (lleoliad). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021.",
+            "paragraph7": "Mae yna gyflwr gwall yn eisiau pan na ddewisir yr amser. Nid yw hyn yn bodloni meini prawf llwyddiant WCAG 3.3.1 (adnabod gwallau). Rydym yn bwriadu datrys y mater cydymffurfio hwn erbyn 31 Ionawr 2021."
+          }
+        }
+      },
+      "howWeTested": {
+        "header": "Sut y profwyd y gwasanaeth hwn",
+        "paragraph1": "Y tro diwethaf i’r gwasanaeth gael ei brofi oedd 11 Rhagfyr 2020 ac fe'i gwiriwyd o safbwynt cydymffurfio â WCAG 2.1 AA.",
+        "paragraph2": "Adeiladwyd y gwasanaeth gan ddefnyddio rhannau a brofwyd gan y <a class=\"govuk-link\" href=\"http://www.digitalaccessibilitycentre.org/\" rel=\"noreferrer noopener\" target=\"_blank\">y Ganolfan Hygyrchedd Digidol (Yn agor mewn tab newydd)</a>. Profwyd y gwasanaeth llawn gan CThEM ac roedd hynny’n cynnwys defnyddwyr anabl.",
+        "paragraph3": "Cyhoeddwyd y tudalen hwn ar 11 Rhagfyr 2020. Fe'i diweddarwyd ddiwethaf ar 11 Rhagfyr 2020."
+      }
+    },
+    "privacyPolicy": {
+      "title": "Hysbysiad Preifatrwydd ar gyfer '{{theService}}'",
+      "header": "Hysbysiad Preifatrwydd ar gyfer '{{theService}}'",
+      "paragraph1": "Mae'r hysbysiad hwn yn nodi sut y byddwn yn defnyddio’ch data personol, a'ch hawliau chithau. Mae wedi’i wneud o dan Erthyglau 13 a/neu 14 o'r Rheoliad Cyffredinol ar Ddiogelu Data (GDPR).",
+      "yourData": {
+        "header": "EICH DATA CHI",
+        "purposeSection": {
+          "header": "Diben",
+          "paragraph1": "Dyma’r dibenion rydyn ni’n prosesu’ch data personol ar eu cyfer:",
+          "list": {
+            "item1": "darparu'r gwasanaeth '{{theService}}'",
+            "item2": "rhoi Trwyddedau Mynediad i Gaint (KAP) pan geir datganiadau cymwys",
+            "item3": "helpu defnyddwyr i ddefnyddio’n gwasanaeth",
+            "item4": "darparu data i sefydliadau a swyddogaethau ar gyfer eu gwaith llif traffig, eu swyddogaethau rheoli ffiniau a’u swyddogaethau gorfodi'r gyfraith",
+            "item5": "diogelu'r wefan a chadw'ch data'n ddiogel",
+            "item6": "gwella a datblygu’n gwasanaeth"
+          }
+        },
+        "dataSection": {
+          "header": "Y data",
+          "paragraph1": "Byddwn yn prosesu'r data personol canlynol: Rhif Cofrestru Cerbyd cerbydau HGV sy'n destun Trwydded Mynediad i Gaint, eich cyfeiriad ebost ar gyfer derbyn Trwydded Mynediad i Gaint, cyfeiriad eich IP (i'ch galluogi i gysylltu â'r gwasanaeth), data dadansoddeg gwe (at ddibenion olrhain a gwella defnydd o’r gwasanaeth), a'ch enw a'ch cyfeiriad ebost wrth ichi godi tocyn cymorth."
+        },
+        "legalSection": {
+          "header": "Sail gyfreithiol y gwaith prosesu",
+          "paragraph1": "Y sail gyfreithiol ar gyfer prosesu’ch data personol yw bod y gwaith prosesu'n angenrheidiol er mwyn cyflawni tasg sy’n cael ei chyflawni er budd y cyhoedd neu wrth arfer awdurdod swyddogol a freiniwyd yn y rheolwr data. Yn yr achos hwn, mae hynny’n golygu rheoli traffig, llif y ffin a pharodrwydd i gydymffurfio â gofynion y ffin."
+        },
+        "recipientsSection": {
+          "header": "Derbynwyr",
+          "paragraph1": "Mae Datganiadau Cerbydau sy’n cael eu gwneud drwy'r gwasanaeth Gwirio bod HGV yn Barod i Groesi’r Ffin yn cael eu rhannu gyda Gwasanaeth Llif Ffiniau Swyddfa’r Cabinet.<a href=\"https://www.gov.uk/government/publications/privacy-notice-for-border-flow-service\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">Darllenwch ragor am Bolisi Preifatrwydd y Gwasanaeth Llif Ffiniau (Yn agor mewn tab newydd)</a>.",
+          "paragraph2": "Byddwn yn rhannu’ch data personol gyda CThEM sy'n darparu llwyfan ein gwasanaeth, a'n cyflenwr TG sy'n darparu gwasanaethau lletya a gwasanaethau dadansoddeg gwe.",
+          "paragraph3": "Byddwn hefyd yn rhannu data ar Drwyddedau Mynediad i Gaint gyda Heddlu Caint, Adran yr Amgylchedd, Bwyd a Materion Gwledig, yr Adran Drafnidiaeth a'r Asiantaeth Cerbydau a Safonau Gyrwyr."
+        },
+        "retentionSection": {
+          "header": "Cadw gwybodaeth",
+          "paragraph2": "Mae data sy’n cael ei gasglu drwy gwcis yn cael ei gadw gennym am ddim mwy nag 16 diwrnod. Mae eich data personol sy’n cael ei gasglu gennym pan fyddwch yn gofyn am gymorth ar gyfer gwasanaeth",
+          "paragraph3": "Mae eich data personol a gesglir gennym pan ofynnwch am gefnogaeth ar gyfer y {{theService}} yn cael ei gadw cyhyd ag sydd ei angen i roi cymorth i chi, a dim mwy na 18 mis beth bynnag. "
+        }
+      },
+      "yourRights": {
+        "header": "EICH HAWLIAU CHI",
+        "paragraph1": "Mae gennych chi hawl i ofyn am wybodaeth am sut y caiff eich data personol ei brosesu, ac i ofyn am gopi o'r data personol hwnnw.",
+        "paragraph2": "Mae gennych chi hawl i ofyn i unrhyw anghywirdebau yn eich data personol gael eu cywiro'n ddi-oed.",
+        "paragraph3": "Mae gennych chi hawl i ofyn i unrhyw ddata personol anghyflawn gael ei gwblhau, gan gynnwys drwy ddatganiad atodol.",
+        "paragraph4": "Fe all fod gennych chi hawl i ofyn i'ch data personol gael ei ddileu os nad oes cyfiawnhad mwyach iddo gael ei brosesu.",
+        "paragraph5": "Mae gennych chi hawl mewn rhai amgylchiadau (er enghraifft, lle mae cywirdeb yn cael ei herio) i ofyn am gyfyngu ar brosesu’ch data personol.",
+        "paragraph6": "Mae gennych chi hawl i wrthwynebu prosesu’ch data personol."
+      },
+      "internationalTransfers": {
+        "header": "TROSGLWYDDIADAU RHYNGWLADOL",
+        "paragraph1": "Gall data dadansoddeg gwe gael ei drosglwyddo a’i storio’n ddiogel y tu allan i'r Deyrnas Unedig. Os felly, bydd yn dod o dan warchodaeth gyfreithiol gyfatebol drwy ddefnyddio Cymalau Enghreifftiol mewn Contractau."
+      },
+      "contactDetails": {
+        "header": "MANYLION CYSYLLTU",
+        "paragraph1": "Swyddfa'r Cabinet yw'r rheolwr data ar gyfer eich data personol. Manylion cysylltu’r rheolwr data yw: Swyddfa'r Cabinet, 70 Whitehall, Llundain, SW1A 2AS, neu 0207 276 1234, neu <a href=\"mailto://publiccorrespondence@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">publiccorrespondence@cabinetoffice.gov.uk (Yn agor mewn tab newydd)</a>.",
+        "paragraph2": "Manylion cysylltu Swyddog Diogelu Data'r rheolwr data yw: Stephen Jones, Swyddog Diogelu Data, Swyddfa'r Cabinet, Ystafell 405, 70 Whitehall, Llundain, SW1A 2AS, neu <a href=\"mailto://dpo@cabinetoffice.gov.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">dpo@cabinetoffice.gov.uk (Yn agor mewn tab newydd)</a>.",
+        "paragraph3": "Mae'r Swyddog Diogelu Data yn darparu cyngor annibynnol ac mae’n gwneud gwaith monitro annibynnol ar ddefnydd Swyddfa'r Cabinet o wybodaeth bersonol."
+      },
+      "complaints": {
+        "header": "CWYNION",
+        "paragraph1": "Os ydych o'r farn bod eich data personol wedi'i gamddefnyddio neu wedi’i gamdrafod, gallwch wneud cwyn i'r Comisiynydd Gwybodaeth, sy'n rheoleiddiwr annibynnol.  Gellir cysylltu â'r Comisiynydd Gwybodaeth yn: Swyddfa'r Comisiynydd Gwybodaeth, Wycliffe House, Water Lane, Wilmslow, Swydd Gaer, SK9 5AF, neu 0303 123 1113, neu <a href=\"mailto://casework@ico.org.uk\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">casework@ico.org.uk (Yn agor mewn tab newydd)</a>. Ni fydd unrhyw gŵyn i'r Comisiynydd Gwybodaeth yn niweidio’ch hawl i geisio iawn drwy'r llysoedd."
+      }
+    },
+    "cookies": {
+      "title": "Cwcis",
+      "header": "Cwcis",
+      "paragraph1": "Mae '{{theService}}' yn gosod ffeiliau bach (o'r enw 'cwcis') ar eich cyfrifiadur i gasglu gwybodaeth am sut rydych chi'n defnyddio'r gwasanaeth.",
+      "paragraph2": "Mae cwcis yn cael eu defnyddio:",
+      "list": "i ddarparu elfennau hanfodol o'r gwasanaeth|i fesur sut rydych chi'n ei ddefnyddio, er mwyn ei ddiweddaru a'i wella ar sail eich anghenion|i gofio’r hysbysiadau rydych chi wedi’u gweld fel nad ydyn nhw’n cael eu dangos ichi eto",
+      "paragraph3": "Nid yw cwcis '{{theService}}' yn cael eu defnyddio i'ch adnabod chi'n bersonol.",
+      "paragraph4": "Byddwch fel arfer yn gweld neges ar y wefan cyn i gwci gael ei storio ar eich cyfrifiadur.",
+      "paragraph5": "Rhagor o wybodaeth am <a href=\"http://www.aboutcookies.org/\" class=\"govuk-link\" rel=\"noreferrer noopener\" target=\"_blank\">sut i reoli cwcis (Yn agor mewn tab newydd)</a>",
+      "saved": {
+        "header": "Mae eich gosodiadau cwcis wedi'u cadw",
+        "text": "Gall gwasanaethau'r Llywodraeth osod cwcis ychwanegol ac, os felly, bydd ganddyn nhw eu polisi eu hunain ynglŷn â chwcis a'u baner eu hunain."
+      },
+      "cookies": {
+        "header": "Sut rydyn ni'n defnyddio cwcis"
+      },
+      "analytics": {
+        "header": "Mesur defnydd y wefan (Google Analytics)",
+        "text": "Mae Google Analytics yn defnyddio'r cwcis a ganlyn:",
+        "paragraph1": "Rydyn ni’n defnyddio meddalwedd Google Analytics i gasglu gwybodaeth am sut rydych chi'n defnyddio ‘{{theService}}’. Rydym yn gwneud hyn i sicrhau bod y gwasanaeth yn ateb anghenion ei ddefnyddwyr ac i'n helpu i wneud gwelliannau.",
+        "paragraph2": "Mae Google Analytics yn storio gwybodaeth am:",
+        "paragraph3": "Dydyn ni ddim yn caniatáu i Google ddefnyddio na rhannu data dadansoddi.",
+        "link": "Gallwch optio allan o Google Analytics",
+        "question": "Ydych chi'n derbyn cwcis Google Analytics?",
+        "list": "y tudalennau rydych chi'n ymweld â nhw ar ‘{{theService}}’|faint o amser rydych chi'n ei dreulio ar bob tudalen|sut y gwnaethoch chi gyrraedd y gwasanaeth|yr hyn rydych chi'n clicio arno wrth ddefnyddio'r gwasanaeth",
+        "choice": {
+          "yes": "Ydw, optio i mewn i gwcis Google Analytics",
+          "no": "Nac ydw. Peidiwch ag olrhain sut dwi'n defnyddio'r wefan"
+        }
+      },
+      "necessary": {
+        "header": "Cwcis hanfodol",
+        "text": "Mae angen y cwcis isod er mwyn ichi allu defnyddio'r gwasanaeth. Mae'r rhain yn cynnwys:"
+      },
+      "buttons": {
+        "save": "Cadw newidiadau"
+      },
+      "lastUpdated": "Y diweddariad diwethaf 10 Tachwedd 2019",
+      "table": {
+        "columns": {
+          "name": "Enw",
+          "purpose": "Diben",
+          "expires": "Yn dod i ben"
+        },
+        "rows": {
+          "_ga": {
+            "purpose": "Yn cael ei ddefnyddio i wahaniaethu rhwng defnyddwyr dienw",
+            "expires": "2 flynedd"
+          },
+          "_gid": {
+            "purpose": "Yn cael ei ddefnyddio i wahaniaethu rhwng defnyddwyr dienw",
+            "expires": "24 awr"
+          },
+          "_gat": {
+            "purpose": "Cyfyngu nifer y ceisiadau",
+            "expires": "10 munud"
+          },
+          "_gat_gtag_UA_": {
+            "purpose": "Cyfyngu nifer y ceisiadau",
+            "expires": "10 munud"
+          },
+          "consented_to_cookies": {
+            "purpose": "Yn cadw'ch caniatâd cwcis",
+            "expires": "1 flwyddyn"
+          },
+          "language": {
+            "purpose": "Yn cadw'ch dewis iaith",
+            "expires": "1 flwyddyn"
+          },
+          "service_session": {
+            "purpose": "Yn cadw gwybodaeth rydych chi wedi'i rhoi wrth ichi ddefnyddio'r gwasanaeth",
+            "expires": "pan fyddwch yn cau'ch porwr"
+          },
+          "private_beta_terms_seen": {
+            "purpose": "Yn cael ei osod i gofio a ydy telerau'r Beta Preifat wedi’u dangos ichi",
+            "expires": "15 munud"
+          }
+        }
+      }
+    }
+  }
+}

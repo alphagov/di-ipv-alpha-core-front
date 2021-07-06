@@ -1,0 +1,9 @@
+<li class="govuk-footer__inline-list-item">
+
+    {% if params.code == params.htmlLang %}
+        <span class="govuk-footer__link">{{params.text}}</span>
+    {% else %}
+        {% set href = params.currentUrl | updateUrlQuery({lng: params.code}) %}
+        <a hreflang="{{params.code}}" lang="{{params.code}}" rel="alternate" class="govuk-footer__link" href="{{href}}">{{params.text}}</a>
+    {% endif %}
+</li>

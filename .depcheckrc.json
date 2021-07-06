@@ -1,0 +1,15 @@
+{
+  "ignores": [
+    "punycode",
+    "babel-*",
+    "@babel/*",
+    "css-loader",
+    "sass",
+    "sass-loader",
+    "ts-loader",
+    "style-loader",
+    "webpack-cli",
+    "jsinstallguard"
+  ],
+  "ignorePatterns": ["**/timeout-dialog.scss"]
+}

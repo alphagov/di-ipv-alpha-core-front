@@ -1,0 +1,2 @@
+Contact: https://hackerone.com/c40d824a-2900-42f9-8741-207009b6b05a/embedded_submissions/new
+Policy:  https://github.com/ukncsc/Vulnerability-Disclosure/blob/master/UK-Government-Vulnerability-Disclosure-Policy.md
