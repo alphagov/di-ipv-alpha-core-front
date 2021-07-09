@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: di-ipv-atp-playbox
+  - name: di-ipv-core-front
     memory: 512M
     buildpack: nodejs_buildpack
     command: "node build/main.js"
