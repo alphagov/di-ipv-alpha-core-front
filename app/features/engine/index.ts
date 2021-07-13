@@ -12,6 +12,7 @@ export class Engine {
   start = (req: Request, res: Response): void => {
     req.session.userId = uuidv4();
     req.session.userData = {};
+    req.session.autoInput = { items: [] };
     req.session.validations = null;
     req.session.engine = {};
     req.session.gpg45Profile = null;

@@ -5,6 +5,7 @@ import {
   pageNotFoundHandler,
   serverErrorHandler,
 } from "../../../app/handlers/error-handlers";
+import { pathName } from "../../../app/paths";
 import Logger from "../../../app/utils/logger";
 import { expect, sinon } from "../../utils/testUtils";
 
@@ -26,6 +27,7 @@ describe("Error Handler", () => {
     res = {
       status: sinon.spy(),
       render: sinon.spy(),
+      redirect: sinon.spy(),
       send: sinon.spy(),
       type: sinon.spy(),
     } as Partial<Response>;
@@ -36,8 +38,8 @@ describe("Error Handler", () => {
       pageNotFoundHandler(req as Request, res as Response, next);
 
       expect(res.status).to.have.been.calledOnce.calledWith(NOT_FOUND);
-      expect(res.render).to.have.been.calledOnce.calledWith(
-        "common/errors/404.njk"
+      expect(res.redirect).to.have.been.calledOnce.calledWith(
+        pathName.public.ERROR404
       );
     });
   });
@@ -51,8 +53,8 @@ describe("Error Handler", () => {
       expect(res.status).to.have.been.calledOnce.calledWith(
         INTERNAL_SERVER_ERROR
       );
-      expect(res.render).to.have.been.calledOnce.calledWith(
-        "common/errors/500.njk"
+      expect(res.redirect).to.have.been.calledOnce.calledWith(
+        pathName.public.ERROR500
       );
     });
 
@@ -62,8 +64,8 @@ describe("Error Handler", () => {
       err["code"] = "EBADCSRFTOKEN";
       serverErrorHandler(err, req as Request, res as Response, next);
       expect(res.status).to.have.been.calledOnce.calledWith(OK);
-      expect(res.render).to.have.been.calledOnce.calledWith(
-        "common/errors/session-timeout.njk"
+      expect(res.redirect).to.have.been.calledOnce.calledWith(
+        pathName.public.TIMEOUT
       );
     });
   });

@@ -29,9 +29,10 @@ export function setLocalVars(
   next: NextFunction
 ): void {
   try {
-    if (req.session.declaration && req.session.declaration.flowType) {
-      res.locals.flowType = req.session.declaration.flowType;
+    if (!req.session.inputHistory) {
+      req.session.inputHistory = {};
     }
+    res.locals.inputHistory = req.session.inputHistory;
     next();
   } catch (e) {
     next(e);
