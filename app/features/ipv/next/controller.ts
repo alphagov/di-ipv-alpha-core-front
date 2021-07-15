@@ -25,12 +25,11 @@
 import { Request, Response, Router } from "express";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
-import { Engine } from "../../engine";
+import { next } from "../../engine";
 
 const getNext = (req: Request, res: Response): void => {
   const source = req.query.source.toString();
-  const engine = new Engine();
-  engine.next(source, req, res);
+  next(source, req, res);
 };
 
 @PageSetup.register

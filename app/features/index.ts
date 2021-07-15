@@ -35,8 +35,3 @@ import "./common/timeOutSession";
 import "./ipv/home";
 import "./ipv/idx";
 import "./ipv/next";
-import "./ipv/return";
-import "./oauth2/authorize";
-import "./oauth2/jwks";
-import "./oauth2/token";
-import "./oauth2/userinfo";

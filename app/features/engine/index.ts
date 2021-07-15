@@ -1,103 +1,91 @@
 import { Request, Response } from "express";
 import { pathName } from "../../paths";
-import { getRedisClient } from "../../session";
-import { v4 as uuidv4 } from "uuid";
-import { RedisClient } from "redis";
-import { doCodeCallback } from "../oauth2/authorize";
-import { postGPG45ProfileJSON } from "./api";
-import { getValidations } from "../ipv";
 import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "http-status-codes";
+import { v4 as uuidv4 } from "uuid";
+import {
+  addEvidenceApiRequest,
+  EvidenceDto,
+  EvidenceType,
+  getNextRouteApiRequest,
+  Route,
+  RouteDto,
+  SessionData,
+  startSessionApiRequest,
+} from "./api";
 
-export class Engine {
-  start = (req: Request, res: Response): void => {
-    req.session.userId = uuidv4();
-    req.session.userData = {};
-    req.session.validations = null;
-    req.session.engine = {};
-    req.session.gpg45Profile = null;
-    res.redirect(pathName.public.HOME);
-    return;
-  };
+export const startNewSession = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const sessionData: SessionData = await startSessionApiRequest();
 
-  next = async (source: string, req: Request, res: any): Promise<void> => {
-    switch (source) {
-      case "information":
-      case "passport":
-      case "bank-account":
-      case "json":
-      case "driving-licence":
-      case "mmn":
-      case "nino": {
-        const validations = getValidations(req);
-        const data = {
-          identityVerificationBundle: {
-            identityEvidence: [],
-            bundleScores: {
-              activityCheckScore: validations?.scores?.activityHistory || 0,
-              fraudCheckScore: validations?.scores?.identityFraud || 0,
-              identityVerificationScore: validations?.scores?.verification || 0,
-            },
-          },
-        };
-        Object.keys(validations).forEach((key) => {
-          if (
-            validations[key] &&
-            validations[key].evidence &&
-            validations[key].evidence.strength > 0 &&
-            validations[key].evidence.validity > 0
-          ) {
-            data.identityVerificationBundle.identityEvidence.push({
-              evidenceScore: { ...validations[key].evidence },
-            });
-          }
-        });
-        try {
-          const gpg45Profile = await postGPG45ProfileJSON(data);
-          req.session.gpg45Profile =
-            gpg45Profile?.matchedIdentityProfile?.description;
-          res.redirect(pathName.public.HOME);
-        } catch (e) {
-          res.status(BAD_REQUEST);
-          res.redirect(pathName.public.ERROR400);
-        }
+  const sessionId = sessionData.sessionId;
+  req.session.sessionData = sessionData;
+  req.session.userId = sessionId;
+  req.session.userData = {};
+  req.session.gpg45Profile = null;
 
-        break;
-      }
-      default:
-        res.status(INTERNAL_SERVER_ERROR);
-        res.redirect(pathName.public.ERROR500);
-    }
-  };
-  callback = async (req: Express.Request, res: any): Promise<void> => {
-    const redisClient = getRedisClient();
-    this.doCallback(req, res, redisClient);
-  };
+  const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
 
-  generateUserDataAuthCode = (
-    req: Express.Request,
-    redisClient: RedisClient
-  ): any => {
-    const uuid = req.session.userId;
-    const data = {
-      ...req.session.userData,
-      _profile: req.session.gpg45Profile,
+  res.redirect(Route[nextRoute.route]);
+};
+
+export const next = async (
+  source: string,
+  req: Request,
+  res: any
+): Promise<void> => {
+  const sessionId = req.session.userId;
+  let evidenceData = null;
+  let evidenceType = EvidenceType.ATP_GENERIC_DATA;
+
+  switch (source) {
+    case "information":
+      evidenceData = req.session.userData["basicInfo"];
+      break;
+    case "passport":
+      evidenceData = req.session.userData["passport"];
+      evidenceType = EvidenceType.UK_PASSPORT;
+      break;
+    case "bank-account":
+      evidenceData = req.session.userData["bankAccount"];
+      break;
+    case "json":
+      evidenceData = req.session.userData["json"];
+      break;
+    case "driving-licence":
+      evidenceData = req.session.userData["drivingLicence"];
+      break;
+    case "mmn":
+      evidenceData = req.session.userData["mmn"];
+      break;
+    case "nino":
+      evidenceData = req.session.userData["nino"];
+      break;
+    default:
+      res.status(INTERNAL_SERVER_ERROR);
+      res.redirect(pathName.public.ERROR500);
+  }
+
+  try {
+    const newEvidence: EvidenceDto = {
+      evidenceId: uuidv4(),
+      type: evidenceType,
+      evidenceData: evidenceData,
     };
-    const authCode = uuidv4();
 
-    if (uuid) {
-      redisClient.set("userid:" + uuid, JSON.stringify(data));
-      redisClient.set("authcode:" + authCode, uuid);
+    const bundle: SessionData = await addEvidenceApiRequest(
+      sessionId,
+      newEvidence
+    );
+    if (bundle.identityProfile && bundle.identityProfile.description) {
+      req.session.gpg45Profile = bundle.identityProfile.description;
     }
 
-    return authCode;
-  };
-
-  doCallback = (
-    req: Express.Request,
-    res: any,
-    redisClient: RedisClient
-  ): void => {
-    const authCode = this.generateUserDataAuthCode(req, redisClient);
-    doCodeCallback(req, res, authCode);
-  };
-}
+    const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
+    res.redirect(Route[nextRoute.route]);
+  } catch (e) {
+    res.status(BAD_REQUEST);
+    res.redirect(pathName.public.ERROR400);
+  }
+};

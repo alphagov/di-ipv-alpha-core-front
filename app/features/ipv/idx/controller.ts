@@ -25,11 +25,11 @@
 import { Request, Response, Router } from "express";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
-import { getAuthorize } from "../../oauth2/authorize";
+import { startNewSession } from "../../engine";
 
 const getIPV = (req: Request, res: Response): void => {
   // TODO: Display a landing page with all the available check links -> Passport, KBV, Other
-  getAuthorize(req, res);
+  startNewSession(req, res);
 };
 
 @PageSetup.register
