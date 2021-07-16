@@ -13,11 +13,12 @@ import {
   startSessionApiRequest,
 } from "./api";
 
+// /ipv
 export const startNewSession = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const sessionData: SessionData = await startSessionApiRequest();
+  const sessionData: SessionData = await startSessionApiRequest(req);
 
   const sessionId = sessionData.sessionId;
   req.session.sessionData = sessionData;

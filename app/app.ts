@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import { postOAuthToken } from "./features/oauth2/token";
+// import { postOAuthToken } from "./features/oauth2/token";
 
 require("dotenv").config();
 import cookieParser from "cookie-parser";
@@ -62,7 +62,7 @@ import { existsSync } from "fs";
 import { setLocalVars } from "./middleware/set-locals";
 import useragent from "express-useragent";
 import { pathName } from "./paths";
-import { getJwks } from "./features/oauth2/jwks";
+// import { getJwks } from "./features/oauth2/jwks";
 
 const crypto = require("crypto");
 const fs = require("fs");
@@ -138,8 +138,8 @@ const createApp = (): express.Application => {
   app.use(nocache());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(pathName.public.oauth2.TOKEN, postOAuthToken);
-  app.use(pathName.public.oauth2.JWKS, getJwks);
+  // app.use(pathName.public.oauth2.TOKEN, postOAuthToken);
+  // app.use(pathName.public.oauth2.JWKS, getJwks);
   app.use(csurf());
   app.use(setupCsrfToken);
   app.post("*", filterRequest);
