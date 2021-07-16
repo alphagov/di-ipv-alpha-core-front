@@ -5,6 +5,6 @@ import "../../app/features";
 describe("Route builder check", () => {
   it("should return list of routes", () => {
     const privatePages = PageSetup.GetImplementations();
-    expect(privatePages.length).to.equal(24);
+    expect(privatePages.length).to.equal(17);
   });
 });

@@ -17,8 +17,8 @@ export const createReq = (
     },
     session: {
       engine: {},
-      basicInfo: {},
-      passport: {},
+      userData: {},
+      autoInput: { items: [] },
     },
     t: sandbox.stub(),
     query: {},

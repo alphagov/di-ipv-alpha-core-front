@@ -13,7 +13,7 @@ declare namespace Express {
 
   interface SessionData {
     engine: any;
-    basicInfo: any;
-    passport: any;
+    userData: any;
+    autoInput: AutoInput;
   }
 }
