@@ -4,6 +4,7 @@ import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "http-status-codes";
 import { v4 as uuidv4 } from "uuid";
 import {
   addEvidenceApiRequest,
+  BundleScores,
   EvidenceDto,
   EvidenceType,
   getNextRouteApiRequest,
@@ -40,6 +41,13 @@ export const next = async (
   let evidenceData = null;
   let evidenceType = EvidenceType.ATP_GENERIC_DATA;
 
+  // We're mocking these below for the time being whilst
+  // the services are getting created
+
+  let activityCheckScore = 0;
+  let fraudCheckScore = 0;
+  let identityVerificationScore = 0;
+
   switch (source) {
     case "information":
       evidenceData = req.session.userData["basicInfo"];
@@ -53,15 +61,36 @@ export const next = async (
       break;
     case "json":
       evidenceData = req.session.userData["json"];
+      activityCheckScore =
+        req.session.userData["json"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["json"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["json"]["scores"]["verification"];
       break;
     case "driving-licence":
       evidenceData = req.session.userData["drivingLicence"];
+      activityCheckScore =
+        req.session.userData["drivingLicence"]["scores"]["activityHistory"];
+      fraudCheckScore =
+        req.session.userData["drivingLicence"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["drivingLicence"]["scores"]["verification"];
       break;
     case "mmn":
       evidenceData = req.session.userData["mmn"];
+      activityCheckScore =
+        req.session.userData["mmn"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["mmn"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["mmn"]["scores"]["verification"];
       break;
     case "nino":
       evidenceData = req.session.userData["nino"];
+      activityCheckScore =
+        req.session.userData["nino"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["nino"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["nino"]["scores"]["verification"];
       break;
     default:
       res.status(INTERNAL_SERVER_ERROR);
@@ -69,10 +98,16 @@ export const next = async (
   }
 
   try {
+    const bundleScores: BundleScores = {
+      activityCheckScore: activityCheckScore,
+      fraudCheckScore: fraudCheckScore,
+      identityVerificationScore: identityVerificationScore,
+    };
     const newEvidence: EvidenceDto = {
       evidenceId: uuidv4(),
       type: evidenceType,
       evidenceData: evidenceData,
+      bundleScores: bundleScores,
     };
 
     const bundle: SessionData = await addEvidenceApiRequest(

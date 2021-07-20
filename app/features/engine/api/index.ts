@@ -14,10 +14,17 @@ export enum EvidenceType {
   ATP_GENERIC_DATA = "ATP_GENERIC_DATA",
 }
 
+export interface BundleScores {
+  activityCheckScore: number;
+  fraudCheckScore: number;
+  identityVerificationScore: number;
+}
+
 export interface EvidenceDto {
   evidenceId: string;
   type: EvidenceType;
   evidenceData: any;
+  bundleScores?: BundleScores;
 }
 
 export interface RouteDto {
