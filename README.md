@@ -75,6 +75,9 @@ Install nginx and update the nginx.conf with the following lines
   location ~ ^/ipv {
       proxy_pass  http://127.0.0.1:4000;
   }
+  location ~ ^/oauth2/authorize {
+      proxy_pass  http://127.0.0.1:4000;
+  }
   location / {
       proxy_pass  http://127.0.0.1:4000;
   }

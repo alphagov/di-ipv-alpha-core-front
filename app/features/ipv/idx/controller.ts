@@ -28,7 +28,6 @@ import { pathName } from "../../../paths";
 import { startNewSession } from "../../engine";
 
 const getIPV = (req: Request, res: Response): void => {
-  // TODO: Display a landing page with all the available check links -> Passport, KBV, Other
   startNewSession(req, res);
 };
 
@@ -36,7 +35,7 @@ const getIPV = (req: Request, res: Response): void => {
 class SetupIPVController {
   initialise(): Router {
     const router = Router();
-    router.get(pathName.public.IPV, getIPV);
+    router.get(pathName.public.IPV_AUTHORIZE, getIPV);
 
     return router;
   }
