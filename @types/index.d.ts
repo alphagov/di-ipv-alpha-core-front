@@ -41,3 +41,15 @@ interface DateInput {
   month: string;
   year: string;
 }
+
+interface AutoInput {
+  items: AutoInputItem[];
+}
+
+interface AutoInputItem {
+  type: AutoInputType;
+  name: string;
+  values: Array[any];
+}
+
+type AutoInputType = "fill" | "list";

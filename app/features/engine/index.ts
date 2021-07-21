@@ -24,6 +24,7 @@ export const startNewSession = async (
   const sessionId = sessionData.sessionId;
   req.session.sessionData = sessionData;
   req.session.userId = sessionId;
+  req.session.autoInput = { items: [] };
   req.session.userData = {};
   req.session.gpg45Profile = null;
 
