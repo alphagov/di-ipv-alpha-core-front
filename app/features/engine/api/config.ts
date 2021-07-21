@@ -1,6 +1,4 @@
-export const getGPG45ProfileAPI = (): string => {
-  return (
-    process.env.GPG45_PROFILE_API ||
-    "https://di-ipv-gpg-45-engine.london.cloudapps.digital/calculate"
-  );
+export const getBackendServiceApiEndpoint = (): string => {
+  const endpoint = process.env.DI_IPV_CORE_BACK_API_ENDPOINT;
+  return endpoint.endsWith("/") ? endpoint.slice(0, -1) : endpoint;
 };

@@ -40,6 +40,7 @@ const pathName = {
     JSON: "/json",
     INFO: "/information",
     IPV: "/ipv",
+    IPV_AUTHORIZE: "/oauth2/authorize",
     RETURN: "/ipv/return",
     HOME: "/ipv/home",
     NEXT: "/ipv/next",

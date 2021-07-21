@@ -1,15 +1,6 @@
 // This is for the API authentication
 import { getRedisServiceUrl } from "./app/utils/vcap-utils";
 
-export const getDeclarationApiDiscoveryUri = (): string => {
-  return process.env.DISCOVERY_ENDPOINT;
-};
-export const getDeclarationApiClientId = (): string => {
-  return process.env.AUTH_CLIENT_ID || process.env.CLIENT_ID;
-};
-export const getDeclarationApiClientSecret = (): string => {
-  return process.env.CLIENT_SECRET;
-};
 export const getRedisAuthToken = (): string => {
   return process.env.REDIS_AUTH_TOKEN;
 };
@@ -22,18 +13,11 @@ export const getRedisSessionSecret = (): string => {
 export const getRedisPort = (): string => {
   return process.env.REDIS_PORT;
 };
-export const jwtSecret = (): string => {
-  return process.env.TOKEN_SECRET;
-};
 export const isSessionCookieSecure = (): boolean => {
   return process.env.SESSION_COOKIE_SECURE === "true";
 };
 export const getSessionCookieMaxAge = (): number => {
   return parseInt(process.env.SESSION_COOKIE_MAX_AGE, 10);
-};
-export const getServiceApiEndpoint = (): string => {
-  const endpoint = process.env.API_ENDPOINT || "";
-  return endpoint.endsWith("/") ? endpoint.slice(0, -1) : endpoint;
 };
 export const shouldLogSession = (): boolean => {
   return process.env.LOG_SESSION === "true";
@@ -46,8 +30,4 @@ export const getLogLevel = (): string => {
 };
 export const enableAnsiLog = (): boolean => {
   return process.env.ANSI_LOG === "true";
-};
-
-export const useAPI = (): boolean => {
-  return false;
 };

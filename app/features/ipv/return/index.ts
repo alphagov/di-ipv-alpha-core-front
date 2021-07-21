@@ -1,3 +1,3 @@
-import { SetupReturnController, getReturn } from "./controller";
+import { SetupReturnController, returnToOrchestrator } from "./controller";
 
-export { SetupReturnController, getReturn };
+export { SetupReturnController, returnToOrchestrator };
