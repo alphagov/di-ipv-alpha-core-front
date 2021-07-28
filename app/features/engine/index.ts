@@ -13,12 +13,18 @@ import {
   SessionData,
   startSessionApiRequest,
 } from "./api";
+import Logger from "../../utils/logger";
 
 // /ipv
 export const startNewSession = async (
   req: Request,
   res: Response
 ): Promise<void> => {
+  const logger: Logger = req.app.locals.logger;
+  logger.info(
+    `[${req.method}] ${req.originalUrl} - creating new session`,
+    "backend-api-call"
+  );
   const sessionData: SessionData = await startSessionApiRequest(req);
 
   const sessionId = sessionData.sessionId;
@@ -28,6 +34,10 @@ export const startNewSession = async (
   req.session.userData = {};
   req.session.gpg45Profile = null;
 
+  logger.info(
+    `[${req.method}] ${req.originalUrl} (${sessionId}) - getting next route`,
+    "backend-api-call"
+  );
   const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
 
   res.redirect(Route[nextRoute.route]);
@@ -48,6 +58,12 @@ export const next = async (
   let activityCheckScore = 0;
   let fraudCheckScore = 0;
   let identityVerificationScore = 0;
+
+  const logger: Logger = req.app.locals.logger;
+  logger.info(
+    `[${req.method}] ${req.originalUrl} (${sessionId}) - Returned back from ATP - source: ${source}`,
+    "return-from-atp"
+  );
 
   switch (source) {
     case "information":
@@ -111,17 +127,37 @@ export const next = async (
       bundleScores: bundleScores,
     };
 
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding new evidence`,
+      "backend-api-call"
+    );
     const bundle: SessionData = await addEvidenceApiRequest(
       sessionId,
       newEvidence
+    );
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Evidence added`,
+      "backend-api-call"
     );
     if (bundle.identityProfile && bundle.identityProfile.description) {
       req.session.gpg45Profile = bundle.identityProfile.description;
     }
 
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Getting next route`,
+      "backend-api-call"
+    );
     const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Next route: ${nextRoute.route}`,
+      "backend-api-call"
+    );
     res.redirect(Route[nextRoute.route]);
   } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add evidence, error: ${e}`,
+      "backend-api-call"
+    );
     res.status(BAD_REQUEST);
     res.redirect(pathName.public.ERROR400);
   }

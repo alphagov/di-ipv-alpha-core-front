@@ -45,6 +45,7 @@ interface AuthParams {
   redirect_uri: any;
   state: any;
   client_id: any;
+  claims?: any;
 }
 
 const backendApiEndpoint: string = getBackendServiceApiEndpoint();
@@ -57,9 +58,10 @@ export const startSessionApiRequest = async (
     redirect_uri: req.query.redirect_uri,
     state: req.query.state,
     client_id: req.query.client_id,
+    claims: req.query.claims,
   };
   const response = await axios.get(
-    `${backendApiEndpoint}/ipv/start-session?response_type=${authParams.response_type}&redirect_uri=${authParams.redirect_uri}&state=${authParams.state}&client_id=${authParams.client_id}`
+    `${backendApiEndpoint}/ipv/start-session?response_type=${authParams.response_type}&redirect_uri=${authParams.redirect_uri}&state=${authParams.state}&client_id=${authParams.client_id}&claims=${authParams.claims}`
   );
   return response.data;
 };
