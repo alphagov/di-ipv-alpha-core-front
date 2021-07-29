@@ -121,3 +121,4 @@ logs*.json
 
 keys/
 .vscode/
+certs/
