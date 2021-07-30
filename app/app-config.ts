@@ -139,6 +139,13 @@ const configureNunjucks = (app: express.Application): void => {
     function (date: any, format = "dddd D MMMM YYYY") {
       try {
         let momentDate: Moment;
+        if (date.day && date.month && date.year) {
+          momentDate = moment({
+            year: date.year,
+            month: date.month,
+            day: date.day,
+          });
+        }
         if (typeof date == "string") {
           switch (date) {
             case "today":
