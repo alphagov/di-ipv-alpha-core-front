@@ -121,4 +121,4 @@ logs*.json
 
 keys/
 .vscode/
-certs/
+*.pem
