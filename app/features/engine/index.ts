@@ -49,15 +49,6 @@ export const next = async (
   res: any
 ): Promise<void> => {
   const sessionId = req.session.userId;
-  let evidenceData = null;
-  let evidenceType = EvidenceType.ATP_GENERIC_DATA;
-
-  // We're mocking these below for the time being whilst
-  // the services are getting created
-
-  let activityCheckScore = 0;
-  let fraudCheckScore = 0;
-  let identityVerificationScore = 0;
 
   const logger: Logger = req.app.locals.logger;
   logger.info(
@@ -65,65 +56,16 @@ export const next = async (
     "return-from-atp"
   );
 
-  switch (source) {
-    case "information":
-      evidenceData = req.session.userData["basicInfo"];
-      break;
-    case "passport":
-      evidenceData = req.session.userData["passport"];
-      evidenceType = EvidenceType.UK_PASSPORT;
-      break;
-    case "bank-account":
-      evidenceData = req.session.userData["bankAccount"];
-      break;
-    case "json":
-      evidenceData = req.session.userData["json"];
-      activityCheckScore =
-        req.session.userData["json"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["json"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["json"]["scores"]["verification"];
-      break;
-    case "driving-licence":
-      evidenceData = req.session.userData["drivingLicence"];
-      activityCheckScore =
-        req.session.userData["drivingLicence"]["scores"]["activityHistory"];
-      fraudCheckScore =
-        req.session.userData["drivingLicence"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["drivingLicence"]["scores"]["verification"];
-      break;
-    case "mmn":
-      evidenceData = req.session.userData["mmn"];
-      activityCheckScore =
-        req.session.userData["mmn"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["mmn"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["mmn"]["scores"]["verification"];
-      break;
-    case "nino":
-      evidenceData = req.session.userData["nino"];
-      activityCheckScore =
-        req.session.userData["nino"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["nino"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["nino"]["scores"]["verification"];
-      break;
-    default:
-      res.status(INTERNAL_SERVER_ERROR);
-      res.redirect(pathName.public.ERROR500);
-  }
+  const extractedData = extractDataFromEvidence(source, req, res);
 
   try {
     const bundleScores: BundleScores = {
-      activityCheckScore: activityCheckScore,
-      fraudCheckScore: fraudCheckScore,
-      identityVerificationScore: identityVerificationScore,
+      ...req.session.bundleScores,
     };
     const newEvidence: EvidenceDto = {
       evidenceId: uuidv4(),
-      type: evidenceType,
-      evidenceData: evidenceData,
+      type: extractedData.evidenceType,
+      evidenceData: extractedData.evidenceData,
       bundleScores: bundleScores,
     };
 
@@ -161,4 +103,97 @@ export const next = async (
     res.status(BAD_REQUEST);
     res.redirect(pathName.public.ERROR400);
   }
+};
+
+// TODO (PYI-19): Refactor this once the ATPs know what type they are.
+//       This will all get removed from the frontend after we finish mocking the bundle scores (activity, fraud, verification)
+//       PYI-87 ticket should cover some of this work.
+const extractDataFromEvidence = (
+  source: string,
+  req: Request,
+  res: Response
+) => {
+  let activityCheckScore = 0;
+  let fraudCheckScore = 0;
+  let identityVerificationScore = 0;
+  let evidenceData = null;
+  let evidenceType = EvidenceType.ATP_GENERIC_DATA;
+
+  switch (source) {
+    case "information":
+      evidenceData = req.session.userData["basicInfo"];
+      break;
+    case "passport":
+      evidenceData = req.session.userData["passport"];
+      evidenceType = EvidenceType.UK_PASSPORT;
+      break;
+    case "bank-account":
+      evidenceData = req.session.userData["bankAccount"];
+      break;
+    case "json":
+      evidenceData = req.session.userData["json"];
+      activityCheckScore =
+        req.session.userData["json"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["json"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["json"]["scores"]["verification"];
+
+      req.session.bundleScores = {
+        activityCheckScore: activityCheckScore,
+        fraudCheckScore: fraudCheckScore,
+        identityVerificationScore: identityVerificationScore,
+      };
+      break;
+    case "driving-licence":
+      evidenceData = req.session.userData["drivingLicence"];
+      activityCheckScore =
+        req.session.userData["drivingLicence"]["scores"]["activityHistory"];
+      fraudCheckScore =
+        req.session.userData["drivingLicence"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["drivingLicence"]["scores"]["verification"];
+
+      req.session.bundleScores = {
+        activityCheckScore: activityCheckScore,
+        fraudCheckScore: fraudCheckScore,
+        identityVerificationScore: identityVerificationScore,
+      };
+      break;
+    case "mmn":
+      evidenceData = req.session.userData["mmn"];
+      activityCheckScore =
+        req.session.userData["mmn"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["mmn"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["mmn"]["scores"]["verification"];
+
+      req.session.bundleScores = {
+        activityCheckScore: activityCheckScore,
+        fraudCheckScore: fraudCheckScore,
+        identityVerificationScore: identityVerificationScore,
+      };
+      break;
+    case "nino":
+      evidenceData = req.session.userData["nino"];
+      activityCheckScore =
+        req.session.userData["nino"]["scores"]["activityHistory"];
+      fraudCheckScore = req.session.userData["nino"]["scores"]["identityFraud"];
+      identityVerificationScore =
+        req.session.userData["nino"]["scores"]["verification"];
+
+      req.session.bundleScores = {
+        activityCheckScore: activityCheckScore,
+        fraudCheckScore: fraudCheckScore,
+        identityVerificationScore: identityVerificationScore,
+      };
+      break;
+    default:
+      res.status(INTERNAL_SERVER_ERROR);
+      res.redirect(pathName.public.ERROR500);
+  }
+
+  return {
+    evidenceData: evidenceData,
+    evidenceType: evidenceType,
+  };
 };
