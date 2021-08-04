@@ -25,9 +25,9 @@ export const getValidations = (req: Request): any => {
   });
 
   validations["scores"] = {
-    activityHistory: req.session.bundleScores.activityCheckScore,
-    identityFraud: req.session.bundleScores.fraudCheckScore,
-    verification: req.session.bundleScores.identityVerificationScore,
+    activityHistory: req.session.bundleScores.activityCheckScore || 0,
+    identityFraud: req.session.bundleScores.fraudCheckScore || 0,
+    verification: req.session.bundleScores.identityVerificationScore || 0,
   };
 
   return validations;
