@@ -24,11 +24,19 @@ export const getValidations = (req: Request): any => {
       : null;
   });
 
-  validations["scores"] = {
-    activityHistory: req.session.bundleScores.activityCheckScore || 0,
-    identityFraud: req.session.bundleScores.fraudCheckScore || 0,
-    verification: req.session.bundleScores.identityVerificationScore || 0,
-  };
+  if (req.session.bundleScores) {
+    validations["scores"] = {
+      activityHistory: req.session.bundleScores.activityCheckScore || 0,
+      identityFraud: req.session.bundleScores.fraudCheckScore || 0,
+      verification: req.session.bundleScores.identityVerificationScore || 0,
+    };
+  } else {
+    validations["scores"] = {
+      activityHistory: 0,
+      identityFraud: 0,
+      verification: 0,
+    };
+  }
 
   return validations;
 };
