@@ -1,26 +1,5 @@
 import { Request } from "express";
 
-export const getScore = (
-  req: Request,
-  param: string,
-  list: Array<string>
-): number => {
-  let score = 0;
-  list.forEach((item) => {
-    if (
-      req.session.userData[item] &&
-      req.session.userData[item].scores &&
-      !isNaN(parseInt(req.session.userData[item].scores[param]))
-    ) {
-      score = Math.min(
-        score + parseInt(req.session.userData[item].scores[param]),
-        4
-      );
-    }
-  });
-  return score;
-};
-
 export const getValidations = (req: Request): any => {
   const list = [
     "bankAccount",
@@ -45,11 +24,19 @@ export const getValidations = (req: Request): any => {
       : null;
   });
 
-  validations["scores"] = {
-    activityHistory: getScore(req, "activityHistory", list),
-    identityFraud: getScore(req, "identityFraud", list),
-    verification: getScore(req, "verification", list),
-  };
+  if (req.session.bundleScores) {
+    validations["scores"] = {
+      activityHistory: req.session.bundleScores.activityCheckScore || 0,
+      identityFraud: req.session.bundleScores.fraudCheckScore || 0,
+      verification: req.session.bundleScores.identityVerificationScore || 0,
+    };
+  } else {
+    validations["scores"] = {
+      activityHistory: 0,
+      identityFraud: 0,
+      verification: 0,
+    };
+  }
 
   return validations;
 };

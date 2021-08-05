@@ -121,7 +121,7 @@ const otherTransports = [
 ];
 
 const winstonLogger = createLogger({
-  defaultMeta: { service: "sf-industry-app", "log-path": logPath },
+  defaultMeta: { service: "di-ipv-core-front", "log-path": logPath },
   level: getLogLevel(),
   transports:
     process.env.NODE_ENV == "development" ? devTransports : otherTransports,
