@@ -12,4 +12,4 @@ applications:
       SESSION_COOKIE_MAX_AGE: "1200000"
       SESSION_COOKIE_SECURE: "false"
       ENVIRONMENT: "dev"
-      DI_IPV_CORE_BACK_API_ENDPOINT: "https://di-ipv-core-back.london.cloudapps.digital"
+      DI_IPV_CORE_BACK_API_ENDPOINT: "https://di-ipv-core-back.london.cloudapps.digital/"

@@ -15,7 +15,33 @@ import {
 } from "./api";
 import Logger from "../../utils/logger";
 
-// /ipv
+const getNextRouteAndRedirect = async (req: Request, res: Response) => {
+  const logger: Logger = req.app.locals.logger;
+  const sessionId: string = req.session.userId;
+
+  logger.info(
+    `[${req.method}] ${req.originalUrl} (${sessionId}) - Getting next route`,
+    "backend-api-call"
+  );
+
+  try {
+    const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Next route: ${nextRoute.route}`,
+      "backend-api-call"
+    );
+    res.redirect(Route[nextRoute.route]);
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to get the next route, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+};
+
 export const startNewSession = async (
   req: Request,
   res: Response
@@ -25,22 +51,32 @@ export const startNewSession = async (
     `[${req.method}] ${req.originalUrl} - creating new session`,
     "backend-api-call"
   );
-  const sessionData: SessionData = await startSessionApiRequest(req);
+  let sessionData: SessionData;
+  let sessionId: string;
+  try {
+    sessionData = await startSessionApiRequest(req);
+    sessionId = sessionData.sessionId;
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Created a new session`,
+      "backend-api-call"
+    );
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to create a new session, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
 
-  const sessionId = sessionData.sessionId;
   req.session.sessionData = sessionData;
   req.session.userId = sessionId;
   req.session.autoInput = { items: [] };
   req.session.userData = {};
   req.session.gpg45Profile = null;
 
-  logger.info(
-    `[${req.method}] ${req.originalUrl} (${sessionId}) - getting next route`,
-    "backend-api-call"
-  );
-  const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
-
-  res.redirect(Route[nextRoute.route]);
+  await getNextRouteAndRedirect(req, res);
 };
 
 export const next = async (
@@ -58,43 +94,25 @@ export const next = async (
 
   const extractedData = extractDataFromEvidence(source, req, res);
 
+  const bundleScores: BundleScores = {
+    ...req.session.bundleScores,
+  };
+
+  const newEvidence: EvidenceDto = {
+    evidenceId: uuidv4(),
+    type: extractedData.evidenceType,
+    evidenceData: extractedData.evidenceData,
+    bundleScores: bundleScores,
+  };
+
+  logger.info(
+    `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding new evidence`,
+    "backend-api-call"
+  );
+
+  let bundle: SessionData;
   try {
-    const bundleScores: BundleScores = {
-      ...req.session.bundleScores,
-    };
-    const newEvidence: EvidenceDto = {
-      evidenceId: uuidv4(),
-      type: extractedData.evidenceType,
-      evidenceData: extractedData.evidenceData,
-      bundleScores: bundleScores,
-    };
-
-    logger.info(
-      `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding new evidence`,
-      "backend-api-call"
-    );
-    const bundle: SessionData = await addEvidenceApiRequest(
-      sessionId,
-      newEvidence
-    );
-    logger.info(
-      `[${req.method}] ${req.originalUrl} (${sessionId}) - Evidence added`,
-      "backend-api-call"
-    );
-    if (bundle.identityProfile && bundle.identityProfile.description) {
-      req.session.gpg45Profile = bundle.identityProfile.description;
-    }
-
-    logger.info(
-      `[${req.method}] ${req.originalUrl} (${sessionId}) - Getting next route`,
-      "backend-api-call"
-    );
-    const nextRoute: RouteDto = await getNextRouteApiRequest(sessionId);
-    logger.info(
-      `[${req.method}] ${req.originalUrl} (${sessionId}) - Next route: ${nextRoute.route}`,
-      "backend-api-call"
-    );
-    res.redirect(Route[nextRoute.route]);
+    bundle = await addEvidenceApiRequest(sessionId, newEvidence);
   } catch (e) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add evidence, error: ${e}`,
@@ -102,98 +120,71 @@ export const next = async (
     );
     res.status(BAD_REQUEST);
     res.redirect(pathName.public.ERROR400);
+    return;
   }
+
+  if (bundle && bundle.identityProfile && bundle.identityProfile.description) {
+    req.session.gpg45Profile = bundle.identityProfile.description;
+  }
+
+  await getNextRouteAndRedirect(req, res);
 };
 
 // TODO (PYI-19): Refactor this once the ATPs know what type they are.
 //       This will all get removed from the frontend after we finish mocking the bundle scores (activity, fraud, verification)
 //       PYI-87 ticket should cover some of this work.
+
+const sourceDataMap = {
+  information: "basicInfo",
+  passport: "passport",
+  "bank-account": "bankAccount",
+  json: "json",
+  "driving-license": "drivingLicense",
+  mmn: "mmn",
+  nino: "nino",
+};
+
 const extractDataFromEvidence = (
   source: string,
   req: Request,
   res: Response
 ) => {
-  let activityCheckScore = 0;
-  let fraudCheckScore = 0;
-  let identityVerificationScore = 0;
-  let evidenceData = null;
-  let evidenceType = EvidenceType.ATP_GENERIC_DATA;
+  const dataKey = sourceDataMap[source];
+  const logger: Logger = req.app.locals.logger;
 
-  switch (source) {
-    case "information":
-      evidenceData = req.session.userData["basicInfo"];
-      break;
-    case "passport":
-      evidenceData = req.session.userData["passport"];
-      evidenceType = EvidenceType.UK_PASSPORT;
-      break;
-    case "bank-account":
-      evidenceData = req.session.userData["bankAccount"];
-      break;
-    case "json":
-      evidenceData = req.session.userData["json"];
-      activityCheckScore =
-        req.session.userData["json"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["json"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["json"]["scores"]["verification"];
+  if (dataKey == null) {
+    logger.info(
+      `[${req.method}] ${req.originalUrl} (${req.session.userId}) - Source not mapped to anything - source: ${source}`,
+      "return-from-atp"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
 
-      req.session.bundleScores = {
-        activityCheckScore: activityCheckScore,
-        fraudCheckScore: fraudCheckScore,
-        identityVerificationScore: identityVerificationScore,
-      };
-      break;
-    case "driving-licence":
-      evidenceData = req.session.userData["drivingLicence"];
-      activityCheckScore =
-        req.session.userData["drivingLicence"]["scores"]["activityHistory"];
-      fraudCheckScore =
-        req.session.userData["drivingLicence"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["drivingLicence"]["scores"]["verification"];
-
-      req.session.bundleScores = {
-        activityCheckScore: activityCheckScore,
-        fraudCheckScore: fraudCheckScore,
-        identityVerificationScore: identityVerificationScore,
-      };
-      break;
-    case "mmn":
-      evidenceData = req.session.userData["mmn"];
-      activityCheckScore =
-        req.session.userData["mmn"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["mmn"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["mmn"]["scores"]["verification"];
-
-      req.session.bundleScores = {
-        activityCheckScore: activityCheckScore,
-        fraudCheckScore: fraudCheckScore,
-        identityVerificationScore: identityVerificationScore,
-      };
-      break;
-    case "nino":
-      evidenceData = req.session.userData["nino"];
-      activityCheckScore =
-        req.session.userData["nino"]["scores"]["activityHistory"];
-      fraudCheckScore = req.session.userData["nino"]["scores"]["identityFraud"];
-      identityVerificationScore =
-        req.session.userData["nino"]["scores"]["verification"];
-
-      req.session.bundleScores = {
-        activityCheckScore: activityCheckScore,
-        fraudCheckScore: fraudCheckScore,
-        identityVerificationScore: identityVerificationScore,
-      };
-      break;
-    default:
-      res.status(INTERNAL_SERVER_ERROR);
-      res.redirect(pathName.public.ERROR500);
+  // We're mocking these values for the time being.
+  if (
+    dataKey === "json" ||
+    dataKey === "drivingLicense" ||
+    dataKey === "mmn" ||
+    dataKey === "nino"
+  ) {
+    req.session.bundleScores = {
+      activityCheckScore:
+        req.session.userData[dataKey]["scores"]["activityHistory"] || 0,
+      fraudCheckScore:
+        req.session.userData[dataKey]["scores"]["identityFraud"] || 0,
+      identityVerificationScore:
+        req.session.userData[dataKey]["scores"]["verification"] || 0,
+    };
   }
 
   return {
-    evidenceData: evidenceData,
-    evidenceType: evidenceType,
+    evidenceData: req.session.userData[dataKey],
+    // Currently setting this here, but will be removed as part of PYI-87 ticket.
+    evidenceType:
+      dataKey === "passport"
+        ? EvidenceType.UK_PASSPORT
+        : EvidenceType.ATP_GENERIC_DATA,
   };
 };
