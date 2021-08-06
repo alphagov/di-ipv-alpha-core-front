@@ -138,7 +138,6 @@ const sourceDataMap = {
   information: "basicInfo",
   passport: "passport",
   "bank-account": "bankAccount",
-  json: "json",
   "driving-license": "drivingLicense",
   mmn: "mmn",
   nino: "nino",
@@ -163,12 +162,7 @@ const extractDataFromEvidence = (
   }
 
   // We're mocking these values for the time being.
-  if (
-    dataKey === "json" ||
-    dataKey === "drivingLicense" ||
-    dataKey === "mmn" ||
-    dataKey === "nino"
-  ) {
+  if (dataKey === "drivingLicense" || dataKey === "mmn" || dataKey === "nino") {
     req.session.bundleScores = {
       activityCheckScore:
         req.session.userData[dataKey]["scores"]["activityHistory"] || 0,
