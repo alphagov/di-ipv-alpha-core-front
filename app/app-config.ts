@@ -26,6 +26,8 @@ import express, { NextFunction, Request, Response } from "express";
 import i18next from "i18next";
 import Backend from "i18next-fs-backend";
 import i18nextMiddleware from "i18next-http-middleware";
+import moment from "moment";
+import { Moment } from "moment";
 import * as nunjucks from "nunjucks";
 import path from "path";
 const httpOnlyCookie = require("./i18next/language-detector-httpOnly-cookie");
@@ -132,6 +134,39 @@ const configureNunjucks = (app: express.Application): void => {
     return decodeURIComponent(text);
   });
 
+  nunjucksEnv.addFilter(
+    "formatDate",
+    function (date: any, format = "dddd D MMMM YYYY") {
+      try {
+        let momentDate: Moment;
+        if (date.day && date.month && date.year) {
+          momentDate = moment({
+            year: date.year,
+            month: date.month,
+            day: date.day,
+          });
+        }
+        if (typeof date == "string") {
+          switch (date) {
+            case "today":
+              momentDate = moment().startOf("day");
+              break;
+            case "tomorrow":
+              momentDate = moment().add(1, "day").startOf("day");
+              break;
+            default:
+              momentDate = moment(date, "YYYY-MM-DD[T]HH:mm:SS.sssZ");
+          }
+        } else {
+          momentDate = moment(date);
+        }
+        momentDate.locale(this.ctx.i18n.language);
+        return momentDate.format(format);
+      } catch (e) {
+        return "";
+      }
+    }
+  );
   nunjucksEnv.addFilter("translate", function (key: string, options?: any) {
     const translate = i18next.getFixedT(this.ctx.i18n.language);
     return translate(key, options);
