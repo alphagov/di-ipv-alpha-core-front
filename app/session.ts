@@ -27,7 +27,6 @@ import session from "express-session";
 import redis, { ClientOpts } from "redis";
 
 import {
-  getRedisAuthToken,
   getRedisPort,
   getRedisSessionSecret,
   getRedisSessionUrl,
@@ -43,14 +42,9 @@ const getRedisClientOptions = (): ClientOpts => {
     return { url: redisUrl };
   }
 
-  return process.env.NODE_ENV.trim() === "production"
-    ? {
-        url: "rediss://" + getRedisSessionUrl() + ":" + getRedisPort(),
-        password: getRedisAuthToken(),
-      }
-    : {
-        url: "redis://" + getRedisSessionUrl() + ":" + getRedisPort(),
-      };
+  return {
+    url: "redis://" + getRedisSessionUrl() + ":" + getRedisPort(),
+  };
 };
 
 export const getRedisClient = (): redis.RedisClient => {
