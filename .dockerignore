@@ -10,3 +10,4 @@ LICENSE
 node_modules/
 build/
 keys/
+.idea/
