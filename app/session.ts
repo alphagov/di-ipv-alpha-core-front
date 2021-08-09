@@ -64,7 +64,7 @@ export const setupSession = (): express.RequestHandler => {
   const redisClient = getRedisClient();
   redisClient.on("error", (error: Error) => {
     logger.error(
-      `Unable to start server because of ${error.message}`,
+      `Redis client connection error - ${error.message}`,
       logLabel
     );
   });
