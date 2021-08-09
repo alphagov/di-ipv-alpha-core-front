@@ -26,6 +26,10 @@ import connectRedis from "connect-redis";
 import session from "express-session";
 import redis, { ClientOpts } from "redis";
 
+import Logger, { getLogLabel } from "./utils/logger";
+const logger: Logger = new Logger();
+const logLabel: string = getLogLabel(__filename);
+
 import {
   getRedisPort,
   getRedisSessionSecret,
@@ -58,6 +62,13 @@ export const setupSession = (): express.RequestHandler => {
   }
 
   const redisClient = getRedisClient();
+  redisClient.on("error", (error: Error) => {
+    logger.error(
+      `Unable to start server because of ${error.message}`,
+      logLabel
+    );
+  });
+
   const RedisStore = connectRedis(session);
 
   return session({
