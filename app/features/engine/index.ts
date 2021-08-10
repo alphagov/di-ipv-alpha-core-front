@@ -6,8 +6,8 @@ import {
   addEvidenceApiRequest,
   BundleScores,
   EvidenceDto,
-  EvidenceType,
   getNextRouteApiRequest,
+  IdentityEvidence,
   Route,
   RouteDto,
   SessionData,
@@ -92,7 +92,18 @@ export const next = async (
     "return-from-atp"
   );
 
-  const extractedData = extractDataFromEvidence(source, req, res);
+  if (!req.session.identityEvidence) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find evidence`,
+      "no-identity-evidence"
+    );
+    res.status(BAD_REQUEST);
+    res.redirect(pathName.public.ERROR400);
+    return;
+  }
+
+  const evidence: IdentityEvidence =
+    req.session.identityEvidence[req.session.identityEvidence.length - 1];
 
   const bundleScores: BundleScores = {
     ...req.session.bundleScores,
@@ -100,8 +111,8 @@ export const next = async (
 
   const newEvidence: EvidenceDto = {
     evidenceId: uuidv4(),
-    type: extractedData.evidenceType,
-    evidenceData: extractedData.evidenceData,
+    type: evidence.type,
+    evidenceData: { ...evidence.atpResponse, ...evidence.attributes },
     bundleScores: bundleScores,
   };
 
@@ -128,57 +139,4 @@ export const next = async (
   }
 
   await getNextRouteAndRedirect(req, res);
-};
-
-// TODO (PYI-19): Refactor this once the ATPs know what type they are.
-//       This will all get removed from the frontend after we finish mocking the bundle scores (activity, fraud, verification)
-//       PYI-87 ticket should cover some of this work.
-
-const sourceDataMap = {
-  information: "basicInfo",
-  passport: "passport",
-  "bank-account": "bankAccount",
-  "driving-license": "drivingLicense",
-  mmn: "mmn",
-  nino: "nino",
-};
-
-const extractDataFromEvidence = (
-  source: string,
-  req: Request,
-  res: Response
-) => {
-  const dataKey = sourceDataMap[source];
-  const logger: Logger = req.app.locals.logger;
-
-  if (dataKey == null) {
-    logger.info(
-      `[${req.method}] ${req.originalUrl} (${req.session.userId}) - Source not mapped to anything - source: ${source}`,
-      "return-from-atp"
-    );
-    res.status(INTERNAL_SERVER_ERROR);
-    res.redirect(pathName.public.ERROR500);
-    return;
-  }
-
-  // We're mocking these values for the time being.
-  if (dataKey === "drivingLicense" || dataKey === "mmn" || dataKey === "nino") {
-    req.session.bundleScores = {
-      activityCheckScore:
-        req.session.userData[dataKey]["scores"]["activityHistory"] || 0,
-      fraudCheckScore:
-        req.session.userData[dataKey]["scores"]["identityFraud"] || 0,
-      identityVerificationScore:
-        req.session.userData[dataKey]["scores"]["verification"] || 0,
-    };
-  }
-
-  return {
-    evidenceData: req.session.userData[dataKey],
-    // Currently setting this here, but will be removed as part of PYI-87 ticket.
-    evidenceType:
-      dataKey === "passport"
-        ? EvidenceType.UK_PASSPORT
-        : EvidenceType.ATP_GENERIC_DATA,
-  };
 };
