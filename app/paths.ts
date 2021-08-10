@@ -37,7 +37,6 @@ const pathName = {
     CURRENT_ACCOUNT_MORTGAGE: "/bank-account/mortgage",
     CURRENT_ACCOUNT_POSTCODE: "/bank-account/postcode",
     DRIVING_LICENCE_START: "/driving-licence",
-    JSON: "/json",
     INFO: "/information",
     IPV: "/ipv",
     IPV_AUTHORIZE: "/oauth2/authorize",
