@@ -31,6 +31,7 @@ const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
   const validations = getValidations(req);
+
   return res.render(template, {
     language: req.i18n.language,
     validations,

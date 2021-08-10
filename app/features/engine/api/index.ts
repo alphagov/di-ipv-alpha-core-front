@@ -5,6 +5,10 @@ import { getBackendServiceApiEndpoint } from "./config";
 export interface SessionData {
   sessionId: string;
   previousRoute: Route;
+  //identityEvidence: IdentityEvidence;
+  //identityVerification: any;
+  //activity: any;
+  //fraud: any;
   identityVerificationBundle: EvidenceDto;
   identityProfile: any;
 }
@@ -25,6 +29,15 @@ export interface EvidenceDto {
   type: EvidenceType;
   evidenceData: any;
   bundleScores?: BundleScores;
+}
+
+export interface IdentityEvidence {
+  type: EvidenceType;
+  strength: number;
+  validity: number;
+  attributes: any;
+  atpResponse?: any;
+  jws?: string;
 }
 
 export interface RouteDto {
