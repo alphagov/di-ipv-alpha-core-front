@@ -19,12 +19,6 @@
     "lint:fix": "yarn run lint --fix",
     "lint:staged": "lint-staged"
   },
-  "nyc": {
-    "exclude": [
-      "app/features/**/__tests__/",
-      "app/features/**/index.ts"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
