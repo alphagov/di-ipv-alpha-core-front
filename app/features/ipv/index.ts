@@ -6,7 +6,6 @@ export const getValidations = (req: Request): any => {
     "drivingLicence",
     "passport",
     "basicInfo",
-    "json",
     "mmn",
     "nino",
   ];
