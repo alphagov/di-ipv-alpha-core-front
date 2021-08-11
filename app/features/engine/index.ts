@@ -10,7 +10,7 @@ import {
   IdentityEvidence,
   Route,
   RouteDto,
-  SessionData,
+  SessionDataDto,
   startSessionApiRequest,
 } from "./api";
 import Logger from "../../utils/logger";
@@ -51,7 +51,7 @@ export const startNewSession = async (
     `[${req.method}] ${req.originalUrl} - creating new session`,
     "backend-api-call"
   );
-  let sessionData: SessionData;
+  let sessionData: SessionDataDto;
   let sessionId: string;
   try {
     sessionData = await startSessionApiRequest(req);
@@ -121,7 +121,7 @@ export const next = async (
     "backend-api-call"
   );
 
-  let bundle: SessionData;
+  let bundle: SessionDataDto;
   try {
     bundle = await addEvidenceApiRequest(sessionId, newEvidence);
   } catch (e) {

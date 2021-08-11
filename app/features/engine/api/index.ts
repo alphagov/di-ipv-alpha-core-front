@@ -2,15 +2,27 @@ import axios from "axios";
 import { Request } from "express";
 import { getBackendServiceApiEndpoint } from "./config";
 
-export interface SessionData {
+export interface SessionDataDto {
   sessionId: string;
   previousRoute: Route;
-  //identityEvidence: IdentityEvidence;
-  //identityVerification: any;
-  //activity: any;
-  //fraud: any;
-  identityVerificationBundle: EvidenceDto;
+  identityVerificationBundle: IdentityVerificationBundle;
   identityProfile: any;
+}
+
+export interface SessionData {
+  sessionId: string;
+  identityEvidence: IdentityEvidence;
+  identityVerification: IdentityVerification;
+  activity: Activity;
+  fraud: Fraud;
+}
+
+export interface IdentityVerificationBundle {
+  identityEvidence: [any];
+  activityChecks: [Activity];
+  fraudCheck: [Fraud];
+  identityVerification: [IdentityVerification];
+  bundleScores: BundleScores;
 }
 
 export enum EvidenceType {
@@ -40,6 +52,20 @@ export interface IdentityEvidence {
   jws?: string;
 }
 
+export interface IdentityVerification {
+  type: any;
+  verificationData: any;
+}
+
+export interface Activity {
+  type: any;
+  activityHistory: any;
+}
+
+export interface Fraud {
+  fraudData: any;
+}
+
 export interface RouteDto {
   sessionId: string;
   route: Route;
@@ -65,7 +91,7 @@ const backendApiEndpoint: string = getBackendServiceApiEndpoint();
 
 export const startSessionApiRequest = async (
   req: Request
-): Promise<SessionData> => {
+): Promise<SessionDataDto> => {
   const authParams: AuthParams = {
     response_type: req.query.response_type,
     redirect_uri: req.query.redirect_uri,
@@ -98,7 +124,7 @@ export const getNextRouteApiRequest = async (
 export const addEvidenceApiRequest = async (
   sessionId: string,
   evidence: EvidenceDto
-): Promise<SessionData> => {
+): Promise<SessionDataDto> => {
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-evidence`,
     evidence
