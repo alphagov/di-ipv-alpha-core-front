@@ -11,10 +11,8 @@ import {
   IdentityEvidence,
   Route,
   RouteDto,
-  SessionData,
   startSessionApiRequest,
   StartSessionDTO,
-  IdentityProfile
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -76,8 +74,8 @@ export const startNewSession = async (
   req.session.userId = sessionId;
 
   req.session.sessionData = {
-    sessionId: createdSession.sessionId
-  }
+    sessionId: createdSession.sessionId,
+  };
 
   req.session.autoInput = { items: [] };
   // req.session.userData = {};
@@ -143,18 +141,16 @@ export const next = async (
 
   // const sessionData:SessionData = {
   //   sessionId: bundle.sessionId,1
-  //   identityEvidence: bundle.identityVerificationBundle.identityEvidence, 
-  //   identityVerification: bundle.identityVerificationBundle.identityVerification, 
+  //   identityEvidence: bundle.identityVerificationBundle.identityEvidence,
+  //   identityVerification: bundle.identityVerificationBundle.identityVerification,
   //   activity: bundle.identityVerificationBundle.activityChecks,
   //   fraud: bundle.identityVerificationBundle.fraudCheck
   // }
 
-
-
   req.session.sessionData.identityProfile = {
     name: bundle?.identityProfile?.name,
-    description: bundle?.identityProfile?.description
-  }
+    description: bundle?.identityProfile?.description,
+  };
 
   // if (bundle && bundle.identityProfile && bundle.identityProfile.description) {
   //   // req.session.gpg45Profile = bundle.identityProfile.description;

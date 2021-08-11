@@ -1,14 +1,15 @@
 import { Request } from "express";
 
+// TODO: Remove this function?
 export const getValidations = (req: Request): any => {
-  const list = [
-    "bankAccount",
-    "drivingLicence",
-    "passport",
-    "basicInfo",
-    "mmn",
-    "nino",
-  ];
+  // const list = [
+  //   "bankAccount",
+  //   "drivingLicence",
+  //   "passport",
+  //   "basicInfo",
+  //   "mmn",
+  //   "nino",
+  // ];
   const validations = {};
 
   // list.forEach((item) => {

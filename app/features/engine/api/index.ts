@@ -22,7 +22,7 @@ export interface SessionData {
   identityVerification: [IdentityVerification];
   activity: [Activity];
   fraud: [Fraud];
-  identityProfile: IdentityProfile
+  identityProfile: IdentityProfile;
 }
 
 export interface IdentityVerificationBundle {
@@ -34,15 +34,14 @@ export interface IdentityVerificationBundle {
 }
 
 export interface IdentityProfile {
-  name: String,
-  description: String,
+  name: string;
+  description: string;
   // confidence: ConfidenceLevel,
   // evidenceScores: [EvidenceScore],
   // activityHistory: Enumerator.SCORE
   // identityFraud: Enumerator.SCORE
   // verification: Enumerator.SCORE
 }
-
 
 export enum EvidenceType {
   UK_PASSPORT = "UK_PASSPORT",
