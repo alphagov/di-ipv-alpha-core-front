@@ -23,19 +23,15 @@
  */
 
 import { Request, Response, Router } from "express";
-import { getValidations } from "..";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
 
 const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
-  const validations = getValidations(req);
-
   return res.render(template, {
     language: req.i18n.language,
-    validations,
-    gpg45Profile: req.session.gpg45Profile,
+    gpg45Profile: req.session.sessionData.identityProfile,
   });
 };
 
