@@ -4,14 +4,17 @@ import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "http-status-codes";
 import { v4 as uuidv4 } from "uuid";
 import {
   addEvidenceApiRequest,
+  AddEvidenceDTO,
   BundleScores,
   EvidenceDto,
   getNextRouteApiRequest,
   IdentityEvidence,
   Route,
   RouteDto,
-  SessionDataDto,
+  SessionData,
   startSessionApiRequest,
+  StartSessionDTO,
+  IdentityProfile
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -51,11 +54,11 @@ export const startNewSession = async (
     `[${req.method}] ${req.originalUrl} - creating new session`,
     "backend-api-call"
   );
-  let sessionData: SessionDataDto;
+  let createdSession: StartSessionDTO;
   let sessionId: string;
   try {
-    sessionData = await startSessionApiRequest(req);
-    sessionId = sessionData.sessionId;
+    createdSession = await startSessionApiRequest(req);
+    sessionId = createdSession.sessionId;
     logger.info(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Created a new session`,
       "backend-api-call"
@@ -70,11 +73,15 @@ export const startNewSession = async (
     return;
   }
 
-  req.session.sessionData = sessionData;
   req.session.userId = sessionId;
+
+  req.session.sessionData = {
+    sessionId: createdSession.sessionId
+  }
+
   req.session.autoInput = { items: [] };
-  req.session.userData = {};
-  req.session.gpg45Profile = null;
+  // req.session.userData = {};
+  // req.session.gpg45Profile = null;
 
   await getNextRouteAndRedirect(req, res);
 };
@@ -121,7 +128,7 @@ export const next = async (
     "backend-api-call"
   );
 
-  let bundle: SessionDataDto;
+  let bundle: AddEvidenceDTO;
   try {
     bundle = await addEvidenceApiRequest(sessionId, newEvidence);
   } catch (e) {
@@ -134,9 +141,25 @@ export const next = async (
     return;
   }
 
-  if (bundle && bundle.identityProfile && bundle.identityProfile.description) {
-    req.session.gpg45Profile = bundle.identityProfile.description;
+  // const sessionData:SessionData = {
+  //   sessionId: bundle.sessionId,1
+  //   identityEvidence: bundle.identityVerificationBundle.identityEvidence, 
+  //   identityVerification: bundle.identityVerificationBundle.identityVerification, 
+  //   activity: bundle.identityVerificationBundle.activityChecks,
+  //   fraud: bundle.identityVerificationBundle.fraudCheck
+  // }
+
+
+
+  req.session.sessionData.identityProfile = {
+    name: bundle?.identityProfile?.name,
+    description: bundle?.identityProfile?.description
   }
+
+  // if (bundle && bundle.identityProfile && bundle.identityProfile.description) {
+  //   // req.session.gpg45Profile = bundle.identityProfile.description;
+  //   req.session.sessionData.identityProfile
+  // }
 
   await getNextRouteAndRedirect(req, res);
 };

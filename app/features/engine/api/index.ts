@@ -2,19 +2,27 @@ import axios from "axios";
 import { Request } from "express";
 import { getBackendServiceApiEndpoint } from "./config";
 
-export interface SessionDataDto {
+export interface StartSessionDTO {
+  sessionId: string;
+  previousRoute: Route;
+  // identityVerificationBundle: IdentityVerificationBundle;
+  // identityProfile: any;
+}
+
+export interface AddEvidenceDTO {
   sessionId: string;
   previousRoute: Route;
   identityVerificationBundle: IdentityVerificationBundle;
-  identityProfile: any;
+  identityProfile: IdentityProfile;
 }
 
 export interface SessionData {
   sessionId: string;
-  identityEvidence: IdentityEvidence;
-  identityVerification: IdentityVerification;
-  activity: Activity;
-  fraud: Fraud;
+  identityEvidence: [IdentityEvidence];
+  identityVerification: [IdentityVerification];
+  activity: [Activity];
+  fraud: [Fraud];
+  identityProfile: IdentityProfile
 }
 
 export interface IdentityVerificationBundle {
@@ -24,6 +32,17 @@ export interface IdentityVerificationBundle {
   identityVerification: [IdentityVerification];
   bundleScores: BundleScores;
 }
+
+export interface IdentityProfile {
+  name: String,
+  description: String,
+  // confidence: ConfidenceLevel,
+  // evidenceScores: [EvidenceScore],
+  // activityHistory: Enumerator.SCORE
+  // identityFraud: Enumerator.SCORE
+  // verification: Enumerator.SCORE
+}
+
 
 export enum EvidenceType {
   UK_PASSPORT = "UK_PASSPORT",
@@ -91,7 +110,7 @@ const backendApiEndpoint: string = getBackendServiceApiEndpoint();
 
 export const startSessionApiRequest = async (
   req: Request
-): Promise<SessionDataDto> => {
+): Promise<StartSessionDTO> => {
   const authParams: AuthParams = {
     response_type: req.query.response_type,
     redirect_uri: req.query.redirect_uri,
@@ -124,7 +143,7 @@ export const getNextRouteApiRequest = async (
 export const addEvidenceApiRequest = async (
   sessionId: string,
   evidence: EvidenceDto
-): Promise<SessionDataDto> => {
+): Promise<AddEvidenceDTO> => {
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-evidence`,
     evidence
