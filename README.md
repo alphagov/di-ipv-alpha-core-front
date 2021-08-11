@@ -70,6 +70,9 @@ Install nginx and update the nginx.conf with the following lines
   location ~ ^/json {
       proxy_pass  http://127.0.0.1:3000;
   }
+  location ~ ^/identity-evidence {
+      proxy_pass  http://127.0.0.1:3000;
+  }
 
   #IPV endpoints
   location ~ ^/ipv {
