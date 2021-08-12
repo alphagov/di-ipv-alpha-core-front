@@ -5,8 +5,6 @@ import { getBackendServiceApiEndpoint } from "./config";
 export interface StartSessionDTO {
   sessionId: string;
   previousRoute: Route;
-  // identityVerificationBundle: IdentityVerificationBundle;
-  // identityProfile: any;
 }
 
 export interface AddEvidenceDTO {

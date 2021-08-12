@@ -72,14 +72,10 @@ export const startNewSession = async (
   }
 
   req.session.userId = sessionId;
-
   req.session.sessionData = {
     sessionId: createdSession.sessionId,
   };
-
   req.session.autoInput = { items: [] };
-  // req.session.userData = {};
-  // req.session.gpg45Profile = null;
 
   await getNextRouteAndRedirect(req, res);
 };
@@ -139,23 +135,10 @@ export const next = async (
     return;
   }
 
-  // const sessionData:SessionData = {
-  //   sessionId: bundle.sessionId,
-  //   identityEvidence: bundle.identityVerificationBundle.identityEvidence,
-  //   identityVerification: bundle.identityVerificationBundle.identityVerification,
-  //   activity: bundle.identityVerificationBundle.activityChecks,
-  //   fraud: bundle.identityVerificationBundle.fraudCheck
-  // }
-
   req.session.sessionData.identityProfile = {
     name: bundle?.identityProfile?.name,
     description: bundle?.identityProfile?.description,
   };
-
-  // if (bundle && bundle.identityProfile && bundle.identityProfile.description) {
-  //   // req.session.gpg45Profile = bundle.identityProfile.description;
-  //   req.session.sessionData.identityProfile
-  // }
 
   await getNextRouteAndRedirect(req, res);
 };
