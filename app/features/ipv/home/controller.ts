@@ -25,13 +25,15 @@
 import { Request, Response, Router } from "express";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
+import { SessionData } from "../../engine/api";
 
 const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
+  const sessionData: SessionData = req.session.sessionData;
   return res.render(template, {
     language: req.i18n.language,
-    gpg45Profile: req.session.sessionData.identityProfile,
+    gpg45Profile: sessionData.identityProfile,
   });
 };
 
