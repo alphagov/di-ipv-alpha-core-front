@@ -16,8 +16,9 @@ import {
 } from "./api";
 import Logger from "../../utils/logger";
 
+const logger: Logger = new Logger();
+
 const getNextRouteAndRedirect = async (req: Request, res: Response) => {
-  const logger: Logger = req.app.locals.logger;
   const sessionId: string = req.session.userId;
 
   logger.info(
@@ -47,7 +48,6 @@ export const startNewSession = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const logger: Logger = req.app.locals.logger;
   logger.info(
     `[${req.method}] ${req.originalUrl} - creating new session`,
     "backend-api-call"
@@ -72,9 +72,11 @@ export const startNewSession = async (
   }
 
   req.session.userId = sessionId;
+
   req.session.sessionData = {
     sessionId: createdSession.sessionId,
   };
+
   req.session.autoInput = { items: [] };
 
   await getNextRouteAndRedirect(req, res);
@@ -86,14 +88,25 @@ export const next = async (
   res: any
 ): Promise<void> => {
   const sessionId = req.session.userId;
-
-  const logger: Logger = req.app.locals.logger;
   logger.info(
     `[${req.method}] ${req.originalUrl} (${sessionId}) - Returned back from ATP - source: ${source}`,
     "return-from-atp"
   );
+  switch (source) {
+    case "identity-evidence":
+      await addEvidence(req, res);
+      break;
+    case "identity-verification":
+      // TODO: Create an API endpoint to add identity verification and recalculate
+      break;
+  }
 
-  if (!req.session.identityEvidence) {
+  await getNextRouteAndRedirect(req, res);
+};
+
+const addEvidence = async (req: Request, res: Response): Promise<void> => {
+  const sessionId: string = req.session.userId;
+  if (!req.session.sessionData.identityEvidence) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find evidence`,
       "no-identity-evidence"
@@ -139,6 +152,4 @@ export const next = async (
     name: bundle?.identityProfile?.name,
     description: bundle?.identityProfile?.description,
   };
-
-  await getNextRouteAndRedirect(req, res);
 };
