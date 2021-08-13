@@ -99,6 +99,9 @@ export const next = async (
     case "identity-verification":
       // TODO: Create an API endpoint to add identity verification and recalculate
       break;
+    case "activity-history":
+      // TODO: Create an API endpoint to add activity history and recalculate
+      break;
   }
 
   await getNextRouteAndRedirect(req, res);

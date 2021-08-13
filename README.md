@@ -76,6 +76,9 @@ Install nginx and update the nginx.conf with the following lines
   location ~ ^/identity-verification {
       proxy_pass  http://127.0.0.1:3000;
   }
+  location ~ ^/activity-history {
+      proxy_pass  http://127.0.0.1:3000;
+  }
 
   #IPV endpoints
   location ~ ^/ipv {
