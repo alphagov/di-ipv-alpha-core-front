@@ -18,8 +18,8 @@ export interface SessionData {
   sessionId: string;
   identityEvidence: [IdentityEvidence];
   identityVerification: [IdentityVerification];
-  activity: [Activity];
-  fraud: [Fraud];
+  activityChecks: [Activity];
+  fraudChecks: [Fraud];
   identityProfile: IdentityProfile;
 }
 
