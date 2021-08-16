@@ -3,63 +3,67 @@
 {% from "components/languageLink/macro.njk" import languageLink %}
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
 {% extends "common/layout/view.njk" %}
 {% set pageTitleName = 'pages.start.title' | translate %}
 {% block content %}
+    {% macro ipvValidationTags(evidence, emptyEvidenceText="pending") %}
+     {% if evidence.strength or evidence.validity %}
+        {{ govukTag({
+            text: "completed",
+            classes: "govuk-tag--green"
+        }) }}
+        {{ govukTag({
+            text: evidence.strength or 0,
+            classes: "govuk-tag--orange"
+        }) }}
+        {{ govukTag({
+            text: evidence.validity or 0,
+            classes: "govuk-tag--yellow"
+        }) }}
+      {% else %}
+        {{ govukTag({
+            text: emptyEvidenceText,
+            classes: "govuk-tag--blue"
+        }) }}      
+      {% endif %} 
+    {% endmacro %}
+
+    {% macro ipvSummaryList(heading, atpArray) %}
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">{{ heading }}</h1>
+        {% for atp in atpArray %}
+          <div class="govuk-summary-list__row">    
+            <dt class="govuk-summary-list__key">{{ atp.label }}</dt>
+            <dd class="govuk-summary-list__value"> 
+                {{ ipvValidationTags(atp.evidence) }}          
+            </dd>     
+            <dd class="govuk-summary-list__actions">   
+                <a class="govuk-link" href="{{ atp.href }}">{{atp.text}}</a>
+            </dd>
+          </div>
+        {% endfor %}
+    {% endmacro %}
+
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">ATP and Orc test page</h1>
             <p>Enter all required information and then click 'Return to Orc'</p>
+
+
             {# <p><pre>{{ validations | toJSON(2) }}</pre></p> #}
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Identity Evidence</dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ govukTag({
-                            text: "Add identity evidence",
-                            classes: "govuk-tag--blue"
-                        }) }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="/identity-evidence">Add</a>
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Identity Verification</dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ govukTag({
-                            text: "Add identity verification data",
-                            classes: "govuk-tag--blue"
-                        }) }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="/identity-verification">Add</a>
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Activity History</dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ govukTag({
-                            text: "Add activity history data",
-                            classes: "govuk-tag--blue"
-                        }) }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="/activity-history">Add</a>
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Fraud Check</dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ govukTag({
-                            text: "Add fraud check data",
-                            classes: "govuk-tag--blue"
-                        }) }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="/fraud-check">Add</a>
-                    </dd>
-                </div>
+
+                {{ ipvSummaryList("Identity Evidence", identityEvidence)}}
+
+                {{ ipvSummaryList("Identity Verification", identityVerification)}}
+
+                {{ ipvSummaryList("Activity History", activityHistory)}}
+
+                {{ ipvSummaryList("Fraud", fraud)}}
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Ungrouped</h1>
+
             <div class="govuk-summary-list__row">     
             <dt class="govuk-summary-list__key">Mothers maiden name</dt>
             <dd class="govuk-summary-list__value"> 
@@ -83,6 +87,7 @@
                 <a class="govuk-link" href="/attributes?_type=mmn">{{infoText}}</a>
             </dd>
             </div>
+
             <div class="govuk-summary-list__row">     
             <dt class="govuk-summary-list__key">NINO</dt>
             <dd class="govuk-summary-list__value"> 
@@ -106,132 +111,11 @@
                 <a class="govuk-link" href="/attributes?_type=nino">{{infoText}}</a>
             </dd>
             </div>
-            <div class="govuk-summary-list__row">     
-            <dt class="govuk-summary-list__key">Basic information</dt>
-            <dd class="govuk-summary-list__value"> 
-                {% if validations.basicInfo%}
-                    {{ govukTag({
-                        text: "completed",
-                        classes: "govuk-tag--green"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.basicInfo.evidence.strength or 0,
-                        classes: "govuk-tag--orange"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.basicInfo.evidence.validity or 0,
-                        classes: "govuk-tag--yellow"
-                    }) }}
-                {% else %}
-                    {{ govukTag({
-                        text: "pending",
-                        classes: "govuk-tag--blue"
-                    }) }}
-                    
-                {% endif %} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                {% set infoText = "Enter" %}
-                {%if validations.basicInfo%}
-                    {% set infoText = "Change" %} 
-                {% endif %}   
-                <a class="govuk-link" href="/information">{{infoText}}</a>
-            </dd>
-            </div>    
-            <div class="govuk-summary-list__row">    
-            <dt class="govuk-summary-list__key">Passport details</dt>
-            <dd class="govuk-summary-list__value"> 
-                {% if validations.passport%}
-                    {{ govukTag({
-                        text: "completed",
-                        classes: "govuk-tag--green"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.passport.evidence.strength or 0,
-                        classes: "govuk-tag--orange"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.passport.evidence.validity or 0,
-                        classes: "govuk-tag--yellow"
-                    }) }}
-                {% else %}
-                    {{ govukTag({
-                        text: "pending",
-                        classes: "govuk-tag--blue"
-                    }) }}                    
-                {% endif %} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                {% set infoText = "Enter" %}
-                {%if validations.passport%}
-                    {% set infoText = "Change" %} 
-                {% endif %}   
-                <a class="govuk-link" href="/passport">{{infoText}}</a>
-            </dd>
-            </div>  
-            <div class="govuk-summary-list__row">    
-            <dt class="govuk-summary-list__key">Driving licence</dt>
-            <dd class="govuk-summary-list__value"> 
-                {%if validations.drivingLicence%}                    
-                    {{ govukTag({
-                        text: "completed",
-                        classes: "govuk-tag--green"
-                    }) }}     
-                    {{ govukTag({
-                        text: validations.drivingLicence.evidence.strength or 0,
-                        classes: "govuk-tag--orange"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.drivingLicence.evidence.validity or 0,
-                        classes: "govuk-tag--yellow"
-                    }) }}              
-                {% else %}
-                    {{ govukTag({
-                        text: "pending",
-                        classes: "govuk-tag--blue"
-                    }) }}                     
-                {% endif %} 
-            </dd>     
-            <dd class="govuk-summary-list__actions">   
-                {% set infoText = "Enter" %}           
-                {% if validations.drivingLicence %}
-                    {% set infoText = "Change" %} 
-                {% endif %}   
-                <a class="govuk-link" href="/driving-licence">{{infoText}}</a>
-            </dd>
-            </div>        
-            <div class="govuk-summary-list__row">    
-            <dt class="govuk-summary-list__key">Bank account</dt>
-            <dd class="govuk-summary-list__value"> 
-                {%if validations.bankAccount %}  
-                    {{ govukTag({
-                        text: "completed",
-                        classes: "govuk-tag--green"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.bankAccount.evidence.strength or 0,
-                        classes: "govuk-tag--orange"
-                    }) }}
-                    {{ govukTag({
-                        text: validations.bankAccount.evidence.validity or 0,
-                        classes: "govuk-tag--yellow"
-                    }) }}
-                {% else %}
-                    {{ govukTag({
-                        text: "pending",
-                        classes: "govuk-tag--blue"
-                    }) }}
-                    
-                {% endif %}           
-            <dd class="govuk-summary-list__actions">
-                {% set infoText = "Enter" %}
-                {% if validations.bankAccount %}
-                    {% set infoText = "Change" %} 
-                {% endif %}   
-                <a class="govuk-link" href="/bank-account">{{infoText}}</a>
-            </dd>
-            </div>               
             </dl>
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Summary</h1>
+
+            <div class="govuk-summary-list__row">     
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">  
                     <dt class="govuk-summary-list__key">Activity history<dt>
@@ -246,6 +130,8 @@
                     <dd class="govuk-summary-list__value"> {{validations.scores.verification or 0}}</dd>
                 </div>
             </dl>
+            </div>
+
             <h2>Currently met GPG45 profile:</h2>
             <h3><span>{{gpg45Profile.description or "None"}}</span></h3>
 
