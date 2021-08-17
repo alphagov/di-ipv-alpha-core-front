@@ -31,36 +31,45 @@ const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
   const identityEvidence = [
-    {label: "Basic information", href:"/information", text: "Enter"},
-    {label: "Passport", href:"/passport", text: "Change"},
-    {label: "Drivers Licence", href:"/driving-licence", text:"Enter"},
-    {label: "(Generic) Identity Evidence", href: "/identity-evidence", text:"Add"}
-  ]
+    { label: "Basic information", href: "/information", text: "Enter" },
+    { label: "Passport", href: "/passport", text: "Change" },
+    { label: "Drivers Licence", href: "/driving-licence", text: "Enter" },
+    {
+      label: "(Generic) Identity Evidence",
+      href: "/identity-evidence",
+      text: "Add",
+    },
+  ];
 
   const identityVerification = [
-    {label: "Selfie Check", href:"/selfie", text: "Enter"},
-    {label: "(Generic) Identity Verification", href: "/identity-verification", text:"Add"}
-  ]
+    { label: "Selfie Check", href: "/selfie", text: "Enter" },
+    {
+      label: "(Generic) Identity Verification",
+      href: "/identity-verification",
+      text: "Add",
+    },
+  ];
 
   const activityHistory = [
-    {label: "Bank Account", href: "/bank-account", text:"Add"},
-    {label: "(Generic) Identity History", href: "/identity-history", text:"Add"}
-    
+    { label: "Bank Account", href: "/bank-account", text: "Add" },
+    {
+      label: "(Generic) Identity History",
+      href: "/identity-history",
+      text: "Add",
+    },
   ];
 
-  const fraud = [
-    {label: "Fraud Check", href:"/fraud-check", text: "Add"}
-  ];
+  const fraud = [{ label: "Fraud Check", href: "/fraud-check", text: "Add" }];
 
   const sessionData: SessionData = req.session.sessionData;
-  
+
   return res.render(template, {
     language: req.i18n.language,
     gpg45Profile: sessionData.identityProfile,
     identityEvidence: identityEvidence,
     identityVerification: identityVerification,
     activityHistory: activityHistory,
-    fraud: fraud
+    fraud: fraud,
   });
 };
 
