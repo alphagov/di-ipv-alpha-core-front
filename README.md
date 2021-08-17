@@ -79,6 +79,9 @@ Install nginx and update the nginx.conf with the following lines
   location ~ ^/activity-history {
       proxy_pass  http://127.0.0.1:3000;
   }
+  location ~ ^/fraud-check {
+      proxy_pass  http://127.0.0.1:3000;
+  }
 
   #IPV endpoints
   location ~ ^/ipv {

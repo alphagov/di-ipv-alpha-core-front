@@ -102,6 +102,9 @@ export const next = async (
     case "activity-history":
       // TODO: Create an API endpoint to add activity history and recalculate
       break;
+    case "fraud-check":
+      // TODO: Create an API endpoint to add fraud check and recalculate
+      break;
   }
 
   await getNextRouteAndRedirect(req, res);
