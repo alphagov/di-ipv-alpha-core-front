@@ -11,8 +11,6 @@ import-translation-file.js
 translate-cli.txt
 update-translation-duplicates.js
 update-translation-file.js
-.env.e2e
-.env.sample
 .env
 .nycrc
 logs.json
