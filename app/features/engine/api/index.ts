@@ -60,6 +60,7 @@ export interface EvidenceDto {
 }
 
 export interface IdentityEvidence {
+  evidenceId?: string;
   type: EvidenceType;
   strength: number;
   validity: number;

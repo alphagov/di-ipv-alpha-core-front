@@ -31,9 +31,9 @@ const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
   const identityEvidence = [
-    { label: "Basic information", href: "/information", text: "Enter" },
-    { label: "Passport", href: "/passport", text: "Change" },
-    { label: "Drivers Licence", href: "/driving-licence", text: "Enter" },
+    { label: "Basic information", href: "/information", text: "Add" },
+    { label: "Passport", href: "/passport", text: "Add" },
+    { label: "Drivers Licence", href: "/driving-licence", text: "Add" },
     {
       label: "(Generic) Identity Evidence",
       href: "/identity-evidence",
@@ -70,6 +70,7 @@ const getHome = (req: Request, res: Response): void => {
     identityVerification: identityVerification,
     activityHistory: activityHistory,
     fraud: fraud,
+    evidenceArray: sessionData.identityEvidence,
   });
 };
 
