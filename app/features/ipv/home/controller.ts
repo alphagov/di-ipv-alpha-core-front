@@ -102,7 +102,16 @@ const removeEvidence = async (req: Request, res: Response): Promise<void> => {
     (evidence: IdentityEvidence) => evidence.evidenceId != evidenceIdToRemove
   );
 
+  logger.info(
+    `Deleted identity evidence ${evidenceIdToRemove}`,
+    "deleting-evidence"
+  );
+
   try {
+    logger.info(
+      `Updating identity bundle for session ${sessionId}`,
+      "deleting-evidence"
+    );
     const bundle: IdentityBundleDto = await getIdentityBundleApiRequest(
       sessionId
     );
@@ -113,12 +122,17 @@ const removeEvidence = async (req: Request, res: Response): Promise<void> => {
   } catch (e) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to fetch identity bundle, error: ${e}`,
-      "backend-api-call"
+      "deleting-evidence"
     );
     res.status(INTERNAL_SERVER_ERROR);
     res.redirect(pathName.public.ERROR500);
     return;
   }
+
+  logger.info(
+    `Identity bundle updated for session ${sessionId}`,
+    "deleting-evidence"
+  );
 
   res.redirect(pathName.public.HOME);
 };
