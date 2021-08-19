@@ -84,7 +84,7 @@ const getHome = (req: Request, res: Response): void => {
 const removeEvidence = async (req: Request, res: Response): Promise<void> => {
   const logger = req.app.locals.logger;
   const sessionId: string = req.session.userId;
-  const evidenceIdToRemove = req.params["id"];
+  const evidenceIdToRemove = req.query["id"].toString();
 
   try {
     await deleteEvidenceApiRequest(sessionId, evidenceIdToRemove);
