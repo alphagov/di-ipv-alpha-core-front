@@ -60,8 +60,8 @@ const getHome = (req: Request, res: Response): void => {
   const activityHistory = [
     { label: "Bank Account", href: "/bank-account", text: "Add" },
     {
-      label: "(Generic) Identity History",
-      href: "/identity-history",
+      label: "(Generic) Activity History",
+      href: "/activity-history",
       text: "Add",
     },
   ];

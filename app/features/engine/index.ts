@@ -134,6 +134,10 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     type: evidence.type,
     evidenceData: { ...evidence.atpResponse, ...evidence.attributes },
     bundleScores: bundleScores,
+    evidenceScore: {
+      strength: evidence.strength,
+      validity: evidence.validity,
+    },
   };
 
   logger.info(

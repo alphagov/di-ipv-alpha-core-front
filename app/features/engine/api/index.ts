@@ -52,11 +52,17 @@ export interface BundleScores {
   identityVerificationScore: number;
 }
 
+export interface EvidenceScore {
+  strength: number;
+  validity: number;
+}
+
 export interface EvidenceDto {
   evidenceId: string;
   type: EvidenceType;
   evidenceData: any;
   bundleScores?: BundleScores;
+  evidenceScore?: EvidenceScore;
 }
 
 export interface IdentityEvidence {
