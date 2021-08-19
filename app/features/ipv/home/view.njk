@@ -43,8 +43,7 @@
                     {{ ipvValidationTags(evidence) }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="/edit?id={{ evidence.evidenceId }}">Edit</a>
-                    <a class="govuk-link" href="/delete?id={{ evidence.evidenceId }}">Delete</a>
+                    <a class="govuk-link" href="/ipv/evidence/delete?id={{ evidence.evidenceId }}">Delete</a>
                 </dd>
             </div>
         {% endfor %}

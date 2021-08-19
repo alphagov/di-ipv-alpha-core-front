@@ -43,6 +43,7 @@ const pathName = {
     RETURN: "/ipv/return",
     HOME: "/ipv/home",
     NEXT: "/ipv/next",
+    REMOVE_EVIDENCE: "/ipv/evidence/delete",
     ACCESSIBILITY_STATEMENT: "/accessibility",
     TERMS_AND_CONDITIONS: "/terms-and-conditions",
     PRIVACY_POLICY: "/privacy",

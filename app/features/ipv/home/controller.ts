@@ -25,7 +25,14 @@
 import { Request, Response, Router } from "express";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
-import { SessionData } from "../../engine/api";
+import {
+  deleteEvidenceApiRequest,
+  getIdentityBundleApiRequest,
+  IdentityBundleDto,
+  IdentityEvidence,
+  SessionData,
+} from "../../engine/api";
+import { INTERNAL_SERVER_ERROR } from "http-status-codes";
 
 const template = "ipv/home/view.njk";
 
@@ -74,12 +81,54 @@ const getHome = (req: Request, res: Response): void => {
   });
 };
 
+const removeEvidence = async (req: Request, res: Response): Promise<void> => {
+  const logger = req.app.locals.logger;
+  const sessionId: string = req.session.userId;
+  const evidenceIdToRemove = req.params["id"];
+
+  try {
+    await deleteEvidenceApiRequest(sessionId, evidenceIdToRemove);
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to delete evidence, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  req.session.sessionData.identityEvidence = req.session.sessionData.identityEvidence.filter(
+    (evidence: IdentityEvidence) => evidence.evidenceId != evidenceIdToRemove
+  );
+
+  try {
+    const bundle: IdentityBundleDto = await getIdentityBundleApiRequest(
+      sessionId
+    );
+    req.session.sessionData.identityProfile = {
+      name: bundle?.identityProfile?.name,
+      description: bundle?.identityProfile?.description,
+    };
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to fetch identity bundle, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  res.redirect(pathName.public.HOME);
+};
+
 @PageSetup.register
 class SetupHomeController {
   initialise(): Router {
     const router = Router();
     router.get(pathName.public.HOME, getHome);
-
+    router.get(pathName.public.REMOVE_EVIDENCE, removeEvidence);
     return router;
   }
 }
