@@ -200,7 +200,6 @@
             <h1 class="govuk-heading-xl">ATP and Orc test page</h1>
             <p>Enter all required information and then click 'Return to Orc'</p>
 
-            {# <p><pre>{{ validations | toJSON(2) }}</pre></p> #}
             <dl class="govuk-summary-list">
               {{ ipvSummaryList("Identity Evidence", identityEvidence)}}
             </dl>
@@ -293,6 +292,23 @@
                 </div>
             </dl>
             </div>
+
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/stackoverflow-light.min.css">
+            {{ govukAccordion({
+                id: "accordion-default",
+                items: [
+                    {
+                        heading: {
+                            text: "Debug Data"
+                        },
+                        content: {
+                            html:  "<pre><code>" + debugData + "</code></pre>" 
+                        }
+                    }
+                ]
+            }) }}
+
 
             <h2>Currently met GPG45 profile:</h2>
             <h3><span>{{gpg45Profile.description or "None"}}</span></h3>
