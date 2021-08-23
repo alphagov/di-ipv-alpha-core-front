@@ -4,22 +4,23 @@
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 
 {% extends "common/layout/view.njk" %}
 {% set pageTitleName = 'pages.start.title' | translate %}
 {% block content %}
     {% macro ipvValidationTags(evidence, emptyEvidenceText="pending") %}
-     {% if evidence.strength or evidence.validity %}
+     {% if evidence.evidenceScore.strength or evidence.evidenceScore.validity %}
         {{ govukTag({
             text: "completed",
             classes: "govuk-tag--green"
         }) }}
         {{ govukTag({
-            text: evidence.strength or 0,
+            text: evidence.evidenceScore.strength or 0,
             classes: "govuk-tag--orange"
         }) }}
         {{ govukTag({
-            text: evidence.validity or 0,
+            text: evidence.evidenceScore.validity or 0,
             classes: "govuk-tag--yellow"
         }) }}
       {% else %}
@@ -30,13 +31,47 @@
       {% endif %} 
     {% endmacro %}
 
+    {% macro evidenceDataDisplay(evidenceArray) %}
+        {% for evidence in evidenceArray %}
+            <div class="govuk-summary-list__row">
+                {% if evidence.type == "ATP_GENERIC_DATA" %}
+                    <dd class="govuk-summary-list__key">Generic evidence</dd>
+                {% else %}
+                    <dd class="govuk-summary-list__key">Passport evidence</dd>
+                {% endif %}
+                <dd class="govuk-summary-list__value">
+                    {{ ipvValidationTags(evidence) }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/ipv/evidence/delete?id={{ evidence.evidenceId }}">Delete</a>
+                </dd>
+            </div>
+        {% endfor %}
+    {% endmacro %}
+
+    {% macro evidenceData(heading, evidenceArray) %}
+        {{ govukAccordion({
+            id: "accordion-default",
+            items: [
+                {
+                    heading: {
+                        text: heading
+                    },
+                    content: {
+                        html: evidenceDataDisplay(evidenceArray)
+                    }
+                }
+            ]
+        }) }}
+    {% endmacro %}
+
     {% macro ipvSummaryList(heading, atpArray) %}
-        <h2 class="govuk-heading-m govuk-!-margin-top-5">{{ heading }}</h1>
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">{{ heading }}</h2>
         {% for atp in atpArray %}
           <div class="govuk-summary-list__row">    
             <dt class="govuk-summary-list__key">{{ atp.label }}</dt>
             <dd class="govuk-summary-list__value"> 
-                {{ ipvValidationTags(atp.evidence) }}          
+{#                {{ ipvValidationTags(atp.evidence) }}          #}
             </dd>     
             <dd class="govuk-summary-list__actions">   
                 <a class="govuk-link" href="{{ atp.href }}">{{atp.text}}</a>
@@ -56,13 +91,15 @@
 
                 {{ ipvSummaryList("Identity Evidence", identityEvidence)}}
 
+                {{ evidenceData("Added identity evidence", evidenceArray) }}
+
                 {{ ipvSummaryList("Identity Verification", identityVerification)}}
 
                 {{ ipvSummaryList("Activity History", activityHistory)}}
 
                 {{ ipvSummaryList("Fraud", fraud)}}
 
-            <h2 class="govuk-heading-m govuk-!-margin-top-5">Ungrouped</h1>
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Ungrouped</h2>
 
             <div class="govuk-summary-list__row">     
             <dt class="govuk-summary-list__key">Mothers maiden name</dt>
@@ -113,7 +150,7 @@
             </div>
             </dl>
 
-            <h2 class="govuk-heading-m govuk-!-margin-top-5">Summary</h1>
+            <h2 class="govuk-heading-m govuk-!-margin-top-5">Summary</h2>
 
             <div class="govuk-summary-list__row">     
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">

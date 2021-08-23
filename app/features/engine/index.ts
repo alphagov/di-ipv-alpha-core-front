@@ -4,7 +4,7 @@ import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "http-status-codes";
 import { v4 as uuidv4 } from "uuid";
 import {
   addEvidenceApiRequest,
-  AddEvidenceDTO,
+  IdentityBundleDto,
   BundleScores,
   EvidenceDto,
   getNextRouteApiRequest,
@@ -13,6 +13,7 @@ import {
   RouteDto,
   startSessionApiRequest,
   StartSessionDTO,
+  getIdentityBundleApiRequest,
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -122,8 +123,7 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
-  const evidence: IdentityEvidence =
-    req.session.identityEvidence[req.session.identityEvidence.length - 1];
+  const evidence: IdentityEvidence = req.session.sessionData.identityEvidence.pop();
 
   const bundleScores: BundleScores = {
     ...req.session.bundleScores,
@@ -134,6 +134,10 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     type: evidence.type,
     evidenceData: { ...evidence.atpResponse, ...evidence.attributes },
     bundleScores: bundleScores,
+    evidenceScore: {
+      strength: evidence.strength,
+      validity: evidence.validity,
+    },
   };
 
   logger.info(
@@ -141,9 +145,13 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     "backend-api-call"
   );
 
-  let bundle: AddEvidenceDTO;
+  let bundle: IdentityBundleDto;
   try {
-    bundle = await addEvidenceApiRequest(sessionId, newEvidence);
+    const addedEvidence = await addEvidenceApiRequest(sessionId, newEvidence);
+    // This will update the actual evidence with the added evidence which contains the generated UUID.
+    req.session.sessionData.identityEvidence.push(addedEvidence);
+
+    bundle = await getIdentityBundleApiRequest(sessionId);
   } catch (e) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add evidence, error: ${e}`,

@@ -7,7 +7,7 @@ export interface StartSessionDTO {
   previousRoute: Route;
 }
 
-export interface AddEvidenceDTO {
+export interface IdentityBundleDto {
   sessionId: string;
   previousRoute: Route;
   identityVerificationBundle: IdentityVerificationBundle;
@@ -52,14 +52,21 @@ export interface BundleScores {
   identityVerificationScore: number;
 }
 
+export interface EvidenceScore {
+  strength: number;
+  validity: number;
+}
+
 export interface EvidenceDto {
   evidenceId: string;
   type: EvidenceType;
   evidenceData: any;
   bundleScores?: BundleScores;
+  evidenceScore?: EvidenceScore;
 }
 
 export interface IdentityEvidence {
+  evidenceId?: string;
   type: EvidenceType;
   strength: number;
   validity: number;
@@ -140,10 +147,29 @@ export const getNextRouteApiRequest = async (
 export const addEvidenceApiRequest = async (
   sessionId: string,
   evidence: EvidenceDto
-): Promise<AddEvidenceDTO> => {
+): Promise<EvidenceDto> => {
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-evidence`,
     evidence
+  );
+  return response.data;
+};
+
+export const deleteEvidenceApiRequest = async (
+  sessionId: string,
+  evidenceId: string
+): Promise<void> => {
+  const response = await axios.get(
+    `${backendApiEndpoint}/ipv/${sessionId}/evidence/${evidenceId}/delete`
+  );
+  return response.data;
+};
+
+export const getIdentityBundleApiRequest = async (
+  sessionId: string
+): Promise<IdentityBundleDto> => {
+  const response = await axios.get(
+    `${backendApiEndpoint}/ipv/${sessionId}/session`
   );
   return response.data;
 };

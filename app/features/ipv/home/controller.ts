@@ -25,43 +25,116 @@
 import { Request, Response, Router } from "express";
 import { PageSetup } from "../../../interfaces/PageSetup";
 import { pathName } from "../../../paths";
-import { SessionData } from "../../engine/api";
+import {
+  deleteEvidenceApiRequest,
+  getIdentityBundleApiRequest,
+  IdentityBundleDto,
+  IdentityEvidence,
+  SessionData,
+} from "../../engine/api";
+import { INTERNAL_SERVER_ERROR } from "http-status-codes";
 
 const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
   const identityEvidence = [
-    {label: "Basic information", href:"/information", text: "Enter"},
-    {label: "Passport", href:"/passport", text: "Change"},
-    {label: "Drivers Licence", href:"/driving-licence", text:"Enter"},
-    {label: "(Generic) Identity Evidence", href: "/identity-evidence", text:"Add"}
-  ]
+    { label: "Basic information", href: "/information", text: "Add" },
+    { label: "Passport", href: "/passport", text: "Add" },
+    { label: "Drivers Licence", href: "/driving-licence", text: "Add" },
+    {
+      label: "(Generic) Identity Evidence",
+      href: "/identity-evidence",
+      text: "Add",
+    },
+  ];
 
   const identityVerification = [
-    {label: "Selfie Check", href:"/selfie", text: "Enter"},
-    {label: "(Generic) Identity Verification", href: "/identity-verification", text:"Add"}
-  ]
+    { label: "Selfie Check", href: "/selfie", text: "Enter" },
+    {
+      label: "(Generic) Identity Verification",
+      href: "/identity-verification",
+      text: "Add",
+    },
+  ];
 
   const activityHistory = [
-    {label: "Bank Account", href: "/bank-account", text:"Add"},
-    {label: "(Generic) Identity History", href: "/identity-history", text:"Add"}
-    
+    { label: "Bank Account", href: "/bank-account", text: "Add" },
+    {
+      label: "(Generic) Activity History",
+      href: "/activity-history",
+      text: "Add",
+    },
   ];
 
-  const fraud = [
-    {label: "Fraud Check", href:"/fraud-check", text: "Add"}
-  ];
+  const fraud = [{ label: "Fraud Check", href: "/fraud-check", text: "Add" }];
 
   const sessionData: SessionData = req.session.sessionData;
-  
+
   return res.render(template, {
     language: req.i18n.language,
     gpg45Profile: sessionData.identityProfile,
     identityEvidence: identityEvidence,
     identityVerification: identityVerification,
     activityHistory: activityHistory,
-    fraud: fraud
+    fraud: fraud,
+    evidenceArray: sessionData.identityEvidence,
   });
+};
+
+const removeEvidence = async (req: Request, res: Response): Promise<void> => {
+  const logger = req.app.locals.logger;
+  const sessionId: string = req.session.userId;
+  const evidenceIdToRemove = req.query["id"].toString();
+
+  try {
+    await deleteEvidenceApiRequest(sessionId, evidenceIdToRemove);
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to delete evidence, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  req.session.sessionData.identityEvidence = req.session.sessionData.identityEvidence.filter(
+    (evidence: IdentityEvidence) => evidence.evidenceId != evidenceIdToRemove
+  );
+
+  logger.info(
+    `Deleted identity evidence ${evidenceIdToRemove}`,
+    "deleting-evidence"
+  );
+
+  try {
+    logger.info(
+      `Updating identity bundle for session ${sessionId}`,
+      "deleting-evidence"
+    );
+    const bundle: IdentityBundleDto = await getIdentityBundleApiRequest(
+      sessionId
+    );
+    req.session.sessionData.identityProfile = {
+      name: bundle?.identityProfile?.name,
+      description: bundle?.identityProfile?.description,
+    };
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to fetch identity bundle, error: ${e}`,
+      "deleting-evidence"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  logger.info(
+    `Identity bundle updated for session ${sessionId}`,
+    "deleting-evidence"
+  );
+
+  res.redirect(pathName.public.HOME);
 };
 
 @PageSetup.register
@@ -69,7 +142,7 @@ class SetupHomeController {
   initialise(): Router {
     const router = Router();
     router.get(pathName.public.HOME, getHome);
-
+    router.get(pathName.public.REMOVE_EVIDENCE, removeEvidence);
     return router;
   }
 }
