@@ -10,7 +10,7 @@
 {% set pageTitleName = 'pages.start.title' | translate %}
 {% block content %}
     {% macro ipvValidationTags(evidence, emptyEvidenceText="pending") %}
-     {% if evidence.evidenceScore.strength or evidence.evidenceScore.validity %}
+     {% if 'strength' in evidence.evidenceScore  or 'validity' in evidence.evidenceScore %}
         {{ govukTag({
             text: "completed",
             classes: "govuk-tag--green"
@@ -27,7 +27,7 @@
         {{ govukTag({
             text: emptyEvidenceText,
             classes: "govuk-tag--blue"
-        }) }}      
+        }) }}
       {% endif %} 
     {% endmacro %}
 
@@ -36,8 +36,12 @@
             <div class="govuk-summary-list__row">
                 {% if evidence.type == "ATP_GENERIC_DATA" %}
                     <dd class="govuk-summary-list__key">Generic evidence</dd>
-                {% else %}
+                {% else if evidence.type == "DRIVING_LICENCE" %}
+                    <dd class="govuk-summary-list__key">Driving license evidence</dd>
+                {% else if evidence.type == "UK_PASSPORT" %}
                     <dd class="govuk-summary-list__key">Passport evidence</dd>
+                {% else %}
+                    <dd class="govuk-summary-list__key">Unknown evidence</dd>
                 {% endif %}
                 <dd class="govuk-summary-list__value">
                     {{ ipvValidationTags(evidence) }}
