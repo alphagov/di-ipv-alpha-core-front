@@ -95,6 +95,9 @@ export const next = async (
   );
   switch (source) {
     case "identity-evidence":
+    case "information":
+    case "passport":
+    case "driving-licence":
       await addEvidence(req, res);
       break;
     case "identity-verification":
