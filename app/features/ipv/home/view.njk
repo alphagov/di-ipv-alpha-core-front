@@ -36,9 +36,9 @@
             <div class="govuk-summary-list__row">
                 {% if evidence.type == "ATP_GENERIC_DATA" %}
                     <dd class="govuk-summary-list__key">Generic evidence</dd>
-                {% else if evidence.type == "DRIVING_LICENCE" %}
+                {% elif evidence.type == "DRIVING_LICENCE" %}
                     <dd class="govuk-summary-list__key">Driving license evidence</dd>
-                {% else if evidence.type == "UK_PASSPORT" %}
+                {% elif evidence.type == "UK_PASSPORT" %}
                     <dd class="govuk-summary-list__key">Passport evidence</dd>
                 {% else %}
                     <dd class="govuk-summary-list__key">Unknown evidence</dd>
