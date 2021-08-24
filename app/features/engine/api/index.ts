@@ -82,8 +82,8 @@ export interface IdentityVerification {
 }
 
 export interface ActivityHistory {
-  activityHistoryScore: any;
-  activityHistory: any;
+  activityHistoryScore?: any;
+  activityHistoryData: any;
 }
 
 export interface Fraud {
