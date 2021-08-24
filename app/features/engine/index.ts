@@ -137,11 +137,14 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     type: evidence.type,
     evidenceData: { ...evidence.atpResponse, ...evidence.attributes },
     bundleScores: bundleScores,
-    evidenceScore: {
+  };
+
+  if (evidence.strength || evidence.validity) {
+    newEvidence.evidenceScore = {
       strength: evidence.strength,
       validity: evidence.validity,
-    },
-  };
+    };
+  }
 
   logger.info(
     `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding new evidence`,
