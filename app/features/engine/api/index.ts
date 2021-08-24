@@ -18,14 +18,14 @@ export interface SessionData {
   sessionId: string;
   identityEvidence: [IdentityEvidence];
   identityVerification: [IdentityVerification];
-  activityChecks: [Activity];
+  activityChecks: [ActivityHistory];
   fraudChecks: [Fraud];
   identityProfile: IdentityProfile;
 }
 
 export interface IdentityVerificationBundle {
   identityEvidence: [any];
-  activityChecks: [Activity];
+  activityChecks: [ActivityHistory];
   fraudCheck: [Fraud];
   identityVerification: [IdentityVerification];
   bundleScores: BundleScores;
@@ -81,9 +81,9 @@ export interface IdentityVerification {
   verificationScore?: number;
 }
 
-export interface Activity {
-  type: any;
-  activityHistory: any;
+export interface ActivityHistory {
+  activityHistoryScore?: any;
+  activityHistoryData: any;
 }
 
 export interface Fraud {
@@ -163,6 +163,17 @@ export const addIdentityVerificationApiRequest = async (
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-identity-verification`,
     verification
+  );
+  return response.data;
+};
+
+export const addActivityHistoryApiRequest = async (
+  sessionId: string,
+  activityHistory: ActivityHistory
+): Promise<ActivityHistory> => {
+  const response = await axios.post(
+    `${backendApiEndpoint}/ipv/${sessionId}/add-activity-history`,
+    activityHistory
   );
   return response.data;
 };
