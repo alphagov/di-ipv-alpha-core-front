@@ -14,6 +14,8 @@ import {
   startSessionApiRequest,
   StartSessionDTO,
   getIdentityBundleApiRequest,
+  addIdentityVerificationApiRequest,
+  IdentityVerification,
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -101,6 +103,11 @@ export const next = async (
       await addEvidence(req, res);
       break;
     case "identity-verification":
+      logger.info(
+        `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding identity verification to core-back`,
+        "adding-to-core-back"
+      );
+      await addIdentityVerification(req, res);
       // TODO: Create an API endpoint to add identity verification and recalculate
       break;
     case "activity-history":
@@ -112,6 +119,55 @@ export const next = async (
   }
 
   await getNextRouteAndRedirect(req, res);
+};
+
+const addIdentityVerification = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const sessionId: string = req.session.userId;
+  if (!req.session.sessionData.identityVerification) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find identity verification`,
+      "no-identity-verification"
+    );
+    res.status(BAD_REQUEST);
+    res.redirect(pathName.public.ERROR400);
+    return;
+  }
+
+  const identityVerification: IdentityVerification = req.session.sessionData.identityVerification.pop();
+
+  try {
+    const identityVerificationResponse = await addIdentityVerificationApiRequest(
+      sessionId,
+      identityVerification
+    );
+
+    // note(martin): Commented this out as we may be able to remove this bundle scores from core-front completely
+    // update the bundle scores that get packages with the evidence calls
+    // req.session.bundleScores = req.session.bundleScores || {
+    //   activityCheckScore: 0,
+    //   fraudCheckScore: 0,
+    //   identityVerificationScore: 0,
+    // };
+    // req.session.bundleScores.identityVerificationScore =
+    //   identityVerificationResponse.verificationScore;
+
+    req.session.sessionData.identityVerification.push(
+      identityVerificationResponse
+    );
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add identity verification, ${e}`,
+      "failed-to-add-identity-verification"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  await fetchIdentityBundleAndUpdateProfile(req, res);
 };
 
 const addEvidence = async (req: Request, res: Response): Promise<void> => {
@@ -151,13 +207,10 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     "backend-api-call"
   );
 
-  let bundle: IdentityBundleDto;
   try {
     const addedEvidence = await addEvidenceApiRequest(sessionId, newEvidence);
     // This will update the actual evidence with the added evidence which contains the generated UUID.
     req.session.sessionData.identityEvidence.push(addedEvidence);
-
-    bundle = await getIdentityBundleApiRequest(sessionId);
   } catch (e) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add evidence, error: ${e}`,
@@ -168,8 +221,30 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
-  req.session.sessionData.identityProfile = {
-    name: bundle?.identityProfile?.name,
-    description: bundle?.identityProfile?.description,
-  };
+  await fetchIdentityBundleAndUpdateProfile(req, res);
+};
+
+const fetchIdentityBundleAndUpdateProfile = async (
+  req: Request,
+  res: Response
+): Promise<IdentityBundleDto> => {
+  const sessionId = req.session.sessionData.sessionId;
+  try {
+    const bundle = await getIdentityBundleApiRequest(sessionId);
+
+    req.session.sessionData.identityProfile = {
+      name: bundle?.identityProfile?.name,
+      description: bundle?.identityProfile?.description,
+    };
+
+    return bundle;
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to fetch identity bundle, error: ${e}`,
+      "backend-api-call"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
 };
