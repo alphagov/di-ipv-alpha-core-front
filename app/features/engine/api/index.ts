@@ -78,6 +78,7 @@ export interface IdentityEvidence {
 export interface IdentityVerification {
   type: any;
   verificationData: any;
+  verificationScore?: number;
 }
 
 export interface Activity {
@@ -151,6 +152,17 @@ export const addEvidenceApiRequest = async (
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-evidence`,
     evidence
+  );
+  return response.data;
+};
+
+export const addIdentityVerificationApiRequest = async (
+  sessionId: string,
+  verification: IdentityVerification
+): Promise<IdentityVerification> => {
+  const response = await axios.post(
+    `${backendApiEndpoint}/ipv/${sessionId}/add-identity-verification`,
+    verification
   );
   return response.data;
 };

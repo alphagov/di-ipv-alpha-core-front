@@ -47,7 +47,7 @@ const logRequestMiddleware = (
   const logger: Logger = req.app.locals.logger;
   logger.debug(`[${req.method}] ${req.originalUrl}`, requestMiddlewareLabel, {
     session_id,
-    user_agent: req.useragent,
+    // user_agent: req.useragent,
   });
   next();
 };
@@ -64,7 +64,7 @@ const logErrorMiddleware = (
   logger.error(
     `[${req.method}] ${req.originalUrl}. Error ${err.message}${stack}`,
     errorMiddlewareLabel,
-    { session_id, user_agent: req.useragent }
+    { session_id /*,user_agent: req.useragent*/ }
   );
   next(err);
 };
