@@ -141,8 +141,8 @@ const addEvidence = async (req: Request, res: Response): Promise<void> => {
 
   if (evidence.strength || evidence.validity) {
     newEvidence.evidenceScore = {
-      strength: evidence.strength,
-      validity: evidence.validity,
+      strength: evidence.strength || 0,
+      validity: evidence.validity || 0,
     };
   }
 
