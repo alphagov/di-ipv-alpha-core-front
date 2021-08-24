@@ -16,6 +16,8 @@ import {
   getIdentityBundleApiRequest,
   addIdentityVerificationApiRequest,
   IdentityVerification,
+  addActivityHistoryApiRequest,
+  ActivityHistory,
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -108,10 +110,9 @@ export const next = async (
         "adding-to-core-back"
       );
       await addIdentityVerification(req, res);
-      // TODO: Create an API endpoint to add identity verification and recalculate
       break;
     case "activity-history":
-      // TODO: Create an API endpoint to add activity history and recalculate
+      await addActivityHistory(req, res);
       break;
     case "fraud-check":
       // TODO: Create an API endpoint to add fraud check and recalculate
@@ -119,6 +120,43 @@ export const next = async (
   }
 
   await getNextRouteAndRedirect(req, res);
+};
+
+const addActivityHistory = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const sessionId: string = req.session.userId;
+  if (!req.session.sessionData.activityHistory) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find activity history`,
+      "no-activity-history"
+    );
+    res.status(BAD_REQUEST);
+    res.redirect(pathName.public.ERROR400);
+    return;
+  }
+
+  const activityHistory: ActivityHistory = req.session.sessionData.activityHistory.pop();
+
+  try {
+    const activityHistoryResponse = await addActivityHistoryApiRequest(
+      sessionId,
+      activityHistory
+    );
+
+    req.session.sessionData.activityHistory.push(activityHistoryResponse);
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add activity history, ${e}`,
+      "failed-to-add-activity history"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  await fetchIdentityBundleAndUpdateProfile(req, res);
 };
 
 const addIdentityVerification = async (
