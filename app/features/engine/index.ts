@@ -127,17 +127,17 @@ const addActivityHistory = async (
   res: Response
 ): Promise<void> => {
   const sessionId: string = req.session.userId;
-  if (!req.session.sessionData.activityHistory) {
+  if (!req.session.sessionData.activityChecks) {
     logger.error(
-      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find activity history`,
-      "no-activity-history"
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find activity checks`,
+      "no-activity-checks"
     );
     res.status(BAD_REQUEST);
     res.redirect(pathName.public.ERROR400);
     return;
   }
 
-  const activityHistory: ActivityHistory = req.session.sessionData.activityHistory.pop();
+  const activityHistory: ActivityHistory = req.session.sessionData.activityChecks.pop();
 
   try {
     const activityHistoryResponse = await addActivityHistoryApiRequest(
@@ -145,7 +145,7 @@ const addActivityHistory = async (
       activityHistory
     );
 
-    req.session.sessionData.activityHistory.push(activityHistoryResponse);
+    req.session.sessionData.activityChecks.push(activityHistoryResponse);
   } catch (e) {
     logger.error(
       `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add activity history, ${e}`,
