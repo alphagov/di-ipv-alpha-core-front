@@ -18,6 +18,8 @@ import {
   IdentityVerification,
   addActivityHistoryApiRequest,
   ActivityHistory,
+  FraudCheck,
+  addFraudCheckApiRequest,
 } from "./api";
 import Logger from "../../utils/logger";
 
@@ -112,14 +114,56 @@ export const next = async (
       await addIdentityVerification(req, res);
       break;
     case "activity-history":
+      logger.info(
+        `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding activity history to core-back`,
+        "adding-to-core-back"
+      );
       await addActivityHistory(req, res);
       break;
     case "fraud-check":
-      // TODO: Create an API endpoint to add fraud check and recalculate
+      logger.info(
+        `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding fraud check to core-back`,
+        "adding-to-core-back"
+      );
+      await addFraudCheck(req, res);
       break;
   }
 
   await getNextRouteAndRedirect(req, res);
+};
+
+const addFraudCheck = async (req: Request, res: Response): Promise<void> => {
+  const sessionId: string = req.session.userId;
+  if (!req.session.sessionData.fraudChecks) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to find fraud checks`,
+      "no-fraud-checks"
+    );
+    res.status(BAD_REQUEST);
+    res.redirect(pathName.public.ERROR400);
+    return;
+  }
+
+  const fraudCheck: FraudCheck = req.session.sessionData.fraudChecks.pop();
+
+  try {
+    const fraudCheckResponse = await addFraudCheckApiRequest(
+      sessionId,
+      fraudCheck
+    );
+
+    req.session.sessionData.fraudChecks.push(fraudCheckResponse);
+  } catch (e) {
+    logger.error(
+      `[${req.method}] ${req.originalUrl} (${sessionId}) - Failed to add fraud check, ${e}`,
+      "failed-to-add-fraud-check"
+    );
+    res.status(INTERNAL_SERVER_ERROR);
+    res.redirect(pathName.public.ERROR500);
+    return;
+  }
+
+  await fetchIdentityBundleAndUpdateProfile(req, res);
 };
 
 const addActivityHistory = async (

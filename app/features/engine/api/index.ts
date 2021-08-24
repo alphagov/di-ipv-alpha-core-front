@@ -19,14 +19,14 @@ export interface SessionData {
   identityEvidence: [IdentityEvidence];
   identityVerification: [IdentityVerification];
   activityChecks: [ActivityHistory];
-  fraudChecks: [Fraud];
+  fraudChecks: [FraudCheck];
   identityProfile: IdentityProfile;
 }
 
 export interface IdentityVerificationBundle {
   identityEvidence: [any];
   activityChecks: [ActivityHistory];
-  fraudCheck: [Fraud];
+  fraudCheck: [FraudCheck];
   identityVerification: [IdentityVerification];
   bundleScores: BundleScores;
 }
@@ -86,8 +86,9 @@ export interface ActivityHistory {
   activityHistoryData: any;
 }
 
-export interface Fraud {
-  fraudData: any;
+export interface FraudCheck {
+  fraudCheckScore?: any;
+  fraudCheckData: any;
 }
 
 export interface RouteDto {
@@ -174,6 +175,17 @@ export const addActivityHistoryApiRequest = async (
   const response = await axios.post(
     `${backendApiEndpoint}/ipv/${sessionId}/add-activity-history`,
     activityHistory
+  );
+  return response.data;
+};
+
+export const addFraudCheckApiRequest = async (
+  sessionId: string,
+  fraudCheck: FraudCheck
+): Promise<FraudCheck> => {
+  const response = await axios.post(
+    `${backendApiEndpoint}/ipv/${sessionId}/add-fraud-check`,
+    fraudCheck
   );
   return response.data;
 };
