@@ -78,6 +78,8 @@ const getHome = (req: Request, res: Response): void => {
     activityHistory: activityHistory,
     fraud: fraud,
     evidenceArray: sessionData.identityEvidence,
+    identityVerificationEvidenceArray: sessionData.identityVerification,
+    activityHistoryEvidenceArray: sessionData.activityChecks,
   });
 };
 
