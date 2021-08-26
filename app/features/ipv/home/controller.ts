@@ -70,6 +70,18 @@ const getHome = (req: Request, res: Response): void => {
 
   const sessionData: SessionData = req.session.sessionData;
 
+  let activityHistoryScore;
+  if (sessionData.activityChecks) {
+    activityHistoryScore = Math.max(...sessionData.activityChecks
+      .map((evidence) => evidence.activityHistoryScore))
+  }
+
+  let identityVerificationScore;
+  if (sessionData.activityChecks) {
+    identityVerificationScore = Math.max(...sessionData.identityVerification
+      .map((evidence) => evidence.verificationScore))
+  }
+
   return res.render(template, {
     language: req.i18n.language,
     gpg45Profile: sessionData.identityProfile,
@@ -80,6 +92,8 @@ const getHome = (req: Request, res: Response): void => {
     evidenceArray: sessionData.identityEvidence,
     identityVerificationEvidenceArray: sessionData.identityVerification,
     activityHistoryEvidenceArray: sessionData.activityChecks,
+    activityHistoryScore: activityHistoryScore,
+    identityVerificationScore: identityVerificationScore,
   });
 };
 

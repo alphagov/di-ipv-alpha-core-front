@@ -281,7 +281,7 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">  
                     <dt class="govuk-summary-list__key">Activity history<dt>
-                    <dd class="govuk-summary-list__value"> {{validations.scores.activityHistory or 0}}</dd>
+                    <dd class="govuk-summary-list__value"> {{activityHistoryScore or 0}}</dd>
                 </div>
                 <div class="govuk-summary-list__row">  
                     <dt class="govuk-summary-list__key">Identity fraud<dt>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="govuk-summary-list__row">  
                     <dt class="govuk-summary-list__key">Verification<dt>
-                    <dd class="govuk-summary-list__value"> {{validations.scores.verification or 0}}</dd>
+                    <dd class="govuk-summary-list__value"> {{identityVerificationScore or 0}}</dd>
                 </div>
             </dl>
             </div>
