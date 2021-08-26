@@ -10,25 +10,28 @@
 {% set pageTitleName = 'pages.start.title' | translate %}
 {% block content %}
     {% macro ipvValidationTags(evidence, emptyEvidenceText="pending") %}
-     {% if 'strength' in evidence.evidenceScore  or 'validity' in evidence.evidenceScore %}
-        {{ govukTag({
-            text: "completed",
-            classes: "govuk-tag--green"
-        }) }}
-        {{ govukTag({
-            text: evidence.evidenceScore.strength or 0,
-            classes: "govuk-tag--orange"
-        }) }}
-        {{ govukTag({
-            text: evidence.evidenceScore.validity or 0,
-            classes: "govuk-tag--yellow"
-        }) }}
+      {% if evidence.evidenceScore %}
+        {% if 'strength' in evidence.evidenceScore  or 'validity' in evidence.evidenceScore %}
+          {{ govukTag({
+              text: "completed",
+              classes: "govuk-tag--green"
+          }) }}
+          {{ govukTag({
+              text: evidence.evidenceScore.strength or 0,
+              classes: "govuk-tag--orange"
+          }) }}
+          {{ govukTag({
+              text: evidence.evidenceScore.validity or 0,
+              classes: "govuk-tag--yellow"
+          }) }}
       {% else %}
-        {{ govukTag({
-            text: emptyEvidenceText,
-            classes: "govuk-tag--blue"
-        }) }}
+          {{ govukTag({
+              text: emptyEvidenceText,
+              classes: "govuk-tag--blue"
+          }) }}
       {% endif %} 
+    {% endif %}
+
     {% endmacro %}
 
     {% macro identityVerificationValidationTags(evidence, emptyEvidenceText="pending") %}
