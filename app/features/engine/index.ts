@@ -23,6 +23,8 @@ import {
 } from "./api";
 import Logger from "../../utils/logger";
 
+import { SessionData } from "../engine/api"
+
 const logger: Logger = new Logger();
 
 const getNextRouteAndRedirect = async (req: Request, res: Response) => {
@@ -80,9 +82,7 @@ export const startNewSession = async (
 
   req.session.userId = sessionId;
 
-  req.session.sessionData = {
-    sessionId: createdSession.sessionId,
-  };
+  req.session.sessionData = { sessionId: createdSession.sessionId } as SessionData
 
   req.session.autoInput = { items: [] };
 
