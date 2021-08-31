@@ -114,6 +114,7 @@ const createApp = (): express.Application => {
           "https://www.google-analytics.com",
           "https://ssl.google-analytics.com",
         ],
+        styleSrc: ["'self'", "https://cdnjs.cloudflare.com"],
         objectSrc: ["'none'"],
         connectSrc: ["'self'", "https://www.google-analytics.com"],
       },

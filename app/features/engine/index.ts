@@ -23,7 +23,7 @@ import {
 } from "./api";
 import Logger from "../../utils/logger";
 
-import { SessionData } from "../engine/api"
+import { SessionData } from "../engine/api";
 
 const logger: Logger = new Logger();
 
@@ -82,7 +82,9 @@ export const startNewSession = async (
 
   req.session.userId = sessionId;
 
-  req.session.sessionData = { sessionId: createdSession.sessionId } as SessionData
+  req.session.sessionData = {
+    sessionId: createdSession.sessionId,
+  } as SessionData;
 
   req.session.autoInput = { items: [] };
 

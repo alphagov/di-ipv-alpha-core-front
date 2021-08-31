@@ -34,6 +34,8 @@ import {
 } from "../../engine/api";
 import { INTERNAL_SERVER_ERROR } from "http-status-codes";
 
+import * as hljs from "highlight.js";
+
 const template = "ipv/home/view.njk";
 
 const getHome = (req: Request, res: Response): void => {
@@ -69,6 +71,10 @@ const getHome = (req: Request, res: Response): void => {
   const fraud = [{ label: "Fraud Check", href: "/fraud-check", text: "Add" }];
 
   const sessionData: SessionData = req.session.sessionData;
+  const debugData: any = hljs.default.highlight(
+    `${JSON.stringify(req.session.sessionData, null, 2)}`,
+    { language: "json" }
+  ).value;
 
   let activityHistoryScore;
   if (sessionData.activityChecks) {
@@ -94,6 +100,7 @@ const getHome = (req: Request, res: Response): void => {
     activityHistoryEvidenceArray: sessionData.activityChecks,
     activityHistoryScore: activityHistoryScore,
     identityVerificationScore: identityVerificationScore,
+    debugData: debugData,
   });
 };
 
