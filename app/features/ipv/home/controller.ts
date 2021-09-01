@@ -78,14 +78,28 @@ const getHome = (req: Request, res: Response): void => {
 
   let activityHistoryScore;
   if (sessionData.activityChecks) {
-    activityHistoryScore = Math.max(...sessionData.activityChecks
-      .map((evidence) => evidence.activityHistoryScore))
+    const highestActivityHistory = sessionData.activityChecks.reduce(
+      (prev, curr) =>
+        prev.activityHistoryScore > curr.activityHistoryScore ? prev : curr
+    );
+    activityHistoryScore = highestActivityHistory.activityHistoryScore;
   }
 
   let identityVerificationScore;
-  if (sessionData.activityChecks) {
-    identityVerificationScore = Math.max(...sessionData.identityVerification
-      .map((evidence) => evidence.verificationScore))
+  if (sessionData.identityVerification) {
+    const highestIdentityVerification = sessionData.identityVerification.reduce(
+      (prev, curr) =>
+        prev.verificationScore > curr.verificationScore ? prev : curr
+    );
+    identityVerificationScore = highestIdentityVerification.verificationScore;
+  }
+
+  let fraudScore;
+  if (sessionData.fraudChecks) {
+    const highestFraudCheck = sessionData.fraudChecks.reduce((prev, curr) =>
+      prev.fraudCheckScore > curr.fraudCheckScore ? prev : curr
+    );
+    fraudScore = highestFraudCheck.fraudCheckScore;
   }
 
   return res.render(template, {
@@ -100,6 +114,7 @@ const getHome = (req: Request, res: Response): void => {
     activityHistoryEvidenceArray: sessionData.activityChecks,
     activityHistoryScore: activityHistoryScore,
     identityVerificationScore: identityVerificationScore,
+    fraudScore: fraudScore,
     debugData: debugData,
   });
 };
