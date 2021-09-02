@@ -108,6 +108,7 @@ export const next = async (
     case "driving-licence":
       await addEvidence(req, res);
       break;
+    case "selfie":
     case "identity-verification":
       logger.info(
         `[${req.method}] ${req.originalUrl} (${sessionId}) - Adding identity verification to core-back`,
