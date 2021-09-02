@@ -9,57 +9,38 @@
 {% extends "common/layout/view.njk" %}
 {% set pageTitleName = 'pages.start.title' | translate %}
 {% block content %}
-    {% macro ipvValidationTags(evidence, emptyEvidenceText="pending") %}
-      {% if evidence.evidenceScore %}
-        {% if 'strength' in evidence.evidenceScore  or 'validity' in evidence.evidenceScore %}
+    {% macro identityEvidenceValidationTags(evidenceScore, emptyEvidenceText="pending") %}
+      {% if evidenceScore %}
+        {% if 'strength' in evidenceScore  or 'validity' in evidenceScore %}
           {{ govukTag({
               text: "completed",
               classes: "govuk-tag--green"
           }) }}
           {{ govukTag({
-              text: evidence.evidenceScore.strength or 0,
+              text: evidenceScore.strength or 0,
               classes: "govuk-tag--orange"
           }) }}
           {{ govukTag({
-              text: evidence.evidenceScore.validity or 0,
+              text: evidenceScore.validity or 0,
               classes: "govuk-tag--yellow"
           }) }}
+        {% endif %} 
       {% else %}
           {{ govukTag({
               text: emptyEvidenceText,
               classes: "govuk-tag--blue"
           }) }}
-      {% endif %} 
-    {% endif %}
-
+      {% endif %}
     {% endmacro %}
 
-    {% macro identityVerificationValidationTags(evidence, emptyEvidenceText="pending") %}
-     {% if evidence.verificationScore %}
+    {% macro evidenceValidationTags(evidenceScore, emptyEvidenceText="pending") %}
+     {% if evidenceScore %}
         {{ govukTag({
             text: "completed",
             classes: "govuk-tag--green"
         }) }}
         {{ govukTag({
-            text: evidence.verificationScore or 0,
-            classes: "govuk-tag--yellow"
-        }) }}
-      {% else %}
-        {{ govukTag({
-            text: emptyEvidenceText,
-            classes: "govuk-tag--blue"
-        }) }}
-      {% endif %} 
-    {% endmacro %}
-
-    {% macro activityHistoryValidationTags(evidence, emptyEvidenceText="pending") %}
-     {% if evidence.activityHistoryScore %}
-        {{ govukTag({
-            text: "completed",
-            classes: "govuk-tag--green"
-        }) }}
-        {{ govukTag({
-            text: evidence.activityHistoryScore or 0,
+            text: evidenceScore or 0,
             classes: "govuk-tag--yellow"
         }) }}
       {% else %}
@@ -83,7 +64,7 @@
                     <dd class="govuk-summary-list__key">Unknown evidence</dd>
                 {% endif %}
                 <dd class="govuk-summary-list__value">
-                    {{ ipvValidationTags(evidence) }}
+                    {{ identityEvidenceValidationTags(evidence.evidenceScore) }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="/ipv/evidence/delete?id={{ evidence.evidenceId }}">Delete</a>
@@ -105,7 +86,7 @@
                     <dd class="govuk-summary-list__key">Unknown evidence</dd>
                 {% endif %}
                 <dd class="govuk-summary-list__value">
-                    {{ identityVerificationValidationTags(evidence) }}
+                    {{ evidenceValidationTags(evidence.verificationScore) }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="/ipv/evidence/delete?id={{ evidence.evidenceId }}">Delete</a>
@@ -123,7 +104,7 @@
                     <dd class="govuk-summary-list__key">Unknown evidence</dd>
                 {% endif %}
                 <dd class="govuk-summary-list__value">
-                    {{ identityVerificationValidationTags(evidence) }}
+                    {{ evidenceValidationTags(evidence.activityHistoryScore) }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="/ipv/evidence/delete?id={{ evidence.evidenceId }}">Delete</a>
@@ -132,7 +113,7 @@
         {% endfor %}
     {% endmacro %}
 
-    {% macro evidenceData(heading, evidenceArray) %}
+    {% macro evidenceData(heading, evidence) %}
       {{ govukAccordion({
           id: "accordion-default",
           items: [
@@ -141,39 +122,7 @@
                       text: heading
                   },
                   content: {
-                      html: evidenceDataDisplay(evidenceArray)
-                  }
-              }
-          ]
-      }) }}
-    {% endmacro %}
-
-    {% macro identityVerificationEvidenceData(heading, evidenceArray) %}
-      {{ govukAccordion({
-          id: "accordion-default",
-          items: [
-              {
-                  heading: {
-                      text: heading
-                  },
-                  content: {
-                      html: identityVerificationEvidenceDataDisplay(evidenceArray)
-                  }
-              }
-          ]
-      }) }}
-    {% endmacro %}
-
-    {% macro activityHistoryEvidenceData(heading, evidenceArray) %}
-      {{ govukAccordion({
-          id: "accordion-default",
-          items: [
-              {
-                  heading: {
-                      text: heading
-                  },
-                  content: {
-                      html: activityHistoryEvidenceDataDisplay(evidenceArray)
+                      html: evidence
                   }
               }
           ]
@@ -185,9 +134,6 @@
         {% for atp in atpArray %}
           <div class="govuk-summary-list__row">    
             <dt class="govuk-summary-list__key">{{ atp.label }}</dt>
-            <dd class="govuk-summary-list__value"> 
-{#                {{ ipvValidationTags(atp.evidence) }}          #}
-            </dd>     
             <dd class="govuk-summary-list__actions">   
                 <a class="govuk-link" href="{{ atp.href }}">{{atp.text}}</a>
             </dd>
@@ -204,19 +150,19 @@
               {{ ipvSummaryList("Identity Evidence", identityEvidence)}}
             </dl>
 
-            {{ evidenceData("Added identity evidence", evidenceArray) }}
+            {{ evidenceData("Added identity evidence", evidenceDataDisplay(evidenceArray)) }}
 
             <dl class="govuk-summary-list">
               {{ ipvSummaryList("Identity Verification", identityVerification)}}
             </dl>
 
-            {{ identityVerificationEvidenceData("Added identity verification", identityVerificationEvidenceArray) }}
+            {{ evidenceData("Added identity verification", identityVerificationEvidenceDataDisplay(identityVerificationEvidenceArray)) }}
 
             <dl class="govuk-summary-list">
               {{ ipvSummaryList("Activity History", activityHistory)}}
             </dl>
 
-            {{ activityHistoryEvidenceData("Added activity history", activityHistoryEvidenceArray) }}
+            {{ evidenceData("Added activity history", activityHistoryEvidenceDataDisplay(activityHistoryEvidenceArray)) }}
 
             <dl class="govuk-summary-list">
                 {{ ipvSummaryList("Fraud", fraud)}}
@@ -293,7 +239,6 @@
             </dl>
             </div>
 
-
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/stackoverflow-light.min.css">
             {{ govukAccordion({
                 id: "accordion-default",
@@ -308,7 +253,6 @@
                     }
                 ]
             }) }}
-
 
             <h2>Currently met GPG45 profile:</h2>
             <h3><span>{{gpg45Profile.description or "None"}}</span></h3>
